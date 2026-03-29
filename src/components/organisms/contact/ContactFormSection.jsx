@@ -1,19 +1,13 @@
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa"
-import { Title } from "../../atoms/titles"
-import { Button } from "../../atoms/buttons"
-import { Paragraph } from "../../atoms/paragraph"
-import { InfoItem } from "../../molecules/contact/infoItem"
-import { MinimalInput } from "../../molecules/contact/minimalInput"
 import { useState } from "react"
-import { messageValidator } from "../../../validations/validationsMessage"
 import emailjs from '@emailjs/browser'
+import { messageValidator } from "../../../validations/validationsMessage"
 
 function ContactFormSection() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
+  const [name, setName]       = useState('')
+  const [email, setEmail]     = useState('')
+  const [phone, setPhone]     = useState('')
   const [message, setMessage] = useState('')
-  const [error, setError] = useState('')
+  const [error, setError]     = useState('')
   const [success, setSuccess] = useState('')
 
   const handleSubmit = async (e) => {
@@ -36,124 +30,149 @@ function ContactFormSection() {
       setEmail('')
       setPhone('')
       setMessage('')
-
-    } catch (error) {
-      console.error(error)
-      setError(error.message || 'Ocurrió un error al enviar el mensaje')
+    } catch (err) {
+      console.error(err)
+      setError(err.message || 'Ocurrió un error al enviar el mensaje')
     }
   }
 
   return (
-    <section className="relative w-full py-20 px-4 -mt-20 z-20">
+    <section className="relative bg-[#1a0d08] px-4 pb-20 -mt-12 z-20">
       <div
-        className="max-w-6xl mx-auto bg-[#121212]/95 backdrop-blur-2xl shadow-[0_0_50px_rgba(255,187,0,0.2)] rounded-xl overflow-hidden border border-[#FFBB00]/50 grid grid-cols-1 lg:grid-cols-2"
+        className="
+          max-w-2xl mx-auto
+          border border-[#c8895a33] rounded-xl
+          px-8 sm:px-14 py-12
+          backdrop-blur-xl
+        "
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        {/* Panel izquierdo - Información */}
-        <div className="relative p-10 md:p-14 flex flex-col justify-between overflow-hidden">
-
-          <div className="absolute inset-0 bg-[url('./IMG-CONTACT.jpeg')] bg-cover bg-center opacity-30 transition-transform duration-700 hover:scale-105"></div>
-          <div className="absolute inset-0 bg-linera-to-b from-[#552D19]/80 via-[#552D19]/60 to-[#000000]/90"></div>
-
-          <div className="relative z-10">
-            <div data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
-              <Title
-                level="h3"
-                text="Información de Contacto"
-                variant="tertiary"
-                className="font-joti text-3xl mb-3 drop-shadow-md"
-              />
-              <Paragraph className="text-gray-200 font-light mb-12 text-lg drop-shadow-sm">
-                Queremos escucharte. Ven a visitarnos o comunícate con nosotros
-              </Paragraph>
-            </div>
-
-            <div className="space-y-8">
-              <div data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">
-                <InfoItem icon={<FaMapMarkerAlt />} title="Dirección" text="Av. Amazonas - 513 - Celendín" />
-              </div>
-              <div data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">
-                <InfoItem icon={<FaPhoneAlt />} title="Llámanos" text="+51 932 983 227" />
-              </div>
-              <div data-aos="fade-right" data-aos-duration="800" data-aos-delay="500">
-                <InfoItem icon={<FaEnvelope />} title="Escríbenos" text="shilicolateoficial@gmail.com" />
-              </div>
-            </div>
-          </div>
+        {/* Cabecera */}
+        <div className="mb-8">
+          <span
+            className="
+              inline-block mb-5
+              font-serif text-[11px] tracking-[0.25em] uppercase
+              text-[#c8895a] border-b border-[#c8895a55] pb-1
+            "
+          >
+            Ponte en contacto
+          </span>
+          <h2 className="font-serif font-bold text-[clamp(1.6rem,3vw,2.2rem)] text-[#f5e8d5] leading-tight m-0">
+            Envíanos <em className="italic font-normal text-[#c8895a]">un mensaje</em>
+          </h2>
+          <div className="w-9 h-px bg-[#c8895a] opacity-50 my-4" />
+          <p className="font-serif font-light text-[0.9rem] text-[#7a5c45] m-0">
+            Comunícate con nosotros y te responderemos a la brevedad.
+          </p>
         </div>
 
-        {/* Panel derecho - Formulario */}
-        <div className="p-10 md:p-14 bg-[#18181b]">
+        {/* Feedback */}
+        {error   && <p className="text-[#e07070] text-[0.82rem] mb-4">{error}</p>}
+        {success && <p className="text-[#7ec88a] text-[0.82rem] mb-4">{success}</p>}
 
-          <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-            {error && <span className="text-red-500 text-sm block mb-2">{error}</span>}
-            {success && <span className="text-green-500 text-sm block mb-2">{success}</span>}
-            <Title
-              level="h3"
-              text="Envíanos un Mensaje"
-              className="text-white font-bold text-2xl mb-2"
-            />
-            <p className="text-gray-400 mb-8 text-sm">Comunícate con nosotros y te responderemos.</p>
-          </div>
+        {/* Formulario */}
+        <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
 
-          <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
-
-            <div
-              className="grid grid-cols-1 md:grid-cols-2 gap-8"
-              data-aos="fade-left" data-aos-duration="800" data-aos-delay="300"
-            >
-              <MinimalInput
-                label="Nombre Completo"
-                placeholder="Ej: Juan Pérez"
-                type="text"
-                value={name}
-                onChange={(e) => { e.preventDefault(); setName(e.target.value) }}
-              />
-              <MinimalInput
-                label="Correo Electrónico"
-                placeholder="Ej: juan.perez@email.com"
-                type="email"
-                value={email}
-                onChange={(e) => { e.preventDefault(); setEmail(e.target.value) }}
-              />
-            </div>
-
-            <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-              <MinimalInput
-                label="Teléfono"
-                placeholder="Ej: 999 999 999"
-                type="text"
-                value={phone}
-                onChange={(e) => { e.preventDefault(); setPhone(e.target.value) }}
-              />
-            </div>
-
-            <div
-              className="flex flex-col gap-2 group"
-              data-aos="fade-left" data-aos-duration="800" data-aos-delay="500"
-            >
-              <label className="text-sm font-medium text-[#CCA047] group-focus-within:text-white transition-colors">
-                Mensaje
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Nombre */}
+            <div className="flex flex-col gap-1.5 group">
+              <label className="font-serif text-[11px] tracking-[0.15em] uppercase text-[#c8895a]">
+                Nombre completo
               </label>
-              <textarea
-                className="w-full bg-[#202023] border-b border-gray-600 focus:border-[#6d5616] text-gray-200 py-2 outline-none resize-none transition-colors h-32 placeholder-gray-600"
-                placeholder="Escribe aquí tu mensaje..."
-                value={message}
-                onChange={(e) => { e.preventDefault(); setMessage(e.target.value) }}
+              <input
+                type="text"
+                placeholder="Ej: Juan Pérez"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="
+                  bg-transparent border-b border-[#c8895a33]
+                  focus:border-[#c8895a] outline-none
+                  font-serif font-light text-[0.95rem] text-[#f5e8d5]
+                  placeholder-[#7a5c45] py-2
+                  transition-colors duration-200
+                "
               />
             </div>
 
-            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="600">
-              <Button
-                type="submit"
-                text="Enviar Mensaje"
-                className="w-full mt-2 bg-linear-to-r from-[#FFBB00] to-[#A66A06] text-black font-bold hover:scale-[1.02] shadow-lg hover:shadow-[#FFBB00]/20 py-4 rounded-xl transition-all cursor-pointer"
+            {/* Email */}
+            <div className="flex flex-col gap-1.5 group">
+              <label className="font-serif text-[11px] tracking-[0.15em] uppercase text-[#c8895a]">
+                Correo electrónico
+              </label>
+              <input
+                type="email"
+                placeholder="Ej: juan@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="
+                  bg-transparent border-b border-[#c8895a33]
+                  focus:border-[#c8895a] outline-none
+                  font-serif font-light text-[0.95rem] text-[#f5e8d5]
+                  placeholder-[#7a5c45] py-2
+                  transition-colors duration-200
+                "
               />
             </div>
+          </div>
 
-          </form>
-        </div>
+          {/* Teléfono */}
+          <div className="flex flex-col gap-1.5 group">
+            <label className="font-serif text-[11px] tracking-[0.15em] uppercase text-[#c8895a]">
+              Teléfono
+            </label>
+            <input
+              type="text"
+              placeholder="Ej: 999 999 999"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="
+                bg-transparent border-b border-[#c8895a33]
+                focus:border-[#c8895a] outline-none
+                font-serif font-light text-[0.95rem] text-[#f5e8d5]
+                placeholder-[#7a5c45] py-2
+                transition-colors duration-200
+              "
+            />
+          </div>
+
+          {/* Mensaje */}
+          <div className="flex flex-col gap-1.5 group">
+            <label className="font-serif text-[11px] tracking-[0.15em] uppercase text-[#c8895a]">
+              Mensaje
+            </label>
+            <textarea
+              placeholder="Escribe aquí tu mensaje..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="
+                bg-transparent border-b border-[#c8895a33]
+                focus:border-[#c8895a] outline-none
+                font-serif font-light text-[0.95rem] text-[#f5e8d5]
+                placeholder-[#7a5c45] py-2 resize-none h-28
+                transition-colors duration-200
+              "
+            />
+          </div>
+
+          {/* Botón */}
+          <button
+            type="submit"
+            className="
+              w-full mt-2 py-3.5
+              bg-[#c8895a] hover:bg-[#d9a070]
+              text-[#1a0d08] font-serif font-medium
+              text-[0.9rem] tracking-[0.12em] uppercase
+              rounded-[2px] border-none cursor-pointer
+              transition-[background,transform] duration-200
+              hover:-translate-y-px active:scale-[0.99]
+            "
+          >
+            Enviar mensaje
+          </button>
+
+        </form>
       </div>
     </section>
   )

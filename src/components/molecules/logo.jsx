@@ -12,7 +12,7 @@ function Logo({variant = 'tertiary', className= 'mt-10' }) {
           <img 
             src="/LOGO.png" 
             alt="Logo de la empresa" 
-            className="w-15 md:w-24 lg:w-48 h-auto" 
+            className="w-40 md:w-40rem lg:w-60rem h-auto"
           />
 
         </Link>

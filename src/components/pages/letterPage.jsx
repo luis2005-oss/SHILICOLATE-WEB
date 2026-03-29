@@ -3,9 +3,10 @@ import { ProductHeader } from "../organisms/letter/ProductHeader";
 import { MyTemplate } from "../templates/myTemplate";
 import { ProductCatalog } from "../organisms/letter/ProductCatalog";
 
+
 export const LetterPage = () => {
 
-  const [cart, setCart] = useState([]);
+  const [_cart, setCart] = useState([]);
 
   const addToCart = (product) => {
 

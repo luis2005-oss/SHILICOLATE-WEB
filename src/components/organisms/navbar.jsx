@@ -1,69 +1,106 @@
-  import { useState } from "react";
-  import { CgMenu, CgClose   } from "react-icons/cg";
-  import { NavbarMenu } from "../molecules/desktopMenu";
-  import { LocationNavbar } from "../molecules/locationNavbar";
-  import { CarNavbar } from "../molecules/login";
-  import { MobileMenu } from "../molecules/modileMenu";
+import { useState } from "react"
+import { CgMenu, CgClose } from "react-icons/cg"
+import { NavbarMenu } from "../molecules/desktopMenu"
+import { CarNavbar } from "../molecules/login"
 
-  function Navbar({ setModalIsOpen, setCartShopOpen, setRegisterIsOpen }) {
-    const [isOpen, setIsOpen] = useState(false);
+function Navbar({ setModalIsOpen, setCartShopOpen, setRegisterIsOpen }) {
+  const [isOpen, setIsOpen] = useState(false)
 
-    const toggleMenu = () => {
-      setIsOpen(!isOpen);
-    };
+  const toggleMenu = () => setIsOpen(!isOpen)
+  const closeMenu  = () => setIsOpen(false)
 
-    const closeMenu = () => {
-      setIsOpen(false);
-    };
+  return (
+    <nav className="fixed top-0 w-full bg-[#1a0d08] border-b border-[#c8895a33] z-[100]">
+      <div className="flex items-center justify-between px-6 md:px-8 h-[68px] max-w-[1280px] mx-auto">
 
-    return (
-      <nav className="fixed top-0 w-full bg-[#462114] border-b border-[#CCA047] z-100">
-        <div className="flex items-center justify-between px-6 md:px-5 h-16 md:h-20">
-          
-          {/* Logo Mobile - Solo visible en mobile (izquierda) */}
-          <a href="/" className="md:hidden flex items-center gap-2">
-            <img 
-              src="/LOGO.png" 
-              alt="Logo Brown Coffee" 
-              className="w-10 h-10 object-contain" 
-            />
-            <span className="text-[#FFBB00] font-bold text-center text-sm whitespace-nowrap">
-              SHILICOLATE
-            </span>
+        {/* ── MÓVIL: logo izquierda ── */}
+        <a href="/" className="md:hidden flex items-center gap-2">
+          <img src="/LOGO.png" alt="Shilicolate" className="w-9 h-9 object-contain" />
+          <span className="font-serif italic text-[0.75rem] tracking-[0.18em] text-[#c8895a]">
+            Shilicolate
+          </span>
+        </a>
+
+        {/* ── DESKTOP: izquierda — ubicación ── */}
+        <div className="hidden md:flex items-center flex-1">
+          <a
+            href="https://maps.app.goo.gl/DrRYNZjjMCFXWKxTA"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1 opacity-75 hover:opacity-100 transition-opacity duration-200"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#c8895a] flex-shrink-0" />
+            <small className="font-serif text-[0.72rem] tracking-[0.08em] text-[#c4a98a] whitespace-nowrap">
+              Av. Amazonas 513 — Celendín
+            </small>
           </a>
-          <div className="hidden md:block">
-            <LocationNavbar />
+        </div>
+
+        {/* ── DESKTOP: centro — menú + logo ── */}
+        <div className="hidden md:flex items-center gap-2 flex-2 justify-center">
+          <NavbarMenu onLinkClick={closeMenu} />
+        </div>
+
+        {/* ── DESKTOP: derecha — carrito + login ── */}
+        <div className="hidden md:flex items-center gap-4 flex-1 justify-end">
+          <CarNavbar
+            setModalIsOpen={setModalIsOpen}
+            setCartShopOpen={setCartShopOpen}
+            setRegisterIsOpen={setRegisterIsOpen}
+          />
+        </div>
+
+        {/* ── MÓVIL: hamburguesa derecha ── */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden text-[#c8895a] p-2 hover:bg-white/5 rounded transition"
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <CgClose size={24} /> : <CgMenu size={24} />}
+        </button>
+      </div>
+
+      {/* ── MENÚ MÓVIL ── */}
+      <div
+        className={`
+          md:hidden overflow-hidden transition-all duration-300 ease-in-out
+          ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}
+        `}
+      >
+        <div className="bg-[#120804] border-t border-[#c8895a22] px-6 py-5 space-y-5">
+
+          {/* Ubicación */}
+          <div className="pb-4 border-b border-[#c8895a22]">
+            <a
+              href="https://maps.app.goo.gl/DrRYNZjjMCFXWKxTA"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#c8895a] flex-shrink-0" />
+              <small className="font-serif text-[0.72rem] tracking-[0.08em] text-[#c4a98a]">
+                Av. Amazonas 513 — Celendín
+              </small>
+            </a>
           </div>
-          <div className="hidden md:flex flex-1 justify-center">
+
+          {/* Links */}
+          <div className="pb-4 border-b border-[#c8895a22]">
             <NavbarMenu onLinkClick={closeMenu} />
           </div>
 
-          <div className="hidden md:block">
-            <CarNavbar 
-              setModalIsOpen={setModalIsOpen} 
+          {/* Carrito + login */}
+          <div className="pt-1">
+            <CarNavbar
+              setModalIsOpen={setModalIsOpen}
               setCartShopOpen={setCartShopOpen}
-              setRegisterIsOpen= {setRegisterIsOpen}
+              setRegisterIsOpen={setRegisterIsOpen}
             />
           </div>
-
-          <button
-            onClick={toggleMenu}
-            className="md:hidden text-[#FFBB00] p-2 hover:bg-white/10 rounded-lg transition"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <CgClose size={28} /> : <CgMenu size={28} />}
-          </button>
         </div>
-        
-        <MobileMenu 
-          setModalIsOpen={setModalIsOpen}
-          setRegisterIsOpen= {setRegisterIsOpen}
-          isOpen={isOpen}
-          closeMenu={closeMenu}
-          setCartShopOpen={setCartShopOpen}
-          />
-      </nav>
-    );
-  }
+      </div>
+    </nav>
+  )
+}
 
-  export { Navbar };
+export { Navbar }

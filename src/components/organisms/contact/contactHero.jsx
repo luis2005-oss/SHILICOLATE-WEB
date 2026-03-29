@@ -1,6 +1,6 @@
 function ContactHero() {
   return (
-    <section className="relative h-[75vh] min-h-[520px] w-full overflow-hidden bg-[#1a0d08] flex items-center justify-center">
+    <section className="relative h-screen w-full overflow-hidden bg-[#1a0d08] flex items-center justify-center">
 
       {/* Imagen de fondo */}
       <div
