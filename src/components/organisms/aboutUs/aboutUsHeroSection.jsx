@@ -1,7 +1,3 @@
-import { AboutUsMainTitle } from "../../atoms/aboutUs/aboutUsMainTitle"
-import { AboutUsFloatingImage } from "../../atoms/aboutUs/aboutUsFloatingImage"
-import { AboutUsInfoCard } from "../../molecules/aboutUs/aboutUsInfoCard"
-
 function InfoCard({ title, text, tags }) {
   return (
     <div
@@ -52,7 +48,7 @@ compromiso con el bienestar de nuestra comunidad.`
         <img
           src="../../../FONDO-NOSOTROS.jpg"
           alt="Fondo"
-          className="w-full h-full object-cover object-center [filter:sepia(30%)_brightness(0.35)]"
+          className="w-full h-full object-cover object-center filter-[sepia(30%)_brightness(0.35)]"
         />
         {/* Scanlines decorativas */}
         <div
@@ -72,14 +68,7 @@ compromiso con el bienestar de nuestra comunidad.`
           data-aos="fade-down"
           data-aos-duration="900"
         >
-          <span
-            className="
-              font-serif text-[11px] tracking-[0.28em] uppercase
-              text-[#c8895a] border-b border-[#c8895a55] pb-1
-            "
-          >
-            Nuestra historia
-          </span>
+
           <h1
             className="
               font-serif font-bold text-center leading-tight
@@ -116,7 +105,7 @@ compromiso con el bienestar de nuestra comunidad.`
               className="
                 w-36 md:w-40
                 [filter:drop-shadow(0_12px_32px_rgba(200,137,90,0.25))]
-                hover:scale-[1.06] hover:rotate-[-2deg]
+                hover:scale-[1.06] hover:rotate-[-15deg]
                 transition-transform duration-500
               "
             />

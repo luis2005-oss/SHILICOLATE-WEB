@@ -194,15 +194,6 @@ function Schedules() {
         data-aos="fade-down"
         data-aos-duration="900"
       >
-        <span
-          className="
-            inline-block mb-4
-            font-serif text-[11px] tracking-[0.25em] uppercase
-            text-[#c8895a] border-b border-[#c8895a55] pb-1
-          "
-        >
-          Logros que nos enorgullecen
-        </span>
         <h2 className="font-serif font-bold text-[clamp(2rem,4vw,3rem)] text-[#f5e8d5] leading-tight m-0">
           Nuestros{" "}
           <em className="italic font-normal text-[#c8895a]">reconocimientos</em>

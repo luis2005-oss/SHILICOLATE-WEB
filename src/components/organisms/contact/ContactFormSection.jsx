@@ -64,7 +64,7 @@ function ContactFormSection() {
           </h2>
           <div className="w-9 h-px bg-[#c8895a] opacity-50 my-4" />
           <p className="font-serif font-light text-[0.9rem] text-[#7a5c45] m-0">
-            Comunícate con nosotros y te responderemos a la brevedad.
+            Comunícate con nosotros y te responderemos.
           </p>
         </div>
 

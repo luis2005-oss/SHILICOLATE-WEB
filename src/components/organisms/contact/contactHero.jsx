@@ -18,37 +18,10 @@ function ContactHero() {
 
       {/* Líneas verticales decorativas */}
       <div className="absolute left-10 top-[20%] bottom-[25%] w-px bg-[#c8895a] opacity-15 z-10" />
-      <div className="absolute right-10 top-[20%] bottom-[25%] w-px bg-[#c8895a] opacity-15 z-10" />
-
-      {/* Letra decorativa de fondo */}
-      <span
-        aria-hidden="true"
-        className="
-          absolute bottom-[10%] left-1/2 -translate-x-1/2
-          font-serif italic text-[16rem] leading-none
-          text-[#c8895a] opacity-[0.025]
-          select-none pointer-events-none z-10
-          whitespace-nowrap
-        "
-      >
-        C
-      </span>
+      <div className="absolute right-10 top-[20%] bottom-[25%] w-px bg-[#c8895a] opacity-15 z-10" />  
 
       {/* Contenido centrado */}
       <div className="relative z-20 flex flex-col items-center text-center px-6 max-w-3xl pb-16 gap-0">
-
-        <span
-          className="
-            inline-block mb-7
-            font-serif text-[11px] tracking-[0.28em] uppercase
-            text-[#c8895a] border-b border-[#c8895a55] pb-1
-          "
-          data-aos="fade-down"
-          data-aos-duration="800"
-          data-aos-delay="200"
-        >
-          Estamos para ti
-        </span>
 
         <h1
           className="
@@ -73,7 +46,7 @@ function ContactHero() {
 
         <p
           className="
-            font-serif font-light text-[1rem] text-[#c4a98a]
+            font-serif font-light text-[1.25rem] text-[#c4a98a]
             leading-[1.8] max-w-lg m-0
           "
           data-aos="fade-up"

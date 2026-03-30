@@ -32,6 +32,7 @@ function ReviewCard({ title, img, className = "" }) {
             opacity-0 translate-y-1.5
             transition-[opacity,transform] duration-300
             group-hover:opacity-100 group-hover:translate-y-0
+            group-active:opacity-100 group-active:translate-y-0
           "
         >
           {title}

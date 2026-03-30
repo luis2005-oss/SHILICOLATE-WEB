@@ -1,7 +1,3 @@
-import { Title } from "../../atoms/titles"
-import { AboutUsHistoryBlock } from "../../molecules/aboutUs/AboutUsHistoryBlock"
-import { AboutUsGalleryImage } from "../../atoms/aboutUs/AboutUsGalleryImage"
-
 function GalleryCard({ src, alt, className = "" }) {
   return (
     <div
@@ -45,7 +41,7 @@ function HistoryBlock() {
           Nuestro origen
         </span>
         <h3 className="font-serif font-bold text-[1.5rem] text-[#f5e8d5] leading-snug">
-          Celendín,<br />cuna de nuestro cacao
+          Celendín,<br />tierra del chocolate
         </h3>
         <div className="w-8 h-px bg-[#c8895a] opacity-50" />
         <p className="font-serif font-light text-[0.9rem] text-[#c4a98a] leading-[1.8]">
@@ -53,15 +49,6 @@ function HistoryBlock() {
           artesanal puede ser a la vez delicioso, sostenible y un reflejo fiel de nuestra cultura.
           Cada pieza lleva consigo el aroma y la tradición de nuestra tierra.
         </p>
-        <span
-          className="
-            inline-block w-fit font-serif text-[0.75rem] tracking-wide
-            px-3 py-1 rounded-[2px]
-            bg-[#c8895a22] text-[#c8895a] border border-[#c8895a44]
-          "
-        >
-          Desde Celendín para el mundo
-        </span>
       </div>
 
       {/* Derecha — clara */}
@@ -78,15 +65,6 @@ function HistoryBlock() {
           Cada shilibonbón, chocoteja y chocolate en caja es elaborado a mano, con ingredientes
           naturales y el cuidado que merece cada momento especial.
         </p>
-        <span
-          className="
-            inline-block w-fit font-serif text-[0.75rem] tracking-wide
-            px-3 py-1 rounded-[2px]
-            bg-[#1a0d0812] text-[#7a5c45] border border-[#c8895a33]
-          "
-        >
-          Hecho a mano · Local
-        </span>
       </div>
     </div>
   )
@@ -102,14 +80,7 @@ function AboutUsGallerySection() {
         data-aos="fade-down"
         data-aos-duration="900"
       >
-        <span
-          className="
-            inline-block mb-4 font-serif text-[11px] tracking-[0.25em] uppercase
-            text-[#c8895a] border-b border-[#c8895a55] pb-1
-          "
-        >
-          Nuestro espacio
-        </span>
+
         <h2 className="font-serif font-bold text-[clamp(1.8rem,3.5vw,2.8rem)] text-[#1a0d08] leading-tight">
           Un espacio{" "}
           <em className="italic font-normal text-[#c8895a]">hecho para ti</em>
