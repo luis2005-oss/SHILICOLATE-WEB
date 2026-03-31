@@ -10,7 +10,6 @@ import { ModalLogin } from "./components/organisms/modals/modalLogin"
 import { CartShop } from "./components/organisms/modals/modalCartShop"
 import { ScrollToTop } from "./components/utils/scrollToTop" //scroll animate
 // Tendencies sections
-import { TendenciesProducts } from "./components/organisms/home/tendenciesProducts"
 import { Footer } from "./components/organisms/footer"
 import { WhatsAppButton } from "./components/atoms/WhatsAppButton"
 // AOS - Animate On Scroll
@@ -37,10 +36,6 @@ function App() {
     {
       path: '/',
       element: <HomePage/>,
-      children: [
-        { index: true, element: <TendenciesProducts /> }, 
-        { path: 'coffee', element: <TendenciesProducts /> },
-      ]
     },
     {
       path: '/letter',
