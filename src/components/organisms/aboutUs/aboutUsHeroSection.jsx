@@ -29,12 +29,16 @@ function InfoCard({ title, text, tags }) {
 
 function AboutUsHeroSection() {
   const mision = `Crear productos chocolateros artesanales y sostenibles que deleiten los sentidos
-y satisfagan a nuestros clientes, fomentando la innovación, la calidad y el respeto
-por el medio ambiente y nuestra cultura Celendina.`
+y satisfagan las necesidades de nuestros clientes amantes del chocolate,
+mientras fomentamos la innovación, la calidad y el respeto por el medio ambiente
+y nuestra cultura Celendina.`
 
   const vision = `Ser la empresa líder en la industria chocolatera de la región, reconocida por
-chocolates de alta calidad que inspiran momentos memorables y reflejan nuestro
-compromiso con el bienestar de nuestra comunidad.`
+ofrecer chocolates de alta calidad que deleitan los sentidos y nutren el cuerpo,
+mientras generamos un impacto positivo en el mundo. Aspiramos a construir una
+marca confiable y querida, que inspire momentos memorables, promueva la
+innovación responsable y refleje nuestro compromiso con el medio ambiente y
+el bienestar de nuestra comunidad.`
 
   return (
     <section className="relative w-full min-h-screen overflow-hidden flex flex-col items-center justify-center pt-28 pb-20 px-4">
@@ -43,7 +47,7 @@ compromiso con el bienestar de nuestra comunidad.`
         <div className="absolute inset-0" style={{ background: "repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(26,13,8,0.04) 2px,rgba(26,13,8,0.04) 4px)" }} />
       </div>
 
-      <div className="relative z-10 w-full max-w-4xl flex flex-col items-center gap-14">
+      <div className="relative z-10 w-full max-w-6xl flex flex-col items-center gap-14">
         <div className="flex flex-col items-center gap-4" data-aos="fade-down" data-aos-duration="900">
           <h1 className="font-serif font-bold text-center leading-tight text-[clamp(2.4rem,5vw,4rem)] text-[#f5e8d5] m-0">
             Más que chocolate,{" "}

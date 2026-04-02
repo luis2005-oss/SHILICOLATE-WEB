@@ -44,7 +44,7 @@ function ContactFormSection() {
   return (
     <section className="relative bg-[#1a0d08] px-4 pb-20 -mt-12 z-20">
       <div
-        className="max-w-2xl mx-auto rounded-xl px-8 sm:px-14 py-12 relative overflow-hidden"
+        className="max-w-3xl mx-auto rounded-xl px-8 sm:px-14 py-12 relative overflow-hidden"
         style={{ border: `0.5px solid ${GOLD}33` }}
         data-aos="fade-up"
         data-aos-duration="1000"

@@ -106,7 +106,7 @@ function VenefitsChocolate() {
       <div
         className="
           grid grid-cols-2 md:grid-cols-3
-          max-w-4xl mx-auto
+          max-w-6xl mx-auto
           border border-[#e8d8c4] rounded-xl overflow-hidden
           gap-px bg-[#e8d8c4]
         "
@@ -123,7 +123,7 @@ function VenefitsChocolate() {
       <div
         className="
           flex flex-col sm:flex-row items-center justify-center
-          gap-8 max-w-4xl mx-auto mt-10 px-4
+          gap-8 max-w-6xl mx-auto mt-7 px-6
         "
         data-aos="fade-up"
         data-aos-duration="800"
@@ -133,7 +133,7 @@ function VenefitsChocolate() {
           src="/VENEFITIONS.png"
           alt="Producto Shilicolate"
           className="
-            w-32 sm:w-36
+            w-32 sm:w-50
             drop-shadow-[0_8px_20px_rgba(26,13,8,0.18)]
             hover:scale-105 hover:-translate-y-1
             transition-transform duration-400
