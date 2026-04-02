@@ -1,123 +1,170 @@
-import { useState } from "react";
-import { useCart } from "../../../context/CartContext";
-import { formatPrice } from "../../utils/formatPrice";
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet"></link>
+import { useState } from "react"
+import { useCart } from "../../../context/CartContext"
+import { formatPrice } from "../../utils/formatPrice"
 
+const GOLD      = "#d4af37"
+const GOLD_GRAD = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)"
 
 export function ProductCard({ product }) {
-
-  const [flipped,setFlipped] = useState(false);
-  const { addToCart } = useCart();
+  const [flipped, setFlipped] = useState(false)
+  const { addToCart } = useCart()
 
   return (
-
     <div
-      style={{perspective:"100rem",height:"17.5rem"}}
-      onMouseEnter={()=>setFlipped(true)}
-      onMouseLeave={()=>setFlipped(false)}
+      style={{ perspective: "1000px", height: "280px" }}
+      onMouseEnter={() => setFlipped(true)}
+      onMouseLeave={() => setFlipped(false)}
     >
-
       <div
         style={{
-          position:"relative",
-          width:"100%",
-          height:"100%",
-          transformStyle:"preserve-3d",
-          transition:"transform 0.6s",
-          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)"
+          position: "relative",
+          width: "100%",
+          height: "100%",
+          transformStyle: "preserve-3d",
+          transition: "transform 0.55s ease",
+          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
 
-        {/* FRENTE */}
-
+        {/* ── FRENTE ── */}
         <div
           style={{
-            backfaceVisibility:"hidden",
-            position:"absolute",
-            inset:0,
-            borderRadius:"1.50rem",
-            background:"#CCA157",
-            display:"flex",
-            flexDirection:"column",
-            justifyContent:"center",
-            padding:"1.5rem"
+            backfaceVisibility: "hidden",
+            position: "absolute",
+            inset: 0,
+            borderRadius: "1rem",
+            background: "#69523b",
+            border: `0.5px solid ${GOLD}22`,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "0.75rem",
+            padding: "1.5rem",
+            overflow: "hidden",
           }}
         >
+          {/* Esquinas doradas */}
+          <span style={{ position: "absolute", top: 0, left: 0, width: 18, height: 18, borderTop: `1px solid ${GOLD}66`, borderLeft: `1px solid ${GOLD}66`, borderRadius: "8px 0 0 0" }} />
+          <span style={{ position: "absolute", bottom: 0, right: 0, width: 18, height: 18, borderBottom: `1px solid ${GOLD}66`, borderRight: `1px solid ${GOLD}66`, borderRadius: "0 0 8px 0" }} />
 
           <img
             src={product.URL}
             alt={product.name}
-            style={{
-              width:"12rem",
-              height:"12rem",
-              objectFit:"contain",
-              marginBottom:"0",
-            }}
+            style={{ width: "12rem", height: "12rem", objectFit: "contain" }}
           />
 
-          <h3 style={{color:"#472315", textAlign:"center", fontSize:"1.4rem", fontWeight:700, fontFamily:"Playfair Display, serif", margin:"0"}}>
+          <p style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontSize: "0.9rem",
+            fontWeight: 700,
+            color: "#f5e8d5",
+            textAlign: "center",
+            lineHeight: 1.3,
+            margin: 0,
+          }}>
             {product.name}
-          </h3>
+          </p>
 
+          <span style={{
+            fontFamily: "'Crimson Pro', Georgia, serif",
+            fontSize: "10px",
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            color: GOLD,
+            opacity: 0.7,
+          }}>
+            {product.category}
+          </span>
         </div>
 
-        {/* REVERSO */}
-
+        {/* ── REVERSO ── */}
         <div
           style={{
-            backfaceVisibility:"hidden",
-            position:"absolute",
-            inset:0,
-            transform:"rotateY(180deg)",
-            borderRadius:"1.25rem",
-            background:"#472315",
-            color:"#fff",
-            display:"flex",
-            flexDirection:"column",
-            alignItems:"center",
-            justifyContent:"center",
-            padding:"1.5rem",
-            gap:"0.625rem"
+            backfaceVisibility: "hidden",
+            position: "absolute",
+            inset: 0,
+            transform: "rotateY(180deg)",
+            borderRadius: "8px",
+            background: "#fdf6ee",
+            border: `0.5px solid #e8d8c4`,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "0.5rem",
+            padding: "1.5rem",
+            textAlign: "center",
+            overflow: "hidden",
           }}
         >
+          {/* Esquinas doradas reverso */}
+          <span style={{ position: "absolute", top: 0, left: 0, width: 18, height: 18, borderTop: `1px solid ${GOLD}88`, borderLeft: `1px solid ${GOLD}88`, borderRadius: "8px 0 0 0" }} />
+          <span style={{ position: "absolute", bottom: 0, right: 0, width: 18, height: 18, borderBottom: `1px solid ${GOLD}88`, borderRight: `1px solid ${GOLD}88`, borderRadius: "0 0 8px 0" }} />
 
-          <h3 style={{textAlign:"center"}}>
+          <p style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontSize: "0.88rem",
+            fontWeight: 700,
+            color: "#1a0d08",
+            lineHeight: 1.3,
+            margin: 0,
+          }}>
             {product.name}
-          </h3>
+          </p>
 
-          <p style={{fontSize:"0.75rem",textAlign:"center"}}>
+          {/* Línea dorada */}
+          <div style={{ width: 28, height: 1, background: GOLD_GRAD, opacity: 0.7 }} />
+
+          <p style={{
+            fontFamily: "'Crimson Pro', Georgia, serif",
+            fontSize: "0.75rem",
+            fontWeight: 300,
+            color: "#7a5c45",
+            lineHeight: 1.6,
+            margin: 0,
+          }}>
             {product.desc}
           </p>
 
-          <div
-            style={{
-              fontSize:"1.5rem",
-              fontWeight:700
-            }}
-          >
+          {/* Precio con gradiente dorado */}
+          <p style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontSize: "1.35rem",
+            fontWeight: 700,
+            margin: 0,
+            background: GOLD_GRAD,
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}>
             {formatPrice(product.price)}
-          </div>
+          </p>
 
           <button
             onClick={() => addToCart(product)}
             style={{
-              background:"#fff",
-              color:"#472315",
-              border:"none",
-              borderRadius:"2rem",
-              padding:"0.72rem 1.2rem",
-              fontWeight:700,
-              cursor:"pointer"
+              width: "100%",
+              fontFamily: "'Crimson Pro', Georgia, serif",
+              fontSize: "0.75rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              color: "#1a0d08",
+              background: GOLD_GRAD,
+              border: "none",
+              borderRadius: "2px",
+              padding: "8px 16px",
+              cursor: "pointer",
+              transition: "opacity 0.2s",
             }}
+            onMouseEnter={e => e.currentTarget.style.opacity = "0.88"}
+            onMouseLeave={e => e.currentTarget.style.opacity = "1"}
           >
-            🛒 Agregar al carrito
+            Agregar al carrito
           </button>
-
         </div>
 
       </div>
-
     </div>
-
-  );
+  )
 }
