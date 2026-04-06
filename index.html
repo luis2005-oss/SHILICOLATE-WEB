@@ -2,10 +2,98 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="/LOGO.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shilicolate</title>
+
+    <!-- SEO PRINCIPAL -->
+    <title>Shilicolate - Chocolates Artesanales</title>
+
+    <meta
+      name="description"
+      content="Descubre chocolates artesanales Shilicolate: chocolate en chapa, en caja, barras, shilibombones y shilicotejas con sabores únicos hechos con cacao seleccionado."
+    />
+
+    <meta
+      name="keywords"
+      content="chocolate artesanal, shilicotejas, chocolate en chapa, en caja, en barra, shilibombones, chocolate comestible, cacao seleccionado, sabores únicos."
+    />
+
+    <meta name="author" content="Shilicolate" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Shilicolate - Chocolates Artesanales" />
+    <meta property="og:description" content="Variedad de chocolates artesanales con sabores únicos." />
+    <meta property="og:image" content="/preview.jpg" />
+    <meta property="og:type" content="website" />
+
+    <meta name="theme-color" content="#1a0d08" />
+
+    <!-- 🔥 SEO ESTRUCTURADO POR CATEGORÍAS -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "Shilicolate",
+        "description": "Tienda de chocolates artesanales en Perú",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Categorías de productos",
+          "itemListElement": [
+            {
+              "@type": "OfferCatalog",
+              "name": "Chocolate en chapa",
+              "itemListElement": {
+                "@type": "Product",
+                "name": "Chocolate artesanal en chapa"
+              }
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Chocolate en caja",
+              "itemListElement": {
+                "@type": "Product",
+                "name": "Chocolate artesanal en caja"
+              }
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Chocolate en barra",
+              "itemListElement": {
+                "@type": "Product",
+                "name": "Chocolate artesanal en barra"
+              }
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Shilibombones",
+              "itemListElement": {
+                "@type": "Product",
+                "name": "Bombones artesanales de chocolate"
+              }
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Chocolate comestible",
+              "itemListElement": {
+                "@type": "Product",
+                "name": "Chocolate con sabores naturales"
+              }
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Shilicotejas",
+              "itemListElement": {
+                "@type": "Product",
+                "name": "Shilicotejas artesanales con sabores frutales"
+              }
+            }
+          ]
+        }
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
