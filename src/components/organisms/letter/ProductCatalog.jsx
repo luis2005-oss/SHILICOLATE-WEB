@@ -20,7 +20,7 @@ const products = [
   
   { idProduct: 12, name: "Chocolate en barra",          category: "Chocolate en barra",   price: 9,   URL: "/CHOCOLATE-BARRA.png",          desc: "Chocolates artesanales en barra, ideales para compartir o regalar." },
   
-  { idProduct: 13, name: "Chocolate",                   category: "Chocolate",            price: 6.8, URL: "/CHOCOLATE.png",               desc: "100% cacao artesanal, perfecto para una taza de chocolate caliente." },
+  { idProduct: 13, name: "Chocolate en barra - presentación dorado",                   category: "Chocolate",            price: 6.8, URL: "/CHOCOLATE.png",               desc: "100% cacao artesanal, perfecto para una taza de chocolate caliente." },
   
   { idProduct: 14, name: "Shilibombones",               category: "Shilibombones",        price: 8,   URL: "/SHILIBOMBONES.png",           desc: "Bombones artesanales con cacao selecto y cremas de delicioso sabor." },
   
