@@ -75,19 +75,10 @@ function HomeBanner() {
         <div data-aos="zoom-in" data-aos-duration="700" data-aos-delay="600">
           <BannerButtons />
         </div>
-
-        {/* Letra deco */}
-        <span
-          aria-hidden="true"
-          className="absolute bottom-6 right-10 font-serif italic text-[7rem] leading-none select-none pointer-events-none"
-          style={{ color: GOLD, opacity: 0.04 }}
-        >
-          S
-        </span>
       </article>
 
       {/* ── Columna derecha: imagen ── */}
-      <div className="hidden md:block flex-[0_0_42%] relative overflow-hidden">
+      <div className="hidden md:block flex-[0_0_55%] relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-75 sepia-[30%]"
           style={{ backgroundImage: "url('/HOME_LOGO.png')" }}
