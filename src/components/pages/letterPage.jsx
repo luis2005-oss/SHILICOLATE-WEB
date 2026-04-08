@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { MyTemplate } from "../templates/myTemplate"
-import { ProductHeader } from "../organisms/letter/ProductHeader"
 import { ProductCatalog } from "../organisms/letter/ProductCatalog"
 
 const GOLD      = "#d4af37"
