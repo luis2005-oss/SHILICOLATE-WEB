@@ -109,10 +109,10 @@ function RecognitionCard({ image, title, description, num }) {
 
 function Schedules() {
   const recognitions = [
-    { image: '/RECOGNITION-1.jpg', title: 'Reconocimiento 1', description: 'Distinción otorgada por promover la identidad y tradición chocolatera local.' },
-    { image: '/RECOGNITION-1.jpg', title: 'Reconocimiento 2', description: 'Premio a la calidad y sabor artesanal en eventos regionales.' },
-    { image: '/RECOGNITION-1.jpg', title: 'Reconocimiento 3', description: 'Reconocidos por nuestros clientes como un referente en chocolate shilico.' },
-    { image: '/RECOGNITION-1.jpg', title: 'Reconocimiento 4', description: 'Reconocidos por nuestros clientes como un referente en chocolate shilico.' },
+    { image: '/RECOGNITION-1.jpg', title: 'Reconocimiento 1', description: 'Distinción otorgada por el mejor licor de cacao otorgado por IILA y FEDECACAO.' },
+    { image: '/RECOGNITION-2.png', title: 'Reconocimiento 2', description: 'Premio a la calidad y sabor artesanal en eventos regionales.' },
+    { image: '/RECOGNITION-3.png', title: 'Reconocimiento 3', description: 'Reconocido otorgado por las buenas practicas empresariales.' },
+    { image: '/RECOGNITION-4.png', title: 'Reconocimiento 4', description: 'Reconocidos por categotia industrial manufactureras referente en chocolate shilico.' },
   ]
 
   return (
