@@ -31,7 +31,7 @@ function HomeBanner() {
 
         {/* Título con gradiente dorado en la cursiva */}
         <h1
-          className="font-serif font-bold leading-none tracking-tight text-[clamp(3.5rem,6vw,5.5rem)] text-[#f5e8d5] m-0"
+          className="font-serif font-bold leading-none tracking-tight text-[clamp(2.2rem,8vw,5.5rem)] text-[#f5e8d5] m-0 mt-7.5"
           data-aos="fade-up"
           data-aos-duration="900"
           data-aos-delay="150"
