@@ -54,7 +54,7 @@ function ReviewCard({ title, img, className = "" }) {
 
 function Reviews() {
   const listReviews = [
-    { id: 1, title: "Cacao seleccionado", img: "/REVIEW-1.jpeg" },
+    { id: 1, title: "Cacao seleccionado", img: "/REVIEW-1.jpg" },
     { id: 2, title: "Chocolates hechos para disfrutar", img: "REVIEW-5.jpg" },
     { id: 3, title: "Ambiente cálido", img: "REVIEW-3.jpg" },
     { id: 4, title: "Tradición Shilicolate", img: "REVIEW-4.png" },

@@ -151,12 +151,12 @@ function AboutUsGallerySection() {
         data-aos-delay="200"
       >
         <GalleryCard
-          src="./US-2.jpeg"
+          src="./US-2.jpg"
           alt="Interior chocolatería"
           className="row-span-2"
         />
-        <GalleryCard src="./US-1.jpeg" alt="Detalle café" />
-        <GalleryCard src="./US-4.jpeg" alt="Ambiente" className="row-span-2" />
+        <GalleryCard src="./US-1.jpg" alt="Detalle café" />
+        <GalleryCard src="./US-4.jpg" alt="Ambiente" className="row-span-2" />
         <GalleryCard src="./US-3.jpg" alt="Grano de café" />
       </div>
 
