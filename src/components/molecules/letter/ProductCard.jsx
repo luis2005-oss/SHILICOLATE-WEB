@@ -87,7 +87,7 @@ export function ProductCard({ product }) {
             transform: "rotateY(180deg)",
             borderRadius: "8px",
             background: "#fdf6ee",
-            border: `0.5px solid #e8d8c4`,
+            border: `3px solid #e8d8c4`,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
