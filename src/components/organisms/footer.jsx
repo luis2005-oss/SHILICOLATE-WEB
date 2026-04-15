@@ -1,12 +1,37 @@
-import { Link } from "react-router-dom"
-import { FaFacebook, FaInstagram, FaWhatsapp, FaTiktok, FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa"
+import { Link } from "react-router-dom";
+import { 
+  FaFacebook, 
+  FaInstagram, 
+  FaWhatsapp, 
+  FaTiktok, 
+  FaPhone, 
+  FaEnvelope, 
+  FaMapMarkerAlt, 
+  FaClock 
+} from "react-icons/fa";
 
 const socials = [
-  { href: "https://web.facebook.com/profile.php?id=100032893851394", label: "Facebook",  Icon: FaFacebook  },
-  { href: "https://wa.me/51932983227?text=Hola%2C%20solicito%20su%20cat%C3%A1logo", label: "WhatsApp", Icon: FaWhatsapp  },
-  { href: "https://www.instagram.com/shilicolate_oficial", label: "Instagram", Icon: FaInstagram },
-  { href: "https://www.tiktok.com/@shilicolate_oficial", label: "TikTok", Icon: FaTiktok },
-]
+  { 
+    href: "https://web.facebook.com/profile.php?id=100032893851394", 
+    label: "Facebook",  
+    Icon: FaFacebook 
+  },
+  { 
+    href: "https://wa.me/51932983227?text=Hola%20Shilicolate%2C%20quisiera%20solicitar%20su%20catalogo", 
+    label: "WhatsApp", 
+    Icon: FaWhatsapp 
+  },
+  { 
+    href: "https://www.instagram.com/shilicolate_oficial", 
+    label: "Instagram", 
+    Icon: FaInstagram 
+  },
+  { 
+    href: "https://www.tiktok.com/@shilicolate_oficial", 
+    label: "TikTok", 
+    Icon: FaTiktok 
+  },
+];
 
 const navLinks = [
   { text: "Inicio", href: "/" },
@@ -14,7 +39,7 @@ const navLinks = [
   { text: "Nosotros", href: "/aboutus" },
   { text: "Reconocimientos", href: "/bookings" },
   { text: "Contacto", href: "/contact" },
-]
+];
 
 const productLinks = [
   "Chocolate en chapa",
@@ -22,14 +47,14 @@ const productLinks = [
   "Shilibombones",
   "Shilicotejas",
   "Chocolate comestible",
-]
+];
 
 const contactItems = [
   { Icon: FaMapMarkerAlt, text: "Av. Amazonas 513, Celendín" },
   { Icon: FaPhone, text: "+51 932 983 227" },
   { Icon: FaEnvelope, text: "shilicolateoficial@gmail.com" },
   { Icon: FaClock, text: "Lun–Sáb: 8:00 am – 8:00 pm" },
-]
+];
 
 function FooterCol({ title, children }) {
   return (
@@ -39,7 +64,7 @@ function FooterCol({ title, children }) {
       </p>
       {children}
     </div>
-  )
+  );
 }
 
 function Footer() {
@@ -81,7 +106,11 @@ function Footer() {
           {/* Navegación */}
           <FooterCol title="Navegación">
             {navLinks.map(({ text, href }) => (
-              <Link key={href} to={href} className="text-[#c4a98a] py-1.5 block hover:text-[#f5e8d5]">
+              <Link 
+                key={href} 
+                to={href} 
+                className="text-[#c4a98a] py-1.5 block hover:text-[#f5e8d5]"
+              >
                 {text}
               </Link>
             ))}
@@ -90,13 +119,17 @@ function Footer() {
           {/* Productos */}
           <FooterCol title="Productos">
             {productLinks.map((name) => (
-              <Link key={name} to="/letter" className="text-[#c4a98a] py-1.5 block hover:text-[#f5e8d5]">
+              <Link 
+                key={name} 
+                to="/letter" 
+                className="text-[#c4a98a] py-1.5 block hover:text-[#f5e8d5]"
+              >
                 {name}
               </Link>
             ))}
           </FooterCol>
 
-          {/* Contacto (ARREGLADO 🔥) */}
+          {/* Contacto */}
           <FooterCol title="Contacto">
             {contactItems.map((item) => {
               const Icon = item.Icon;
@@ -129,7 +162,7 @@ function Footer() {
 
       </div>
     </footer>
-  )
+  );
 }
 
-export { Footer }
+export { Footer };
