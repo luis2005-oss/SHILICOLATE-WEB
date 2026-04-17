@@ -77,20 +77,9 @@ export function ProductCard({ product }) {
             fontFamily: "'Crimson Pro', Georgia, serif",
             fontSize: "10px", letterSpacing: "0.15em",
             textTransform: "uppercase", color: GOLD, opacity: 0.7,
+            textAlign: "center",
           }}>
             {product.category}
-          </span>
-
-          {/* Hint visible solo en móvil */}
-          <span style={{
-            position: "absolute", bottom: 8,
-            fontFamily: "'Crimson Pro', Georgia, serif",
-            fontSize: "9px", letterSpacing: "0.12em",
-            textTransform: "uppercase", color: GOLD, opacity: 0.5,
-          }}
-            className="md:hidden"
-          >
-            toca para ver
           </span>
         </div>
 
