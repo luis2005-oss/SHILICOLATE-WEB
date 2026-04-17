@@ -132,7 +132,7 @@ export function ProductCatalog({ addToCart }) {
 
             {/* Título de categoría con línea dorada */}
             <h2
-              className="font-serif font-bold text-[1.35rem] m-0 mb-1"
+              className="font-serif font-bold text-[1.65rem] m-0 mb-1"
               style={{
                 background: GOLD_GRAD,
                 WebkitBackgroundClip: "text",
