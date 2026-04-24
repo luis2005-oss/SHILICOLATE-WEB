@@ -53,7 +53,7 @@ const contactItems = [
   { Icon: FaMapMarkerAlt, text: "Av. Amazonas 513, Celendín" },
   { Icon: FaPhone, text: "+51 932 983 227" },
   { Icon: FaEnvelope, text: "shilicolateoficial@gmail.com" },
-  { Icon: FaClock, text: "Lun–Sáb: 8:00 am – 8:00 pm" },
+  { Icon: FaClock, text: "Lun–Dom: 7:30 am – 10:00 pm" },
 ];
 
 function FooterCol({ title, children }) {
@@ -70,7 +70,7 @@ function FooterCol({ title, children }) {
 function Footer() {
   return (
     <footer className="bg-[#120804] border-t border-[#c8895a22] font-serif">
-      <div className="max-w-[1100px] mx-auto px-6 pt-16 pb-0">
+      <div className="max-w-[1300px] mx-auto px-6 pt-16 pb-0">
 
         {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr] gap-10 pb-12">

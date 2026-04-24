@@ -1,6 +1,5 @@
 import { NavbarMenu } from "./desktopMenu"
 import { LocationNavbar } from "./locationNavbar"
-import { CarNavbar } from "./login"
 
 
 function MobileMenu ({isOpen, closeMenu, setModalIsOpen, setCartShopOpen}) {

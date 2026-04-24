@@ -11,7 +11,7 @@ export const sendOrderToWhatsApp = (cartItems, total) => {
 
   });
 
-  message += `Total: $${total.toFixed(2)} %0A%0A`;
+  message += `Total: S/.${total.toFixed(2)} %0A%0A`;
 
 
   const url = `https://wa.me/${phone}?text=${message}`;

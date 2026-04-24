@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { CgMenu, CgClose } from "react-icons/cg"
 import { NavbarMenu } from "../molecules/desktopMenu"
-import { CarNavbar } from "../molecules/login"
+import { CarNavbar } from "../molecules/navarCar"
 
 function Navbar({ setModalIsOpen, setCartShopOpen, setRegisterIsOpen }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -94,7 +94,7 @@ function Navbar({ setModalIsOpen, setCartShopOpen, setRegisterIsOpen }) {
             <NavbarMenu onLinkClick={closeMenu} />
           </div>
 
-          {/* Carrito + login */}
+          {/* Carrito */}
           <div className="pt-1">
             <CarNavbar
               setModalIsOpen={setModalIsOpen}

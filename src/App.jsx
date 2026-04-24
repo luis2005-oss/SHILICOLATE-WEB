@@ -6,7 +6,6 @@ import { AcknorPage } from "./components/pages/acknorPage"
 import { ContactPage } from "./components/pages/contactPage"
 import { Navbar } from "./components/organisms/navbar"
 import { useEffect, useState } from "react"
-import { ModalLogin } from "./components/organisms/modals/modalLogin"
 import { CartShop } from "./components/organisms/modals/modalCartShop"
 import { ScrollToTop } from "./components/utils/scrollToTop" //scroll animate
 // Tendencies sections

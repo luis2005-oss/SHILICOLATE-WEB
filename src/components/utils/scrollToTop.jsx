@@ -18,7 +18,7 @@ function ScrollToTop() {
       prevPath === "/" ||
       prevPath === "/coffee";
 
-    // 👉 Solo hacer scroll si SALES del Home o ENTRAS al Home
+    // Solo hacer scroll si SALES del Home o ENTRAS al Home
     if (!(isHomeSection && wasHomeSection)) {
       window.scrollTo({
         top: 0,
