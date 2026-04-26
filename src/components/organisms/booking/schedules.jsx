@@ -1,24 +1,25 @@
-import { useState, useEffect, useRef } from "react"
-import { MdClose } from "react-icons/md"
-import { createPortal } from "react-dom"
+import { useState, useEffect, useRef } from "react";
+import { MdClose } from "react-icons/md";
+import { createPortal } from "react-dom";
 
-const GOLD = "#d4af37"
+const GOLD = "#d4af37";
 
-function RecognitionCard({ image, title, description, num }) {
-  const [isOpen, setIsOpen] = useState(false)
-  const modalRef = useRef(null)
+function RecognitionModal({ image, title, isOpen, setIsOpen }) {
+  const modalRef = useRef(null);
 
   useEffect(() => {
-    const handleEsc = (e) => { if (e.key === "Escape") setIsOpen(false) }
+    const handleEsc = (e) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
     if (isOpen) {
-      window.addEventListener("keydown", handleEsc)
-      document.body.style.overflow = "hidden"
+      window.addEventListener("keydown", handleEsc);
+      document.body.style.overflow = "hidden";
     }
     return () => {
-      window.removeEventListener("keydown", handleEsc)
-      document.body.style.overflow = ""
-    }
-  }, [isOpen])
+      window.removeEventListener("keydown", handleEsc);
+      document.body.style.overflow = "";
+    };
+  }, [isOpen, setIsOpen]);
 
   const modalContent = isOpen ? (
     <div
@@ -29,128 +30,231 @@ function RecognitionCard({ image, title, description, num }) {
     >
       <div
         ref={modalRef}
-        className="relative w-full max-w-[95vw] max-h-[95vh] flex flex-col items-center justify-center outline-none gap-5"
+        className="relative w-full max-w-[95vw] max-h-[95vh] flex items-center justify-center outline-none"
         onClick={(e) => e.stopPropagation()}
         tabIndex={-1}
       >
         <button
           className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
-          style={{ background: "rgba(26,13,8,0.8)", border: `0.5px solid ${GOLD}55`, color: GOLD }}
-          onMouseEnter={e => { e.currentTarget.style.background = GOLD; e.currentTarget.style.color = "#1a0d08" }}
-          onMouseLeave={e => { e.currentTarget.style.background = "rgba(26,13,8,0.8)"; e.currentTarget.style.color = GOLD }}
+          style={{
+            background: "rgba(26,13,8,0.8)",
+            border: `0.5px solid ${GOLD}55`,
+            color: GOLD,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = GOLD;
+            e.currentTarget.style.color = "#1a0d08";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "rgba(26,13,8,0.8)";
+            e.currentTarget.style.color = GOLD;
+          }}
           onClick={() => setIsOpen(false)}
           aria-label="Cerrar"
         >
           <MdClose className="w-5 h-5" />
         </button>
 
-        <img src={image} alt={title} className="max-w-full max-h-[78vh] object-contain rounded-lg" />
-
-        <div className="text-center">
-          <p className="font-serif italic text-[0.7rem] tracking-[0.2em] mb-1" style={{ color: GOLD }}>— {num}</p>
-          <h3 className="font-serif font-bold text-[1.1rem] text-[#f5e8d5] mb-1">{title}</h3>
-          <p className="font-serif font-light text-[0.85rem] text-[#c4a98a] max-w-sm mx-auto leading-relaxed">{description}</p>
-        </div>
+        <img
+          src={image}
+          alt={title}
+          className="max-w-full max-h-[90vh] object-contain rounded-lg"
+        />
       </div>
     </div>
-  ) : null
+  ) : null;
 
+  return modalContent && createPortal(modalContent, document.body);
+}
+
+function RecognitionRow({
+  image,
+  title,
+  description,
+  num,
+  isReversed,
+  onImageClick,
+}) {
   return (
-    <>
-      <div
-        className="group relative overflow-hidden rounded-lg bg-[#2a1810] min-h-[280px] cursor-pointer"
-        onClick={() => setIsOpen(true)}
-      >
-        <img
-          src={image} alt={title} loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover block transition-[transform,filter] duration-500 [filter:sepia(20%)_brightness(0.6)] group-hover:[filter:sepia(10%)_brightness(0.45)] group-hover:scale-[1.05]"
-        />
-
-        {/* Medallón dorado */}
+    <div
+      className={`flex flex-col ${isReversed ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-8 md:gap-16 mb-20 md:mb-32 last:mb-0`}
+      data-aos="zoom-in-up"
+      data-aos-duration="1400"
+      data-aos-offset="450"
+      data-aos-easing="ease-out-cubic"
+    >
+      {/* Imagen */}
+      <div className="w-full md:w-2/5">
         <div
-          className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center"
-          style={{ background: "rgba(26,13,8,0.7)", border: `0.5px solid ${GOLD}66` }}
+          className="relative group cursor-pointer overflow-hidden rounded-xl inline-block w-full"
+          onClick={onImageClick}
         >
-          <svg viewBox="0 0 24 24" className="w-4 h-4" style={{ fill: GOLD }}>
-            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
-          </svg>
-        </div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-[#d4af37] to-[#c8895a] opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300 blur-lg"></div>
+          <img
+            src={image}
+            alt={title}
+            className="relative w-full h-auto object-contain rounded-xl shadow-2xl transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-[1deg] group-hover:brightness-75 group-hover:shadow-[0_25px_60px_rgba(212,175,55,0.25)] [filter:sepia(15%)_brightness(0.7)]"
+            loading="lazy"
+          />
 
-        {/* Hint hover */}
-        <div
-          className="absolute top-4 left-4 font-serif text-[0.65rem] tracking-[0.18em] uppercase px-2.5 py-1 rounded-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          style={{ color: GOLD, background: "rgba(26,13,8,0.65)" }}
-        >
-          Ver imagen
-        </div>
+          {/* Hint hover */}
+          <div
+            className="absolute top-4 left-4 font-serif text-[0.65rem] tracking-[0.18em] uppercase px-2.5 py-1 rounded-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            style={{ color: GOLD, background: "rgba(26,13,8,0.65)" }}
+          >
+            Ver imagen
+          </div>
 
-        {/* Contenido inferior */}
-        <div className="absolute inset-0 flex flex-col justify-end p-7 bg-gradient-to-t from-[rgba(26,13,8,0.92)] via-[rgba(26,13,8,0.3)] to-transparent">
-          <span className="font-serif italic text-[0.7rem] tracking-[0.15em] mb-1.5 opacity-85" style={{ color: GOLD }}>
+          {/* Medallón dorado */}
+          <div
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center"
+            style={{
+              background: "rgba(26,13,8,0.7)",
+              border: `0.5px solid ${GOLD}66`,
+            }}
+          >
+            <svg viewBox="0 0 24 24" className="w-4 h-4" style={{ fill: GOLD }}>
+              <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      {/* Contenido */}
+      <div className="w-full md:w-1/2 flex flex-col gap-6">
+        <div>
+          <span
+            className="inline-block font-serif italic text-[0.7rem] tracking-[0.15em] mb-3 opacity-85"
+            style={{ color: GOLD }}
+          >
             — {num}
           </span>
-          <h3 className="font-serif font-bold text-[1.15rem] text-[#f5e8d5] leading-tight mb-2">{title}</h3>
-          <p className="font-serif font-light text-[0.85rem] text-[#c4a98a] leading-relaxed max-w-sm m-0 opacity-0 translate-y-1.5 transition-[opacity,transform] duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+          <h3 className="font-serif font-bold text-[clamp(1.5rem,3vw,2.2rem)] text-[#f5e8d5] leading-tight mb-4">
+            {title}
+          </h3>
+          <p className="font-serif font-light text-[1rem] text-[#c4a98a] leading-relaxed">
             {description}
           </p>
         </div>
 
-        {/* Línea dorada inferior */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-[2px] scale-x-0 origin-left transition-transform duration-[350ms] group-hover:scale-x-100"
-          style={{ background: "linear-gradient(to right, #d4af37, #c8895a)" }}
-        />
+        {/* Línea decorativa */}
+        <div className="flex items-center gap-3 pt-4">
+          <div
+            className="h-[2px] w-12 rounded-full"
+            style={{
+              background: "linear-gradient(to right, #d4af37, #c8895a)",
+            }}
+          />
+          <span className="font-serif text-[0.8rem] text-[#c8895a] tracking-[0.1em]">
+            RECONOCIMIENTO
+          </span>
+        </div>
       </div>
-
-      {modalContent && createPortal(modalContent, document.body)}
-    </>
-  )
+    </div>
+  );
 }
 
 function Schedules() {
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const recognitions = [
-    { image: '/RECOGNITION-1.jpg', title: 'Reconocimiento 1', description: 'Distinción otorgada por el mejor licor de cacao otorgado por IILA y FEDECACAO.' },
-    { image: '/RECOGNITION-2.png', title: 'Reconocimiento 2', description: 'Premio a la calidad y sabor artesanal en eventos regionales.' },
-    { image: '/RECOGNITION-3.png', title: 'Reconocimiento 3', description: 'Reconocido otorgado por las buenas practicas empresariales.' },
-    { image: '/RECOGNITION-4.png', title: 'Reconocimiento 4', description: 'Reconocidos por categotia industrial manufactureras referente en chocolate shilico.' },
-  ]
+    {
+      image: "/RECOGNITION-1.jpg",
+      title: "Reconocimiento 1",
+      description:
+        "Distinción otorgada por el mejor licor de cacao otorgado por IILA y FEDECACAO. Un logro que refleja nuestro compromiso con la excelencia y la calidad en cada paso del proceso de producción.",
+    },
+    {
+      image: "/RECOGNITION-2.png",
+      title: "Reconocimiento 2",
+      description:
+        "Premio a la calidad y sabor artesanal en eventos regionales. Reconocimiento que valida nuestras técnicas tradicionales y la dedicación de nuestro equipo en crear chocolates únicos.",
+    },
+    {
+      image: "/RECOGNITION-3.png",
+      title: "Reconocimiento 3",
+      description:
+        "Reconocido otorgado por las buenas prácticas empresariales. Un testimonio de nuestro compromiso con la sostenibilidad, la ética y la responsabilidad social en toda nuestra operación.",
+    },
+    {
+      image: "/RECOGNITION-4.png",
+      title: "Reconocimiento 4",
+      description:
+        "Reconocidos por categoría industrial manufactureras referente en chocolate shilico. Posicionándonos como líderes innovadores en la industria chocolatera regional.",
+    },
+  ];
+
+  const handleImageClick = (index) => {
+    setSelectedIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const selectedRecognition =
+    selectedIndex !== null ? recognitions[selectedIndex] : null;
 
   return (
-    <section className="bg-[#1a0d08] py-20 px-4">
-      <div className="text-center mb-14" data-aos="fade-down" data-aos-duration="900">
-        <span
-          className="inline-block mb-4 font-serif text-[11px] tracking-[0.25em] uppercase pb-1"
-          style={{ color: GOLD, borderBottom: `0.5px solid ${GOLD}55` }}
+    <section className="bg-[#1a0d08] py-24 md:py-32 px-4 overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        {/* Cabecera */}
+        <div
+          className="text-center mb-20 md:mb-28"
+          data-aos="fade-down"
+          data-aos-duration="900"
         >
-          Logros que nos enorgullecen
-        </span>
-        <h2 className="font-serif font-bold text-[clamp(2rem,4vw,3rem)] text-[#f5e8d5] leading-tight m-0">
-          Nuestros{" "}
-          <em
-            className="italic font-normal"
-            style={{ background: "linear-gradient(135deg,#d4af37,#c8895a)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
+          <span
+            className="inline-block mb-4 font-serif text-[11px] tracking-[0.25em] uppercase pb-1"
+            style={{ color: GOLD, borderBottom: `0.5px solid ${GOLD}55` }}
           >
-            reconocimientos
-          </em>
-        </h2>
-        <p className="font-serif font-light text-[1rem] text-[#c4a98a] max-w-md mx-auto mt-4 leading-[1.7]">
-          Distinciones que reflejan nuestra pasión, dedicación y amor por el chocolate.
-        </p>
+            Logros que nos enorgullecen
+          </span>
+          <h2 className="font-serif font-bold text-[clamp(2rem,5vw,3.5rem)] text-[#f5e8d5] leading-tight m-0">
+            Nuestros{" "}
+            <em
+              className="italic font-normal"
+              style={{
+                background: "linear-gradient(135deg,#d4af37,#c8895a)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              reconocimientos
+            </em>
+          </h2>
+          <p className="font-serif font-light text-[1rem] text-[#c4a98a] max-w-md mx-auto mt-4 leading-[1.7]">
+            Distinciones que reflejan nuestra pasión, dedicación y amor por el
+            chocolate.
+          </p>
+        </div>
+
+        {/* Lista de reconocimientos en zigzag */}
+        <div className="flex flex-col">
+          {recognitions.map((recognition, index) => (
+            <RecognitionRow
+              key={index}
+              {...recognition}
+              num={String(index + 1).padStart(2, "0")}
+              isReversed={index % 2 !== 0}
+              onImageClick={() => handleImageClick(index)}
+            />
+          ))}
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-6xl mx-auto" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
-        {recognitions.map((item, index) => (
-          <RecognitionCard
-            key={index}
-            image={item.image}
-            title={item.title}
-            description={item.description}
-            num={String(index + 1).padStart(2, "0")}
-          />
-        ))}
-      </div>
+      {/* Modal */}
+      {selectedRecognition && (
+        <RecognitionModal
+          image={selectedRecognition.image}
+          title={selectedRecognition.title}
+          description={selectedRecognition.description}
+          num={String(selectedIndex + 1).padStart(2, "0")}
+          isOpen={isModalOpen}
+          setIsOpen={setIsModalOpen}
+        />
+      )}
     </section>
-  )
+  );
 }
 
-export { Schedules }
+export { Schedules };
