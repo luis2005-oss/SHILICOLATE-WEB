@@ -1,12 +1,12 @@
 import { useState } from "react"
 import { MyTemplate } from "../templates/myTemplate"
-import { ProductCatalog } from "../organisms/letter/ProductCatalog"
+import { ProductComestibles } from "../organisms/letter/ProductComestibles"
 
 const GOLD      = "#d4af37"
 const GOLD_GRAD = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)"
 const GOLD_LINE = "linear-gradient(to right, #d4af37, #c8895a)"
 
-export const LetterPage = () => {
+export const ComestiblesPage = () => {
   const [_cart, setCart] = useState([])
 
   const addToCart = (product) => {
@@ -55,7 +55,7 @@ export const LetterPage = () => {
 
         {/* ── Catálogo ── */}
         <div className="max-w-7xl mx-auto">
-          <ProductCatalog addToCart={addToCart} />
+          <ProductComestibles addToCart={addToCart} />
         </div>
 
       </div>

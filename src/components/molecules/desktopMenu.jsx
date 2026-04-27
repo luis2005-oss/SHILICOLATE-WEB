@@ -13,8 +13,8 @@ const menuRight = [
 ];
 
 const productosSubmenu = [
-  { text: "Chocolate al 100%", href: "/productos/chocolates-100" },
-  { text: "Comestibles", href: "/productos/comestibles" },
+  { text: "Chocolate al 100%", href: "/chocolate100" },
+  { text: "Comestibles", href: "/comestibles" },
 ];
 
 function NavbarLink({ href, text, onClick }) {

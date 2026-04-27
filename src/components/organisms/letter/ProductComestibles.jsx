@@ -5,23 +5,7 @@ const GOLD      = "#d4af37"
 const GOLD_GRAD = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)"
 const GOLD_LINE = "linear-gradient(to right, #d4af37, #c8895a)"
 
-const products = [
-  { idProduct: 1,  name: "Chocolate en chapa de 55gr",  category: "Chocolate en chapa",   price: 4,   URL: "/CHOCOLATE-CHAPA.png",          desc: "Elaborado con 100% cacao puro, de sabor intenso y natural." },
-  { idProduct: 2,  name: "Chocolate en chapa de 70gr",  category: "Chocolate en chapa",   price: 5,   URL: "/CHOCOLATE-CHAPA.png",          desc: "Elaborado con 100 % cacao puro, de sabor intenso y natural." },
-  { idProduct: 3,  name: "Chocolate en chapa de 100gr", category: "Chocolate en chapa",   price: 7,   URL: "/CHOCOLATE-CHAPA.png",          desc: "Elaborado con 100 % cacao puro, de sabor intenso y natural." },
-  { idProduct: 4,  name: "Chocolate en chapa de 150gr", category: "Chocolate en chapa",   price: 9,   URL: "/CHOCOLATE-CHAPA.png",          desc: "Elaborado con 100 % cacao puro, de sabor intenso y natural." },
-  { idProduct: 5,  name: "Chocolate en chapa de 250gr", category: "Chocolate en chapa",   price: 15,  URL: "/CHOCOLATE-CHAPA.png",          desc: "Elaborado con 100 % cacao puro, de sabor intenso y natural." },
-  { idProduct: 6,  name: "Chocolate en chapa de 300gr", category: "Chocolate en chapa",   price: 18,  URL: "/CHOCOLATE-CHAPA.png",          desc: "Elaborado con 100 % cacao puro, de sabor intenso y natural." },
-  { idProduct: 7,  name: "Chocolate en chapa de 400gr", category: "Chocolate en chapa",   price: 24,  URL: "/CHOCOLATE-CHAPA.png",          desc: "Elaborado con 100 % cacao puro, de sabor intenso y natural." },
-  { idProduct: 8,  name: "Chocolate en chapa de 460gr", category: "Chocolate en chapa",   price: 28,  URL: "/CHOCOLATE-CHAPA.png",          desc: "Elaborado con 100 % cacao puro, de sabor intenso y natural." },
-  { idProduct: 9,  name: "Chocolate en chapa de 500gr", category: "Chocolate en chapa",   price: 30,  URL: "/CHOCOLATE-CHAPA.png",          desc: "Elaborado con 100 % cacao puro, de sabor intenso y natural." },
-  { idProduct: 10, name: "Chocolate en caja de 100gr",  category: "Chocolate en caja",    price: 8,   URL: "/CAJA-100.png",                 desc: "Cacao intenso, profundo y auténtico para cada momento." },
-  { idProduct: 11, name: "Chocolate en caja de 200gr",  category: "Chocolate en caja",    price: 14,  URL: "/CAJA-200.png",                 desc: "Cacao intenso, profundo y auténtico para cada momento." },
-  
-  { idProduct: 12, name: "Chocolate en barra",          category: "Chocolate en barra",   price: 9,   URL: "/CHOCOLATE-BARRA.png",          desc: "Chocolates artesanales en barra, ideales para compartir o regalar." },
-  
-  { idProduct: 13, name: "Chocolate en barra - presentación dorado",                   category: "Chocolate",            price: 6.8, URL: "/CHOCOLATE.png",               desc: "100% cacao artesanal, perfecto para una taza de chocolate caliente." },
-  
+const products = [  
   { idProduct: 14, name: "Shilibombones",               category: "Shilibombones",        price: 8,   URL: "/SHILIBOMBONES.png",           desc: "Bombones artesanales con cacao selecto y cremas de delicioso sabor." },
   
   { idProduct: 15, name: "Sabor a Pecana de 70gr",      category: "Chocolate comestible", price: 8,   URL: "/CHOCOLARE-COM-PECANA.png",     desc: "Chocolate comestible artesanal con deliciosos sabores naturales." },
@@ -62,10 +46,6 @@ const products = [
 
 const categories = [
   "Todos",
-  "Chocolate en chapa",
-  "Chocolate en caja",
-  "Chocolate en barra",
-  "Chocolate",
   "Shilibombones",
   "Chocolate comestible",
   "Shilicotejas",
@@ -89,7 +69,7 @@ function dividirShilicotejas(items) {
   return resultado
 }
 
-export function ProductCatalog({ addToCart }) {
+export function ProductComestibles({ addToCart }) {
   const [activeCategory, setActiveCategory] = useState("Todos")
 
   const filteredProducts =

@@ -1,6 +1,11 @@
-/* CartContext.jsx */
 /* eslint-disable react-refresh/only-export-components */
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 const CartContext = createContext(null);
 
@@ -66,24 +71,23 @@ export function CartProvider({ children }) {
 
   const clearCart = () => setCartItems([]);
 
-  const totalItems = useMemo(
-    () =>
-      cartItems.reduce(
-        (total, item) => total + item.quantity,
-        0
-      ),
-    [cartItems]
-  );
+  const totalItems = useMemo(() => {
+    return cartItems.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+  }, [cartItems]);
 
-  const totalPrice = useMemo(
-    () =>
-      cartItems.reduce(
-        (total, item) =>
-          total + Number(item.price) * item.quantity,
-        0
-      ),
-    [cartItems]
-  );
+  const totalPrice = useMemo(() => {
+    return cartItems.reduce(
+      (total, item) =>
+        total + Number(item.price) * item.quantity,
+      0
+    );
+  }, [cartItems]);
+
+  // 🔥 compatibilidad con código antiguo
+  const getTotalPrice = () => totalPrice;
 
   const value = {
     cartItems,
@@ -93,6 +97,7 @@ export function CartProvider({ children }) {
     clearCart,
     totalItems,
     totalPrice,
+    getTotalPrice, // 🔥 agregado
   };
 
   return (
@@ -106,9 +111,10 @@ export function useCart() {
   const context = useContext(CartContext);
 
   if (!context) {
-    throw new Error("useCart debe usarse dentro de CartProvider");
+    throw new Error(
+      "useCart debe usarse dentro de CartProvider"
+    );
   }
 
   return context;
 }
-
