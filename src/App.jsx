@@ -42,18 +42,31 @@ function App() {
       )}
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/chocolate100" element={<Chocolate100Page />} />
-        <Route path="/comestibles" element={<ComestiblesPage />} />
-        <Route path="/aboutus" element={<AbouUsPage />} />
-        <Route path="/bookings" element={<AcknorPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+  <Route path="/" element={<HomePage />} />
 
-        <Route path="/letter" element={<Navigate to="/chocolate100" replace />} />
-        <Route path="/carta" element={<Navigate to="/chocolate100" replace />} />
-        <Route path="/LetterPageCookie" element={<Navigate to="/chocolate100" replace />} />
-        <Route path="/LetterPageCake" element={<Navigate to="/comestibles" replace />} />
-      </Routes>
+  {/* Principales */}
+  <Route path="/chocolate100" element={<Chocolate100Page />} />
+  <Route path="/comestibles" element={<ComestiblesPage />} />
+  <Route path="/aboutus" element={<AbouUsPage />} />
+  <Route path="/bookings" element={<AcknorPage />} />
+  <Route path="/contact" element={<ContactPage />} />
+
+  {/* Nuevas rutas del footer */}
+  <Route path="/productos/chocolates-100/chapa" element={<Chocolate100Page />} />
+  <Route path="/productos/chocolates-100/caja" element={<Chocolate100Page />} />
+  <Route path="/productos/chocolates-100/barra" element={<Chocolate100Page />} />
+  <Route path="/productos/chocolates-100/chocolate" element={<Chocolate100Page />} />
+
+  <Route path="/productos/comestibles/shilibombones" element={<ComestiblesPage />} />
+  <Route path="/productos/comestibles/chocolate-comestible" element={<ComestiblesPage />} />
+  <Route path="/productos/comestibles/shilicotejas" element={<ComestiblesPage />} />
+
+  {/* Redirects antiguos */}
+  <Route path="/letter" element={<Navigate to="/chocolate100" replace />} />
+  <Route path="/carta" element={<Navigate to="/chocolate100" replace />} />
+  <Route path="/LetterPageCookie" element={<Navigate to="/chocolate100" replace />} />
+  <Route path="/LetterPageCake" element={<Navigate to="/comestibles" replace />} />
+</Routes>
 
       <Footer />
       <WhatsAppButton />

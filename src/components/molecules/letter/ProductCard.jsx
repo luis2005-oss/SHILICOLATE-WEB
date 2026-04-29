@@ -2,17 +2,20 @@ import { useState } from "react"
 import { useCart } from "../../../context/CartContext"
 import { formatPrice } from "../../utils/formatPrice"
 
-const GOLD      = "#d4af37"
+const GOLD = "#d4af37"
 const GOLD_GRAD = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)"
+
+// Fuentes más profesionales
+const TITLE_FONT = "'Montserrat', 'Helvetica Neue', Arial, sans-serif"
+const BODY_FONT = "'Inter', 'Segoe UI', Roboto, sans-serif"
 
 export function ProductCard({ product }) {
   const [flipped, setFlipped] = useState(false)
   const { addToCart } = useCart()
 
-  // Desktop: hover. Móvil: click en el frente voltea, click en el reverso regresa
   const handleFrontClick = () => setFlipped(true)
-  const handleBackClick  = (e) => {
-    // Evita que el botón "Agregar al carrito" también voltee la carta
+
+  const handleBackClick = (e) => {
     e.stopPropagation()
     setFlipped(false)
   }
@@ -33,8 +36,7 @@ export function ProductCard({ product }) {
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
-
-        {/* ── FRENTE — clic para voltear en móvil ── */}
+        {/* FRENTE */}
         <div
           onClick={handleFrontClick}
           style={{
@@ -54,36 +56,73 @@ export function ProductCard({ product }) {
             cursor: "pointer",
           }}
         >
-          {/* Esquinas doradas */}
-          <span style={{ position: "absolute", top: 0, left: 0, width: 18, height: 18, borderTop: `1px solid ${GOLD}66`, borderLeft: `1px solid ${GOLD}66`, borderRadius: "8px 0 0 0" }} />
-          <span style={{ position: "absolute", bottom: 0, right: 0, width: 18, height: 18, borderBottom: `1px solid ${GOLD}66`, borderRight: `1px solid ${GOLD}66`, borderRadius: "0 0 8px 0" }} />
+          <span
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: 18,
+              height: 18,
+              borderTop: `1px solid ${GOLD}66`,
+              borderLeft: `1px solid ${GOLD}66`,
+              borderRadius: "8px 0 0 0",
+            }}
+          />
+
+          <span
+            style={{
+              position: "absolute",
+              bottom: 0,
+              right: 0,
+              width: 18,
+              height: 18,
+              borderBottom: `1px solid ${GOLD}66`,
+              borderRight: `1px solid ${GOLD}66`,
+              borderRadius: "0 0 8px 0",
+            }}
+          />
 
           <img
             src={product.URL}
             alt={product.name}
-            style={{ width: "12rem", height: "12rem", objectFit: "contain" }}
+            style={{
+              width: "12rem",
+              height: "12rem",
+              objectFit: "contain",
+            }}
           />
 
-          <p style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
-            fontSize: "1rem", fontWeight: 700,
-            color: "#f5e8d5", textAlign: "center",
-            lineHeight: 1.3, margin: 0,
-          }}>
+          <p
+            style={{
+              fontFamily: TITLE_FONT,
+              fontSize: "1rem",
+              fontWeight: 700,
+              color: "#f5e8d5",
+              textAlign: "center",
+              lineHeight: 1.3,
+              margin: 0,
+            }}
+          >
             {product.name}
           </p>
 
-          <span style={{
-            fontFamily: "'Crimson Pro', Georgia, serif",
-            fontSize: "10px", letterSpacing: "0.15em",
-            textTransform: "uppercase", color: GOLD, opacity: 0.7,
-            textAlign: "center",
-          }}>
+          <span
+            style={{
+              fontFamily: BODY_FONT,
+              fontSize: "10px",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              color: GOLD,
+              opacity: 0.7,
+              textAlign: "center",
+              fontWeight: 500,
+            }}
+          >
             {product.category}
           </span>
         </div>
 
-        {/* ── REVERSO — clic para regresar en móvil ── */}
+        {/* REVERSO */}
         <div
           onClick={handleBackClick}
           style={{
@@ -105,60 +144,82 @@ export function ProductCard({ product }) {
             cursor: "pointer",
           }}
         >
-          {/* Esquinas doradas */}
-          <span style={{ position: "absolute", top: 0, left: 0, width: 18, height: 18, borderTop: `1px solid ${GOLD}88`, borderLeft: `1px solid ${GOLD}88`, borderRadius: "8px 0 0 0" }} />
-          <span style={{ position: "absolute", bottom: 0, right: 0, width: 18, height: 18, borderBottom: `1px solid ${GOLD}88`, borderRight: `1px solid ${GOLD}88`, borderRadius: "0 0 8px 0" }} />
-
-          <p style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
-            fontSize: "0.88rem", fontWeight: 700,
-            color: "#1a0d08", lineHeight: 1.3, margin: 0,
-          }}>
-            {product.name}
+          <p
+            style={{
+              fontFamily: TITLE_FONT,
+              fontSize: "0.88rem",
+              fontWeight: 700,
+              color: "#1a0d08",
+              lineHeight: 1.3,
+              margin: 0,
+            }}
+          >
+            {product.performance}
           </p>
 
-          <div style={{ width: 28, height: 1, background: GOLD_GRAD, opacity: 0.7 }} />
+          <div
+            style={{
+              width: 28,
+              height: 1,
+              background: GOLD_GRAD,
+              opacity: 0.7,
+            }}
+          />
 
-          <p style={{
-            fontFamily: "'Crimson Pro', Georgia, serif",
-            fontSize: "0.75rem", fontWeight: 300,
-            color: "#7a5c45", lineHeight: 1.6, margin: 0,
-          }}>
+          <p
+            style={{
+              fontFamily: BODY_FONT,
+              fontSize: "0.75rem",
+              fontWeight: 400,
+              color: "#7a5c45",
+              lineHeight: 1.6,
+              margin: 0,
+            }}
+          >
             {product.desc}
           </p>
 
-          <p style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
-            fontSize: "1.35rem", fontWeight: 700, margin: 0,
-            background: GOLD_GRAD,
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-          }}>
+          <p
+            style={{
+              fontFamily: TITLE_FONT,
+              fontSize: "1.35rem",
+              fontWeight: 700,
+              margin: 0,
+              background: GOLD_GRAD,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
             {formatPrice(product.price)}
           </p>
 
           <button
             onClick={(e) => {
-              e.stopPropagation() // Evita que se voltee de vuelta al hacer clic en el botón
+              e.stopPropagation()
               addToCart(product)
             }}
             style={{
               width: "100%",
-              fontFamily: "'Crimson Pro', Georgia, serif",
-              fontSize: "0.75rem", letterSpacing: "0.1em",
-              textTransform: "uppercase", color: "#1a0d08",
-              background: GOLD_GRAD, border: "none",
-              borderRadius: "2px", padding: "8px 16px",
-              cursor: "pointer", transition: "opacity 0.2s",
+              fontFamily: BODY_FONT,
+              fontSize: "0.75rem",
+              fontWeight: 600,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "#1a0d08",
+              background: GOLD_GRAD,
+              border: "none",
+              borderRadius: "4px",
+              padding: "8px 16px",
+              cursor: "pointer",
+              transition: "opacity 0.2s",
             }}
-            onMouseEnter={e => e.currentTarget.style.opacity = "0.88"}
-            onMouseLeave={e => e.currentTarget.style.opacity = "1"}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.88")}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
           >
             Agregar al carrito
           </button>
         </div>
-
       </div>
     </div>
   )

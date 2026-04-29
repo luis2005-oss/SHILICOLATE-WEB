@@ -1,16 +1,32 @@
 import { BannerButtons } from "../../molecules/home/bannerButtons"
 
-/* Color tokens dorados */
-const GOLD = "#d4af37"
+const GOLD          = "#d4af37"
 const GOLD_GRADIENT = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)"
 const GOLD_LINE     = "linear-gradient(to right, #d4af37, #c8895a)"
 
 function HomeBanner() {
   return (
-    <section className="relative w-full min-h-[520px] lg:h-screen bg-[#1a0d08] flex overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden bg-[#1a0d08]">
 
-      {/* Partículas doradas decorativas */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      {/* Imagen de fondo — ocupa todo */}
+      <div
+        className="absolute inset-0 bg-right bg-cover bg-no-repeat transition-all duration-300"
+        style={{ backgroundImage: "url('/HOME_LOGO.png')", filter: "sepia(25%) brightness(0.45)" }}
+        data-aos="zoom-in"
+        data-aos-duration="1500"
+      />
+
+      {/* Degradado direccional */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(27,15,8,0.98)] via-[rgba(26,13,8,0.5)] to-transparent" />
+
+      {/* Línea vertical dorada */}
+      <div
+        className="absolute left-6 sm:left-10 top-[30%] bottom-[30%] w-px opacity-25"
+        style={{ background: `linear-gradient(to bottom, transparent, ${GOLD}, transparent)` }}
+      />
+
+      {/* Partículas doradas */}
+      <div className="absolute inset-0 pointer-events-none z-10">
         {[
           { top: "15%", left: "62%", size: 3 },
           { top: "70%", left: "76%", size: 3 },
@@ -20,16 +36,19 @@ function HomeBanner() {
         ].map((p, i) => (
           <span
             key={i}
-            className="absolute rounded-full bg-[#d4af37]"
-            style={{ top: p.top, left: p.left, width: p.size, height: p.size, opacity: p.opacity ?? 0.35 }}
+            className="absolute rounded-full"
+            style={{ top: p.top, left: p.left, width: p.size, height: p.size, background: GOLD, opacity: p.opacity ?? 0.35 }}
           />
         ))}
       </div>
 
-      {/* ── Columna izquierda ── */}
-      <article className="flex-1 flex flex-col justify-center px-8 sm:px-12 lg:px-20 py-16 relative z-10">
-
-        {/* Título con gradiente dorado en la cursiva */}
+      {/* Contenido */}
+      <article
+        className="absolute inset-0 z-10 flex flex-col justify-center px-8 sm:px-12 lg:px-20 max-w-2xl pt-24 md:pt-0"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        data-aos-delay="300"
+      >
         <h1
           className="font-serif font-bold leading-none tracking-tight text-[clamp(2.2rem,8vw,5.5rem)] text-[#f5e8d5] m-0 mt-7.5"
           data-aos="fade-up"
@@ -50,7 +69,6 @@ function HomeBanner() {
           </em>
         </h1>
 
-        {/* Línea degradada dorado → ámbar */}
         <div
           className="w-14 h-px my-6 opacity-80"
           style={{ background: GOLD_LINE }}
@@ -59,7 +77,6 @@ function HomeBanner() {
           data-aos-delay="300"
         />
 
-        {/* Descripción */}
         <p
           className="font-serif font-light text-[1.05rem] leading-[1.75] text-[#c4a98a] max-w-md mb-10"
           data-aos="fade-up"
@@ -71,20 +88,10 @@ function HomeBanner() {
           tus sentidos y regalarte un momento especial.
         </p>
 
-        {/* Botones */}
         <div data-aos="zoom-in" data-aos-duration="700" data-aos-delay="600">
           <BannerButtons />
         </div>
       </article>
-
-      {/* ── Columna derecha: imagen ── */}
-      <div className="hidden md:block flex-[0_0_55%] relative overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-75 sepia-[30%]"
-          style={{ backgroundImage: "url('/HOME_LOGO.png')" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1a0d08] via-[#1a0d0855] to-transparent" />
-      </div>
 
     </section>
   )

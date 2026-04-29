@@ -16,7 +16,7 @@ function Button({
               active:scale-95
               transition-all duration-300
               shadow-md hover:shadow-lg`,
-    primary :'text-[#ffff] cursor-pointer',
+    primary :'relative text-[#ffff] cursor-pointer',
     secondary: `
       px-4 sm:px-6 md:px-8 lg:px-10 py-2.5 sm:py-3
       text-sm sm:text-base 

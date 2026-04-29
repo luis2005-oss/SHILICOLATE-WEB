@@ -1,11 +1,9 @@
 import { FiShoppingCart } from "react-icons/fi";
 import { Button } from "../atoms/buttons";
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext"; // ajusta la ruta si es necesario
+import { useCart } from "../../context/CartContext";
 
 function CarNavbar({ setCartShopOpen }) {
-
-  const { cart } = useContext(CartContext);
+  const { totalItems } = useCart();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,19 +12,16 @@ function CarNavbar({ setCartShopOpen }) {
 
   return (
     <div className="flex items-center gap-6 justify-center mr-6 ml-20">
-      <Button
-        variant="primary"
-        onClick={handleSubmit}
-        className="relative"
-      >
-        <FiShoppingCart className="text-[#FFBB00] size-6" />
+      <Button variant="primary" onClick={handleSubmit}>
+        <div className="relative inline-flex items-center gap-2">
+          <FiShoppingCart className="text-[#FFBB00] size-6" />
 
-        {cart.length > 0 && (
-          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 rounded-full">
-            {cart.length}
-          </span>
-        )}
-
+          {totalItems > 0 && (
+            <span className="text-[#FFBB00] font-serif text-sm font-bold">
+              {totalItems}
+            </span>
+          )}
+        </div>
       </Button>
     </div>
   );
