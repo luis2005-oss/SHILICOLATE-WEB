@@ -77,12 +77,7 @@ export function ProductChocolate100({ addToCart }) {
             {/* Título de categoría con línea dorada */}
             <h2
               className="font-serif font-bold text-[1.65rem] m-0 mb-1"
-              style={{
-                background: GOLD_GRAD,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              style={{ color: "#5E2E11" }}
             >
               {category}
             </h2>

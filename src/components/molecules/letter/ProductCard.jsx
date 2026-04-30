@@ -44,7 +44,7 @@ export function ProductCard({ product }) {
             position: "absolute",
             inset: 0,
             borderRadius: "1rem",
-            background: "#69523b",
+            background: "linear-gradient(145deg, #1A0D08 5%, #5E2E11 100%)",
             border: `0.5px solid ${GOLD}22`,
             display: "flex",
             flexDirection: "column",
