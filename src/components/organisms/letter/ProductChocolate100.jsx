@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ProductCard } from "../../molecules/letter/ProductCard"
 
 const GOLD      = "#d4af37"
@@ -25,6 +25,10 @@ const categories = ["Todos", "Chocolate en chapa", "Chocolate en caja", "Chocola
 
 export function ProductChocolate100({ initialCategory = "Todos" }) {
   const [activeCategory, setActiveCategory] = useState(initialCategory)
+
+    useEffect(() => {
+    setActiveCategory(initialCategory)
+  }, [initialCategory])
 
   const filteredProducts =
     activeCategory === "Todos"
