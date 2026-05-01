@@ -54,12 +54,12 @@ function ReviewCard({ title, img, className = "" }) {
 
 function Reviews() {
   const listReviews = [
-    { id: 1, title: "Cacao seleccionado", img: "/REVIEW-1.jpg" },
+    { id: 1, title: "Cacao seleccionado",            img: "/REVIEW-1.jpg"  },
     { id: 2, title: "Chocolates hechos para disfrutar", img: "REVIEW-5.jpg" },
-    { id: 3, title: "Ambiente cálido", img: "REVIEW-3.jpg" },
-    { id: 4, title: "Tradición Shilicolate", img: "REVIEW-4.png" },
-    { id: 5, title: "Chocolates en chapa", img: "REVIEW-2.png" },
-    { id: 6, title: "Momentos especiales", img: "REVIEW-6.jpg" },
+    { id: 3, title: "Ambiente cálido",               img: "REVIEW-3.jpg"  },
+    { id: 4, title: "Tradición Shilicolate",         img: "REVIEW-4.png"  },
+    { id: 5, title: "Chocolates en chapa",           img: "REVIEW-2.png"  },
+    { id: 6, title: "Momentos especiales",           img: "REVIEW-6.jpg"  },
   ];
 
   return (
@@ -72,13 +72,25 @@ function Reviews() {
         </h2>
       </div>
 
-      {/* GRID EXACTO */}
+      {/* MÓVIL: 2 columnas simples */}
+      <div className="grid grid-cols-2 gap-3 max-w-5xl mx-auto md:hidden">
+        {listReviews.map(review => (
+          <ReviewCard
+            key={review.id}
+            title={review.title}
+            img={review.img}
+            className="h-[180px]"
+          />
+        ))}
+      </div>
+
+      {/* DESKTOP: grid original */}
       <div
         className="
-    grid max-w-5xl mx-auto gap-3
-    grid-cols-3
-    grid-rows-[220px_220px_220px]
-  "
+          hidden md:grid max-w-5xl mx-auto gap-3
+          grid-cols-3
+          grid-rows-[220px_220px_220px]
+        "
       >
         {/* 1 - izquierda grande */}
         <ReviewCard

@@ -19,11 +19,11 @@ function GalleryCard({ src, alt, className = "" }) {
       />
       <div
         className="
-        absolute bottom-0 left-0 right-0 h-[2px]
-        bg-[#c8895a] scale-x-0 origin-left
-        transition-transform duration-[350ms]
-        group-hover:scale-x-100
-      "
+          absolute bottom-0 left-0 right-0 h-[2px]
+          bg-[#c8895a] scale-x-0 origin-left
+          transition-transform duration-[350ms]
+          group-hover:scale-x-100
+        "
       />
     </div>
   );
@@ -54,12 +54,8 @@ function HistoryBlock() {
           Cajamarca. Que nació como una idea de negocio que se dedica a la
           elaboración y comercialización de productos derivados del cacao.{" "}
           <br /><br />
-          Tiene como marca registrada “SHILICOLATE – El Verdadero Sabor Del
-          Chocolate Shilico”, teniendo como dueña la Señora Jesús Haydee Briones
-          Sánchez y Representante Legal a su hija Lourdes Jacquelin Alva
-          Briones. <br /><br />
-          Tiene como marca registrada “SHILICOLATE – El Verdadero Sabor Del
-          Chocolate Shilico”, teniendo como dueña la Señora Jesús Haydee Briones
+          Tiene como marca registrada "SHILICOLATE – El Verdadero Sabor Del
+          Chocolate Shilico", teniendo como dueña la Señora Jesús Haydee Briones
           Sánchez y Representante Legal a su hija Lourdes Jacquelin Alva
           Briones. <br /><br />
           Actualmente la empresa, su principal producto es el chocolate al 100%
@@ -86,37 +82,27 @@ function HistoryBlock() {
             En Shilicolate, la calidad no es solo un estándar, es una promesa.
             Seleccionamos cuidadosamente el mejor cacao de la región y
             elaboramos cada producto de forma artesanal, garantizando sabor,
-            textura y frescura. Utilizamos ingredientes naturales, sin aditivos
-            ni conservantes, cuidando también cada detalle en la presentación y
-            experiencia del cliente.
+            textura y frescura.
           </p>
-
           <p>
             <strong>Innovación</strong>
             <br />
             Creamos productos únicos como Shilibombones y chocolates al 70% y
             50%. Experimentamos constantemente con nuevas combinaciones,
-            texturas y formatos que sorprenden, incorporando además empaques
-            sostenibles y diseños que reflejan nuestra identidad local.
+            texturas y formatos que sorprenden.
           </p>
-
           <p>
             <strong>Compromiso con la comunidad</strong>
             <br />
             Trabajamos directamente con agricultores locales, promoviendo
             prácticas sostenibles y generando oportunidades para jóvenes y
-            mujeres de la zona. Participamos en iniciativas culturales,
-            educativas y ambientales que fortalecen nuestra comunidad. Cada
-            producto refleja el esfuerzo y la esencia de nuestra tierra.
+            mujeres de la zona.
           </p>
-
           <p>
             <strong>Pasión por el chocolate</strong>
             <br />
             El chocolate es nuestro arte e inspiración. Cada creación nace del
-            amor por el cacao y el deseo de compartirlo con el mundo. Buscamos
-            despertar emociones, crear momentos y transmitir orgullo local en
-            cada experiencia.
+            amor por el cacao y el deseo de compartirlo con el mundo.
           </p>
         </div>
       </div>
@@ -125,8 +111,16 @@ function HistoryBlock() {
 }
 
 function AboutUsGallerySection() {
+  const images = [
+    { src: "./US-2.jpg", alt: "Interior chocolatería" },
+    { src: "./US-1.jpg", alt: "Detalle café" },
+    { src: "./US-4.jpg", alt: "Ambiente" },
+    { src: "./US-3.jpg", alt: "Grano de café" },
+  ];
+
   return (
     <section className="bg-[#fdf6ee] py-20 px-4">
+
       {/* Cabecera */}
       <div
         className="text-center mb-12"
@@ -139,10 +133,27 @@ function AboutUsGallerySection() {
         </h2>
       </div>
 
-      {/* Grilla de imágenes */}
+      {/* MÓVIL: 2 columnas simples */}
+      <div
+        className="grid grid-cols-2 gap-2 max-w-6xl mx-auto mb-10 md:hidden"
+        data-aos="fade-up"
+        data-aos-duration="900"
+        data-aos-delay="200"
+      >
+        {images.map((img) => (
+          <GalleryCard
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            className="h-[160px]"
+          />
+        ))}
+      </div>
+
+      {/* DESKTOP: grid masonry original */}
       <div
         className="
-          grid max-w-6xl mx-auto mb-10 gap-2
+          hidden md:grid max-w-6xl mx-auto mb-10 gap-2
           grid-cols-3
           grid-rows-[280px_280px]
         "
@@ -150,11 +161,7 @@ function AboutUsGallerySection() {
         data-aos-duration="900"
         data-aos-delay="200"
       >
-        <GalleryCard
-          src="./US-2.jpg"
-          alt="Interior chocolatería"
-          className="row-span-2"
-        />
+        <GalleryCard src="./US-2.jpg" alt="Interior chocolatería" className="row-span-2" />
         <GalleryCard src="./US-1.jpg" alt="Detalle café" />
         <GalleryCard src="./US-4.jpg" alt="Ambiente" className="row-span-2" />
         <GalleryCard src="./US-3.jpg" alt="Grano de café" />
@@ -169,6 +176,7 @@ function AboutUsGallerySection() {
       >
         <HistoryBlock />
       </div>
+
     </section>
   );
 }

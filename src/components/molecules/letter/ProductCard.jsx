@@ -1,28 +1,26 @@
-import { useState } from "react"
-import { useCart } from "../../../context/CartContext"
-import { formatPrice } from "../../utils/formatPrice"
+import { useState } from "react";
+import { useCart } from "../../../context/CartContext";
+import { formatPrice } from "../../utils/formatPrice";
 
-const GOLD = "#d4af37"
-const GOLD_GRAD = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)"
-
-// Fuentes más profesionales
-const TITLE_FONT = "'Montserrat', 'Helvetica Neue', Arial, sans-serif"
-const BODY_FONT = "'Inter', 'Segoe UI', Roboto, sans-serif"
+const GOLD = "#d4af37";
+const GOLD_GRAD =
+  "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
+const TITLE_FONT = "'Montserrat', 'Helvetica Neue', Arial, sans-serif";
+const BODY_FONT = "'Inter', 'Segoe UI', Roboto, sans-serif";
 
 export function ProductCard({ product }) {
-  const [flipped, setFlipped] = useState(false)
-  const { addToCart } = useCart()
+  const [flipped, setFlipped] = useState(false);
+  const { addToCart } = useCart();
 
-  const handleFrontClick = () => setFlipped(true)
-
+  const handleFrontClick = () => setFlipped(true);
   const handleBackClick = (e) => {
-    e.stopPropagation()
-    setFlipped(false)
-  }
+    e.stopPropagation();
+    setFlipped(false);
+  };
 
   return (
     <div
-      style={{ perspective: "1000px", height: "280px" }}
+      style={{ perspective: "1000px", width: "100%", height: "280px" }}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
     >
@@ -36,7 +34,7 @@ export function ProductCard({ product }) {
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
-        {/* FRENTE */}
+        {/* ── FRENTE ── */}
         <div
           onClick={handleFrontClick}
           style={{
@@ -56,6 +54,7 @@ export function ProductCard({ product }) {
             cursor: "pointer",
           }}
         >
+          {/* Esquina superior izquierda */}
           <span
             style={{
               position: "absolute",
@@ -69,6 +68,7 @@ export function ProductCard({ product }) {
             }}
           />
 
+          {/* Esquina inferior derecha */}
           <span
             style={{
               position: "absolute",
@@ -82,20 +82,47 @@ export function ProductCard({ product }) {
             }}
           />
 
+          {/* Badge categoría — solo para comestibles y shilicotejas */}
+          {["Chocolate comestible", "Shilicotejas"].includes(
+            product.category,
+          ) && (
+            <span
+              style={{
+                position: "absolute",
+                top: 10,
+                right: 10,
+                fontFamily: BODY_FONT,
+                fontSize: "7px",
+                fontWeight: 700,
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                color: "#1a0d08",
+                background: GOLD_GRAD,
+                borderRadius: "999px",
+                width: "9vh",
+                height: "5vh",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                lineHeight: 1.2,
+                padding: "4px",
+              }}
+            >
+              {product.flavor}
+            </span>
+          )}
+
           <img
             src={product.URL}
             alt={product.name}
-            style={{
-              width: "12rem",
-              height: "12rem",
-              objectFit: "contain",
-            }}
+            style={{ width: "12rem", height: "12rem", objectFit: "contain" }}
           />
 
           <p
             style={{
               fontFamily: TITLE_FONT,
-              fontSize: "1rem",
+              fontSize: "0.9rem",
               fontWeight: 700,
               color: "#f5e8d5",
               textAlign: "center",
@@ -105,24 +132,9 @@ export function ProductCard({ product }) {
           >
             {product.name}
           </p>
-
-          <span
-            style={{
-              fontFamily: BODY_FONT,
-              fontSize: "10px",
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-              color: GOLD,
-              opacity: 0.7,
-              textAlign: "center",
-              fontWeight: 500,
-            }}
-          >
-            {product.category}
-          </span>
         </div>
 
-        {/* REVERSO */}
+        {/* ── REVERSO ── */}
         <div
           onClick={handleBackClick}
           style={{
@@ -144,6 +156,34 @@ export function ProductCard({ product }) {
             cursor: "pointer",
           }}
         >
+          {/* Esquina superior izquierda */}
+          <span
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: 18,
+              height: 18,
+              borderTop: `1px solid ${GOLD}88`,
+              borderLeft: `1px solid ${GOLD}88`,
+              borderRadius: "8px 0 0 0",
+            }}
+          />
+
+          {/* Esquina inferior derecha */}
+          <span
+            style={{
+              position: "absolute",
+              bottom: 0,
+              right: 0,
+              width: 18,
+              height: 18,
+              borderBottom: `1px solid ${GOLD}88`,
+              borderRight: `1px solid ${GOLD}88`,
+              borderRadius: "0 0 8px 0",
+            }}
+          />
+
           <p
             style={{
               fontFamily: TITLE_FONT,
@@ -196,8 +236,8 @@ export function ProductCard({ product }) {
 
           <button
             onClick={(e) => {
-              e.stopPropagation()
-              addToCart(product)
+              e.stopPropagation();
+              addToCart(product);
             }}
             style={{
               width: "100%",
@@ -222,5 +262,5 @@ export function ProductCard({ product }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -50,7 +50,7 @@ export function ProductChocolate100({ addToCart }) {
   return (
     <>
       {/* ── Filtros ── */}
-      <div className="flex flex-wrap gap-2 mb-10">
+      <div className="flex flex-wrap gap-2 mb-10 justify-center sm:justify-start">
         {categories.map(cat => (
           <button
             key={cat}
