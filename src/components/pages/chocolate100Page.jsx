@@ -1,13 +1,21 @@
+import { useSearchParams } from "react-router-dom"
 import { MyTemplate } from "../templates/myTemplate"
 import { ProductChocolate100 } from "../organisms/letter/ProductChocolate100"
-import { useCart } from "../../context/CartContext"
 
 const GOLD      = "#d4af37"
 const GOLD_GRAD = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)"
 const GOLD_LINE = "linear-gradient(to right, #d4af37, #c8895a)"
 
+const filterMap = {
+  chapa:     "Chocolate en chapa",
+  caja:      "Chocolate en caja",
+  barra:     "Chocolate en barra",
+  chocolate: "Chocolate",
+}
+
 export const Chocolate100Page = () => {
-  const { addToCart } = useCart()
+  const [searchParams] = useSearchParams()
+  const initialCategory = filterMap[searchParams.get("filter")] || "Todos"
 
   return (
     <MyTemplate>
@@ -23,21 +31,17 @@ export const Chocolate100Page = () => {
               backgroundClip: "text",
             }}
           >
-            Nuestros productos
+            Chocolates al 100%
           </h1>
-
           <div className="flex items-center gap-3 mt-3" style={{ width: 140 }}>
             <div className="flex-1 h-px opacity-60" style={{ background: GOLD_LINE }} />
-            <div
-              className="w-1.5 h-1.5 flex-shrink-0"
-              style={{ background: GOLD, transform: "rotate(45deg)", opacity: 0.7 }}
-            />
+            <div className="w-1.5 h-1.5 flex-shrink-0" style={{ background: GOLD, transform: "rotate(45deg)", opacity: 0.7 }} />
             <div className="flex-1 h-px opacity-60" style={{ background: `linear-gradient(to left, ${GOLD}, #c8895a)` }} />
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto">
-          <ProductChocolate100 addToCart={addToCart} />
+          <ProductChocolate100 initialCategory={initialCategory} />
         </div>
 
       </div>

@@ -92,14 +92,14 @@ export function ProductCard({ product }) {
                 top: 10,
                 right: 10,
                 fontFamily: BODY_FONT,
-                fontSize: "7px",
+                fontSize: "9.4px",
                 fontWeight: 700,
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
                 color: "#1a0d08",
                 background: GOLD_GRAD,
                 borderRadius: "999px",
-                width: "9vh",
+                width: "11vh",
                 height: "5vh",
                 display: "flex",
                 alignItems: "center",
@@ -209,7 +209,7 @@ export function ProductCard({ product }) {
           <p
             style={{
               fontFamily: BODY_FONT,
-              fontSize: "0.75rem",
+              fontSize: "0.90rem",
               fontWeight: 400,
               color: "#7a5c45",
               lineHeight: 1.6,
@@ -222,7 +222,7 @@ export function ProductCard({ product }) {
           <p
             style={{
               fontFamily: TITLE_FONT,
-              fontSize: "1.35rem",
+              fontSize: "1.7rem",
               fontWeight: 700,
               margin: 0,
               background: GOLD_GRAD,
