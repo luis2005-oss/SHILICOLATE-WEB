@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { SpecialMoment } from './SpecialMoment'
 
 const benefits = [
   {
@@ -133,95 +134,83 @@ function VenefitsChocolate() {
   }
 
   return (
-    <section className="bg-[#fdf6ee] py-20 md:py-28 px-4 overflow-hidden">
-      <div className="max-w-7xl mx-auto overflow-visible">
-        {/* Cabecera */}
-        <div
-          className="text-center mb-16 md:mb-20"
-          data-aos="fade-down"
-          data-aos-duration="900"
-        >
-          <h2 className="font-serif font-bold text-[clamp(2rem,5vw,3.5rem)] text-[#1a0d08] leading-tight m-0">
-            El chocolate{" "}
-            <span className="italic font-normal text-[#c8895a]">que transforma</span>
-            <br />
-            tu día
-          </h2>
-        </div>
-
-        {/* Carrusel */}
-        <div 
-          className="relative px-2"
-          data-aos="fade-up"
-          data-aos-duration="900"
-          data-aos-delay="200"
-          onMouseEnter={() => setIsAutoplay(false)}
-          onMouseLeave={() => setIsAutoplay(true)}
-        >
-          {/* Contenedor de tarjetas */}
-          <div className="flex gap-6 md:gap-8 overflow-hidden px-4 pb-4">
-            {visibleIndices.map((index) => (
-              <div
-                key={benefits[index].num}
-                className="flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)] transition-transform duration-500 mb-2"
-              >
-                <BenefitCard {...benefits[index]} />
-              </div>
-            ))}
+    <>
+      {/* Sección principal con carrusel */}
+      <section className="bg-[#fdf6ee] py-20 md:py-28 px-4 overflow-hidden">
+        <div className="max-w-7xl mx-auto overflow-visible">
+          {/* Cabecera */}
+          <div
+            className="text-center mb-16 md:mb-20"
+            data-aos="fade-down"
+            data-aos-duration="900"
+          >
+            <h2 className="font-serif font-bold text-[clamp(2rem,5vw,3.5rem)] text-[#1a0d08] leading-tight m-0">
+              El chocolate{" "}
+              <span className="italic font-normal text-[#c8895a]">que transforma</span>
+              <br />
+              tu día
+            </h2>
           </div>
 
-          {/* Botones de navegación */}
-          <button
-            onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-10 bg-[#c8895a] hover:bg-[#b8795a] text-white rounded-full p-3 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
-            aria-label="Anterior"
+          {/* Carrusel */}
+          <div 
+            className="relative px-2"
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="200"
+            onMouseEnter={() => setIsAutoplay(false)}
+            onMouseLeave={() => setIsAutoplay(true)}
           >
-            <FaChevronLeft size={20} />
-          </button>
-          <button
-            onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-10 bg-[#c8895a] hover:bg-[#b8795a] text-white rounded-full p-3 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
-            aria-label="Siguiente"
-          >
-            <FaChevronRight size={20} />
-          </button>
+            {/* Contenedor de tarjetas */}
+            <div className="flex gap-6 md:gap-8 overflow-hidden px-4 pb-4">
+              {visibleIndices.map((index) => (
+                <div
+                  key={benefits[index].num}
+                  className="flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)] transition-transform duration-500 mb-2"
+                >
+                  <BenefitCard {...benefits[index]} />
+                </div>
+              ))}
+            </div>
 
-          {/* Paginación */}
-          <div className="flex justify-center gap-2 mt-12 pb-4">
-            {benefits.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleDotClick(index)}
-                className={`transition-all duration-300 rounded-full ${
-                  index === currentIndex
-                    ? 'bg-[#c8895a] w-8 h-2'
-                    : 'bg-[#c8895a] opacity-40 w-2 h-2 hover:opacity-60'
-                }`}
-                aria-label={`Ir al beneficio ${index + 1}`}
-              />
-            ))}
+            {/* Botones de navegación */}
+            <button
+              onClick={handlePrev}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-10 bg-[#c8895a] hover:bg-[#b8795a] text-white rounded-full p-3 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
+              aria-label="Anterior"
+            >
+              <FaChevronLeft size={20} />
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-10 bg-[#c8895a] hover:bg-[#b8795a] text-white rounded-full p-3 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
+              aria-label="Siguiente"
+            >
+              <FaChevronRight size={20} />
+            </button>
+
+            {/* Paginación */}
+            <div className="flex justify-center gap-2 mt-12 pb-4">
+              {benefits.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleDotClick(index)}
+                  className={`transition-all duration-300 rounded-full ${
+                    index === currentIndex
+                      ? 'bg-[#c8895a] w-8 h-2'
+                      : 'bg-[#c8895a] opacity-40 w-2 h-2 hover:opacity-60'
+                  }`}
+                  aria-label={`Ir al beneficio ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Imagen + cita final */}
-        <div
-          className="flex flex-col sm:flex-row items-center justify-center gap-8 mt-20 pt-16 border-t border-[#e8d8c4]"
-          data-aos="fade-up"
-          data-aos-duration="800"
-          data-aos-delay="400"
-        >
-          <img
-            src="/VENEFITIONS.png"
-            alt="Producto Shilicolate"
-            className="w-32 sm:w-48 drop-shadow-[0_8px_20px_rgba(26,13,8,0.18)] hover:scale-105 transition-transform duration-400"
-          />
-          <blockquote className="font-serif italic text-[clamp(1.1rem,2.5vw,1.5rem)] text-[#1a0d08] leading-relaxed m-0 border-l-4 border-[#c8895a] pl-6">
-            "Cada pieza de Shilicolate está pensada<br />
-            para regalarte un momento especial."
-          </blockquote>
-        </div>
-      </div>
-    </section>
+      {/* Componente SpecialMoment FUERA del contenedor limitado (full-width) */}
+      <SpecialMoment />
+    </>
   )
 }
 

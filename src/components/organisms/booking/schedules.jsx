@@ -74,6 +74,7 @@ function RecognitionRow({
   num,
   isReversed,
   onImageClick,
+  label = "RECONOCIMIENTO",
 }) {
   return (
     <div
@@ -146,7 +147,7 @@ function RecognitionRow({
             }}
           />
           <span className="font-serif text-[0.8rem] text-[#c8895a] tracking-[0.1em]">
-            RECONOCIMIENTO
+            {label}
           </span>
         </div>
       </div>
@@ -161,24 +162,24 @@ function Schedules() {
   const recognitions = [
     {
       image: "/RECOGNITION-1.jpg",
-      title: "Reconocimiento 1",
+      title: "Premio Chocoandino (Colombia)",
       description:
         "Distinción otorgada por el mejor licor de cacao otorgado por IILA y FEDECACAO. Un logro que refleja nuestro compromiso con la excelencia y la calidad en cada paso del proceso de producción.",
     },
     {
       image: "/RECOGNITION-2.png",
-      title: "Reconocimiento 2",
+      title: "Industrias manufactureras",
       description:
         "Premio a la calidad y sabor artesanal en eventos regionales. Reconocimiento que valida nuestras técnicas tradicionales y la dedicación de nuestro equipo en crear chocolates únicos.",
     },
     {
       image: "/RECOGNITION-3.png",
-      title: "Reconocimiento 3",
+      title: "Buenas prácticas empresariales",
       description:
         "Reconocido otorgado por las buenas prácticas empresariales. Un testimonio de nuestro compromiso con la sostenibilidad, la ética y la responsabilidad social en toda nuestra operación.",
     },
     {
-      image: "/RECOGNITION-4.png",
+      image: "/RECOGNITION-4.jpeg",
       title: "Reconocimiento 4",
       description:
         "Reconocidos por categoría industrial manufactureras referente en chocolate shilico. Posicionándonos como líderes innovadores en la industria chocolatera regional.",
@@ -237,6 +238,7 @@ function Schedules() {
               num={String(index + 1).padStart(2, "0")}
               isReversed={index % 2 !== 0}
               onImageClick={() => handleImageClick(index)}
+              label={index === 3 ? "PREMIO" : "RECONOCIMIENTO"}
             />
           ))}
         </div>

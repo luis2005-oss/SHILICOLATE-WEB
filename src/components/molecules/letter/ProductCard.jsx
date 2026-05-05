@@ -116,7 +116,7 @@ export function ProductCard({ product }) {
           <img
             src={product.URL}
             alt={product.name}
-            style={{ width: "12rem", height: "12rem", objectFit: "contain" }}
+            style={{ width: "14rem", height: "14rem", objectFit: "center" }}
           />
 
           <p

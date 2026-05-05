@@ -11,7 +11,7 @@ function HomeBanner() {
       {/* Imagen de fondo — ocupa todo */}
       <div
         className="absolute inset-0 bg-right bg-cover bg-no-repeat transition-all duration-300"
-        style={{ backgroundImage: "url('/HOME_LOGO.png')", filter: "sepia(25%) brightness(0.45)" }}
+        style={{ backgroundImage: "url('/REVIEW-4.png')", filter: "sepia(25%) brightness(0.45)" }}
         data-aos="zoom-in"
         data-aos-duration="1500"
       />
