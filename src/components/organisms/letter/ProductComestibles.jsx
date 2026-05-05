@@ -7,23 +7,23 @@ const GOLD_GRAD = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%
 const GOLD_LINE = "linear-gradient(to right, #d4af37, #c8895a)"
 
 const filterMap = {
-  shilibombones: "Shilibombones",
-  comestible:    "Chocolate comestible",
+  shilibombones: "Shilibombones al 55%",
+  comestible:    "Chocolate al 70%",
   shilicotejas:  "Shilicotejas",
 }
 
 const products = [
-  { idProduct: 14, name: "Shilibombones",             category: "Shilibombones",        price: 8, URL: "/SHILIBOMBONES.png",           desc: "Bombones artesanales con cacao selecto y rellenas de cremas. El verdadero sabor del chocolate shilico." },
-  { idProduct: 15, name: "Sabor a Pecana de 70gr",    category: "Chocolate comestible", flavor: "Pecana",      price: 8, URL: "/CHOCOLARE-COM-PECANA.png",     desc: "Chocolate artesanal comestible, elaborado con delicados sabores naturales. El verdadero sabor del chocolate shilico." },
-  { idProduct: 16, name: "Sabor a Blueberry de 70gr", category: "Chocolate comestible", flavor: "Blueberry",   price: 8, URL: "/CHOCOLARE-COM-BLUEBERRY.png",  desc: "Chocolate artesanal comestible, elaborado con delicados sabores naturales. El verdadero sabor del chocolate shilico." },
-  { idProduct: 17, name: "Sabor Aguaymanto de 70gr",  category: "Chocolate comestible", flavor: "Aguaymanto",  price: 8, URL: "/CHOCOLARE-COM-AGUAYMANTO.png", desc: "Chocolate artesanal comestible, elaborado con delicados sabores naturales. El verdadero sabor del chocolate shilico." },
-  { idProduct: 18, name: "Sabor a Cafe de 70gr",      category: "Chocolate comestible", flavor: "Cafe",        price: 8, URL: "/CHOCOLARE-COM-CAFE.png",       desc: "Chocolate artesanal comestible, elaborado con delicados sabores naturales. El verdadero sabor del chocolate shilico." },
-  { idProduct: 19, name: "Sabor a Almendra de 70gr",  category: "Chocolate comestible", flavor: "Almendra",    price: 8, URL: "/CHOCOLARE-COM-ALMENDRA.png",   desc: "Chocolate artesanal comestible, elaborado con delicados sabores naturales. El verdadero sabor del chocolate shilico." },
-  { idProduct: 20, name: "Sabor a Pecana de 35gr",    category: "Chocolate comestible", flavor: "Pecana",      price: 4, URL: "/CHOCOLARE-COM-PECANA.png",     desc: "Chocolate artesanal comestible, elaborado con delicados sabores naturales. El verdadero sabor del chocolate shilico." },
-  { idProduct: 21, name: "Sabor a Blueberry de 35gr", category: "Chocolate comestible", flavor: "Blueberry",   price: 4, URL: "/CHOCOLARE-COM-BLUEBERRY.png",  desc: "Chocolate artesanal comestible, elaborado con delicados sabores naturales. El verdadero sabor del chocolate shilico." },
-  { idProduct: 22, name: "Sabor Aguaymanto de 35gr",  category: "Chocolate comestible", flavor: "Aguaymanto",  price: 4, URL: "/CHOCOLARE-COM-AGUAYMANTO.png", desc: "Chocolate artesanal comestible, elaborado con delicados sabores naturales. El verdadero sabor del chocolate shilico." },
-  { idProduct: 23, name: "Sabor a Cafe de 35gr",      category: "Chocolate comestible", flavor: "Cafe",        price: 4, URL: "/CHOCOLARE-COM-CAFE.png",       desc: "Chocolate artesanal comestible, elaborado con delicados sabores naturales. El verdadero sabor del chocolate shilico." },
-  { idProduct: 24, name: "Sabor a Almendra de 35gr",  category: "Chocolate comestible", flavor: "Almendra",    price: 4, URL: "/CHOCOLARE-COM-ALMENDRA.png",   desc: "Chocolate artesanal comestible, elaborado con delicados sabores naturales. El verdadero sabor del chocolate shilico." },
+  { idProduct: 14, name: "Shilibombones",             category: "Shilibombones al 55%",        price: 8, URL: "/SHILIBOMBONES.png",           desc: "Bombones artesanales con cacao selecto y rellenas de cremas." },
+  { idProduct: 15, name: "Sabor a Pecana de 70gr",    category: "Chocolate al 70%", flavor: "Pecana",      price: 8, URL: "/CHOCOLARE-COM-PECANA.png",     desc: "Chocolate artesanal comestible con trozos de pecana tostada, elaborado con delicados sabores naturales." },
+  { idProduct: 16, name: "Sabor a Blueberry de 70gr", category: "Chocolate al 70%", flavor: "Blueberry",   price: 8, URL: "/CHOCOLARE-COM-BLUEBERRY.png",  desc: "Chocolate artesanal comestible con delicado aroma a blueberry, elaborado con sabores naturales." },
+  { idProduct: 17, name: "Sabor Aguaymanto de 70gr",  category: "Chocolate al 70%", flavor: "Aguaymanto",  price: 8, URL: "/CHOCOLARE-COM-AGUAYMANTO.png", desc: "Chocolate artesanal comestible con un toque ácido de aguaymanto, elaborado con sabores naturales." },
+  { idProduct: 18, name: "Sabor a Cafe de 70gr",      category: "Chocolate al 70%", flavor: "Cafe",        price: 8, URL: "/CHOCOLARE-COM-CAFE.png",       desc: "Chocolate artesanal comestible con notas de café tostado, elaborado con delicados sabores naturales." },
+  { idProduct: 19, name: "Sabor a Almendra de 70gr",  category: "Chocolate al 70%", flavor: "Almendra",    price: 8, URL: "/CHOCOLARE-COM-ALMENDRA.png",   desc: "Chocolate artesanal comestible con almendras crocantes, elaborado con delicados sabores naturales." },
+  { idProduct: 20, name: "Sabor a Pecana de 35gr",    category: "Chocolate al 70%", flavor: "Pecana",      price: 4, URL: "/CHOCOLARE-COM-PECANA.png",     desc: "Chocolate artesanal comestible con trozos de pecana tostada, elaborado con delicados sabores naturales." },
+  { idProduct: 21, name: "Sabor a Blueberry de 35gr", category: "Chocolate al 70%", flavor: "Blueberry",   price: 4, URL: "/CHOCOLARE-COM-BLUEBERRY.png",  desc: "Chocolate artesanal comestible con delicado aroma a blueberry, elaborado con sabores naturales." },
+  { idProduct: 22, name: "Sabor Aguaymanto de 35gr",  category: "Chocolate al 70%", flavor: "Aguaymanto",  price: 4, URL: "/CHOCOLARE-COM-AGUAYMANTO.png", desc: "Chocolate artesanal comestible con un toque ácido de aguaymanto, elaborado con sabores naturales." },
+  { idProduct: 23, name: "Sabor a Cafe de 35gr",      category: "Chocolate al 70%", flavor: "Cafe",        price: 4, URL: "/CHOCOLARE-COM-CAFE.png",       desc: "Chocolate artesanal comestible con notas de café tostado, elaborado con delicados sabores naturales." },
+  { idProduct: 24, name: "Sabor a Almendra de 35gr",  category: "Chocolate al 70%", flavor: "Almendra",    price: 4, URL: "/CHOCOLARE-COM-ALMENDRA.png",   desc: "Chocolate artesanal comestible con almendras crocantes, elaborado con delicados sabores naturales." },
   { idProduct: 25, name: "Shilicoteja de Maracuyá",    category: "Shilicotejas", flavor: "Maracuyá",    price: 1, URL: "/SHILICOTEJA-MARACUYA.png",    desc: "Rellena con mermelada de maracuyá, equilibrio perfecto entre dulzura y acidez." },
   { idProduct: 26, name: "Shilicoteja de Maracumango", category: "Shilicotejas", flavor: "Maracumango", price: 1, URL: "/SHILICOTEJA-MARACUMAGO.png",  desc: "Con mermelada de maracuyá y mango, una mezcla tropical de dulzura y frescura." },
   { idProduct: 27, name: "Shilicoteja de Naranja",     category: "Shilicotejas", flavor: "Naranja",     price: 1, URL: "/SHILICOTEJA-NARANJA.png",     desc: "Con mermelada de naranja, una combinación cítrica de dulzura y acidez." },
@@ -49,7 +49,12 @@ const products = [
   { idProduct: 47, name: "Shilicoteja de Almendra",    category: "Shilicotejas", flavor: "Almendra",    price: 1, URL: "/SHILICOTEJA-ALMENDRA.png",    desc: "Rellena con mermelada de almendra, con un sabor intenso y refrescante." },
 ]
 
-const categories = ["Todos", "Shilibombones", "Chocolate comestible", "Shilicotejas"]
+const categories = [
+  { label: "Todos", value: "Todos" },
+  { label: "Shilibombones al 55%", value: "Shilibombones al 55%" },
+  { label: "Chocolate al 70%", value: "Chocolate al 70%" },
+  { label: "Shilicotejas", value: "Shilicotejas" },
+]
 
 const shilicoTejaGroups = {
   "Mermelada Agridulce":  ["Maracuyá", "Maracumango", "Naranja", "Mandarina", "Aguaymanto", "Piña", "Limón", "Tamarindo"],
@@ -59,6 +64,8 @@ const shilicoTejaGroups = {
   "Exóticas":             ["Café", "Pitahaya"],
   "Frutos Secos":         ["Pecana", "Coco", "Maní", "Almendra"],
 }
+
+
 
 function dividirShilicotejas(items) {
   const resultado = {}
@@ -92,20 +99,20 @@ export function ProductComestibles() {
   return (
     <>
       <div className="flex flex-wrap gap-2 mb-10 justify-center sm:justify-start">
-        {categories.map(cat => (
+        {categories.map((cat) => (
           <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className="font-bold text-[0.74rem] tracking-[0.1em] uppercase px-4 py-1 rounded-[4px] cursor-pointer transition-all duration-200"
+            key={cat.value}
+            onClick={() => setActiveCategory(cat.value)}
+            className="font-sans font-semibold text-[0.74rem] tracking-[0.1em] uppercase px-4 py-1 rounded-[4px] cursor-pointer transition-all duration-200"
             style={
-              effectiveCategory === cat
+              effectiveCategory === cat.value
                 ? { background: GOLD_GRAD, color: "#1a0d08", border: "none" }
                 : { background: "transparent", color: "#7a5c45", border: `0.145rem solid ${GOLD}44` }
             }
-            onMouseEnter={e => { if (effectiveCategory !== cat) e.currentTarget.style.borderColor = GOLD }}
-            onMouseLeave={e => { if (effectiveCategory !== cat) e.currentTarget.style.borderColor = `${GOLD}44` }}
+            onMouseEnter={e => { if (effectiveCategory !== cat.value) e.currentTarget.style.borderColor = GOLD }}
+            onMouseLeave={e => { if (effectiveCategory !== cat.value) e.currentTarget.style.borderColor = `${GOLD}44` }}
           >
-            {cat}
+            {cat.label}
           </button>
         ))}
       </div>
@@ -114,7 +121,7 @@ export function ProductComestibles() {
         {Object.entries(groupedProducts).map(([category, items]) => (
           <div key={category}>
             <h2
-              className="font-serif font-bold text-[1.65rem] m-0 mb-1"
+              className="font-sans font-bold text-[1.65rem] m-0 mb-1 tracking-tight"
               style={{ color: "#5E2E11" }}
             >
               {category}
@@ -130,7 +137,7 @@ export function ProductComestibles() {
                       style={{ background: GOLD, transform: "rotate(45deg)", opacity: 0.7 }}
                     />
                     <p
-                      className="font-serif text-[0.78rem] tracking-[0.18em] uppercase m-0"
+                      className="font-sans text-[0.78rem] tracking-[0.18em] uppercase m-0 font-semibold"
                       style={{ color: "#5E2E10" }}
                     >
                       {grupo}

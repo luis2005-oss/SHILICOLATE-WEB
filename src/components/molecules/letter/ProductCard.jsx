@@ -83,7 +83,7 @@ export function ProductCard({ product }) {
           />
 
           {/* Badge categoría — solo para comestibles y shilicotejas */}
-          {["Chocolate comestible", "Shilicotejas"].includes(
+          {["Chocolate al 70%", "Shilicotejas"].includes(
             product.category,
           ) && (
             <span
@@ -209,7 +209,7 @@ export function ProductCard({ product }) {
           <p
             style={{
               fontFamily: BODY_FONT,
-              fontSize: "0.90rem",
+              fontSize: "1rem",
               fontWeight: 400,
               color: "#7a5c45",
               lineHeight: 1.6,
