@@ -72,7 +72,7 @@ el bienestar de nuestra comunidad.`
             <div className="w-px h-8" style={{ background: `linear-gradient(to bottom, transparent, ${GOLD})` }} />
             <img
               src="/CACAO.png" alt="Granos de cacao"
-              className="w-36 md:w-40 hover:scale-[1.06] hover:rotate-[-15deg] transition-transform duration-500"
+              className="w-70 sm:w-60 md:w-72 hover:scale-[1.06] hover:rotate-[-15deg] transition-transform duration-500"
               style={{ filter: "drop-shadow(0 12px 32px rgba(212,175,55,0.25))" }}
             />
             <div className="w-1.5 h-1.5 bg-[#d4af37] opacity-70" style={{ transform: "rotate(45deg)" }} />

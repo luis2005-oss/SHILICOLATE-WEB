@@ -19,13 +19,13 @@ function SpecialMoment({
           <img
             src={image}
             alt={imageAlt}
-            className="w-40 md:w-56 lg:w-64 drop-shadow-[0_8px_20px_rgba(26,13,8,0.18)] hover:scale-105 transition-transform duration-400"
+            className="w-40 md:w-56 lg:w-80 drop-shadow-[0_8px_20px_rgba(26,13,8,0.18)] hover:scale-105 transition-transform duration-400"
           />
         </div>
 
         {/* Frase - 50% */}
         <div className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-8">
-          <blockquote className="font-serif italic text-[clamp(1.1rem,2.5vw,1.5rem)] text-[#1a0d08] leading-relaxed m-0 border-l-4 border-[#c8895a] pl-6">
+          <blockquote className="font-serif italic text-[clamp(2rem,2.5vw,1.5rem)] text-[#1a0d08] leading-relaxed m-0 border-l-4 border-[#c8895a] pl-6">
             "{quote}"
           </blockquote>
         </div>

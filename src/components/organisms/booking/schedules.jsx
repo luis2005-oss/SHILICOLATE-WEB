@@ -179,7 +179,7 @@ function Schedules() {
         "Reconocido otorgado por las buenas prácticas empresariales. Un testimonio de nuestro compromiso con la sostenibilidad, la ética y la responsabilidad social en toda nuestra operación.",
     },
     {
-      image: "/RECOGNITION-4.jpeg",
+      image: "/RECOGNITION-4.jpg",
       title: "Reconocimiento 4",
       description:
         "Reconocidos por categoría industrial manufactureras referente en chocolate shilico. Posicionándonos como líderes innovadores en la industria chocolatera regional.",

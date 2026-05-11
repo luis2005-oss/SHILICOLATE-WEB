@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
-import { SpecialMoment } from './SpecialMoment'
 
 const benefits = [
   {
@@ -208,8 +207,7 @@ function VenefitsChocolate() {
         </div>
       </section>
 
-      {/* Componente SpecialMoment FUERA del contenedor limitado (full-width) */}
-      <SpecialMoment />
+      
     </>
   )
 }

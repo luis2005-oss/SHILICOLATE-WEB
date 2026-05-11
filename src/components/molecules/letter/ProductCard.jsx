@@ -82,37 +82,6 @@ export function ProductCard({ product }) {
             }}
           />
 
-          {/* Badge categoría — solo para comestibles y shilicotejas */}
-          {["Chocolate al 70%", "Shilicotejas"].includes(
-            product.category,
-          ) && (
-            <span
-              style={{
-                position: "absolute",
-                top: 10,
-                right: 10,
-                fontFamily: BODY_FONT,
-                fontSize: "9.4px",
-                fontWeight: 700,
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-                color: "#1a0d08",
-                background: GOLD_GRAD,
-                borderRadius: "999px",
-                width: "11vh",
-                height: "5vh",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "center",
-                lineHeight: 1.2,
-                padding: "4px",
-              }}
-            >
-              {product.flavor}
-            </span>
-          )}
-
           <img
             src={product.URL}
             alt={product.name}
@@ -187,7 +156,7 @@ export function ProductCard({ product }) {
           <p
             style={{
               fontFamily: TITLE_FONT,
-              fontSize: "0.88rem",
+              fontSize: "1.3rem",
               fontWeight: 700,
               color: "#1a0d08",
               lineHeight: 1.3,
