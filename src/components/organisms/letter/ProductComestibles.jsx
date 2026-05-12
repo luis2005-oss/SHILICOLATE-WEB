@@ -25,7 +25,8 @@ const products = [
 
   {
     idProduct: 15,
-    name: "Sabor a Pecana de 70gr",
+    name: "Pecana",
+    presentation: "70gr",
     category: "Chocolate al 70%",
     flavor: "Pecana",
     price: 8,
@@ -34,7 +35,8 @@ const products = [
   },
   {
     idProduct: 16,
-    name: "Sabor a Blueberry de 70gr",
+    name: "Blueberry",
+    presentation: "70gr",
     category: "Chocolate al 70%",
     flavor: "Blueberry",
     price: 8,
@@ -43,7 +45,8 @@ const products = [
   },
   {
     idProduct: 17,
-    name: "Sabor Aguaymanto de 70gr",
+    name: "Aguaymanto",
+    presentation: "70gr",
     category: "Chocolate al 70%",
     flavor: "Aguaymanto",
     price: 8,
@@ -52,7 +55,8 @@ const products = [
   },
   {
     idProduct: 18,
-    name: "Sabor a Cafe de 70gr",
+    name: "Cafe",
+    presentation: "70gr",
     category: "Chocolate al 70%",
     flavor: "Cafe",
     price: 8,
@@ -61,7 +65,7 @@ const products = [
   },
   {
     idProduct: 19,
-    name: "Sabor a Almendra de 70gr",
+    name: "Almendra",
     category: "Chocolate al 70%",
     flavor: "Almendra",
     price: 8,
@@ -71,7 +75,8 @@ const products = [
 
   {
     idProduct: 20,
-    name: "Sabor a Pecana de 35gr",
+    name: "Pecana",
+    presentation: "35gr",
     category: "Chocolate al 70%",
     flavor: "Pecana",
     price: 4,
@@ -80,7 +85,8 @@ const products = [
   },
   {
     idProduct: 21,
-    name: "Sabor a Blueberry de 35gr",
+    name: "Blueberry",
+    presentation: "35gr",
     category: "Chocolate al 70%",
     flavor: "Blueberry",
     price: 4,
@@ -89,7 +95,8 @@ const products = [
   },
   {
     idProduct: 22,
-    name: "Sabor Aguaymanto de 35gr",
+    name: "Aguaymanto",
+    presentation: "35gr",
     category: "Chocolate al 70%",
     flavor: "Aguaymanto",
     price: 4,
@@ -98,7 +105,8 @@ const products = [
   },
   {
     idProduct: 23,
-    name: "Sabor a Cafe de 35gr",
+    name: "Cafe",
+    presentation: "35gr",
     category: "Chocolate al 70%",
     flavor: "Cafe",
     price: 4,
@@ -107,7 +115,8 @@ const products = [
   },
   {
     idProduct: 24,
-    name: "Sabor a Almendra de 35gr",
+    name: "Almendra",
+    presentation: "35gr",
     category: "Chocolate al 70%",
     flavor: "Almendra",
     price: 4,
@@ -115,9 +124,10 @@ const products = [
     desc: "Chocolate artesanal comestible con almendras crocantes, elaborado con delicados sabores naturales.",
   },
 
+
   {
     idProduct: 25,
-    name: "Shilicoteja de Maracuyá",
+    name: "Maracuyá",
     category: "Shilicotejas",
     flavor: "Maracuyá",
     price: 1,
@@ -126,7 +136,7 @@ const products = [
   },
   {
     idProduct: 26,
-    name: "Shilicoteja de Maracumango",
+    name: "Maracumango",
     category: "Shilicotejas",
     flavor: "Maracumango",
     price: 1,
@@ -135,7 +145,7 @@ const products = [
   },
   {
     idProduct: 27,
-    name: "Shilicoteja de Naranja",
+    name: "Naranja",
     category: "Shilicotejas",
     flavor: "Naranja",
     price: 1,
@@ -144,7 +154,7 @@ const products = [
   },
   {
     idProduct: 28,
-    name: "Shilicoteja de Mandarina",
+    name: "Mandarina",
     category: "Shilicotejas",
     flavor: "Mandarina",
     price: 1,
@@ -153,7 +163,7 @@ const products = [
   },
   {
     idProduct: 29,
-    name: "Shilicoteja de Aguaymanto",
+    name: "Aguaymanto",
     category: "Shilicotejas",
     flavor: "Aguaymanto",
     price: 1,
@@ -162,7 +172,7 @@ const products = [
   },
   {
     idProduct: 30,
-    name: "Shilicoteja de Piña",
+    name: "Piña",
     category: "Shilicotejas",
     flavor: "Piña",
     price: 1,
@@ -171,7 +181,7 @@ const products = [
   },
   {
     idProduct: 31,
-    name: "Shilicoteja de Limón",
+    name: "Limón",
     category: "Shilicotejas",
     flavor: "Limón",
     price: 1,
@@ -180,7 +190,7 @@ const products = [
   },
   {
     idProduct: 32,
-    name: "Shilicoteja de Tamarindo",
+    name: "Tamarindo",
     category: "Shilicotejas",
     flavor: "Tamarindo",
     price: 1,
@@ -189,7 +199,7 @@ const products = [
   },
   {
     idProduct: 33,
-    name: "Shilicoteja de Pisco",
+    name: "Pisco",
     category: "Shilicotejas",
     flavor: "Pisco",
     price: 1,
@@ -198,7 +208,7 @@ const products = [
   },
   {
     idProduct: 34,
-    name: "Shilicoteja de Vino",
+    name: "Vino",
     category: "Shilicotejas",
     flavor: "Vino",
     price: 1,
@@ -207,7 +217,7 @@ const products = [
   },
   {
     idProduct: 35,
-    name: "Shilicoteja de Fresa",
+    name: "Fresa",
     category: "Shilicotejas",
     flavor: "Fresa",
     price: 1,
@@ -216,7 +226,7 @@ const products = [
   },
   {
     idProduct: 36,
-    name: "Shilicoteja de Mora",
+    name: "Mora",
     category: "Shilicotejas",
     flavor: "Mora",
     price: 1,
@@ -225,7 +235,7 @@ const products = [
   },
   {
     idProduct: 37,
-    name: "Shilicoteja de Arándano",
+    name: "Arándano",
     category: "Shilicotejas",
     flavor: "Arándano",
     price: 1,
@@ -234,7 +244,7 @@ const products = [
   },
   {
     idProduct: 38,
-    name: "Shilicoteja de Sauco",
+    name: "Sauco",
     category: "Shilicotejas",
     flavor: "Sauco",
     price: 1,
@@ -243,7 +253,7 @@ const products = [
   },
   {
     idProduct: 39,
-    name: "Shilicoteja de Lúcuma",
+    name: "Lúcuma",
     category: "Shilicotejas",
     flavor: "Lúcuma",
     price: 1,
@@ -252,7 +262,7 @@ const products = [
   },
   {
     idProduct: 40,
-    name: "Shilicoteja de Pasas",
+    name: "Pasas",
     category: "Shilicotejas",
     flavor: "Pasas",
     price: 1,
@@ -261,7 +271,7 @@ const products = [
   },
   {
     idProduct: 41,
-    name: "Shilicoteja de Guindón",
+    name: "Guindón",
     category: "Shilicotejas",
     flavor: "Guindón",
     price: 1,
@@ -270,7 +280,7 @@ const products = [
   },
   {
     idProduct: 42,
-    name: "Shilicoteja de Café",
+    name: "Café",
     category: "Shilicotejas",
     flavor: "Café",
     price: 1,
@@ -279,7 +289,7 @@ const products = [
   },
   {
     idProduct: 43,
-    name: "Shilicoteja de Pitahaya",
+    name: "Pitahaya",
     category: "Shilicotejas",
     flavor: "Pitahaya",
     price: 1,
@@ -288,7 +298,7 @@ const products = [
   },
   {
     idProduct: 44,
-    name: "Shilicoteja de Pecana",
+    name: "Pecana",
     category: "Shilicotejas",
     flavor: "Pecana",
     price: 1,
@@ -297,7 +307,7 @@ const products = [
   },
   {
     idProduct: 45,
-    name: "Shilicoteja de Coco",
+    name: "Coco",
     category: "Shilicotejas",
     flavor: "Coco",
     price: 1,
@@ -306,7 +316,7 @@ const products = [
   },
   {
     idProduct: 46,
-    name: "Shilicoteja de Maní",
+    name: "Maní",
     category: "Shilicotejas",
     flavor: "Maní",
     price: 1,
@@ -315,7 +325,7 @@ const products = [
   },
   {
     idProduct: 47,
-    name: "Shilicoteja de Almendra",
+    name: "Almendra",
     category: "Shilicotejas",
     flavor: "Almendra",
     price: 1,
@@ -360,11 +370,11 @@ function dividirShilicotejas(items) {
   return resultado;
 }
 
-// NUEVO: separar chocolates por gramos
+// Separar chocolates por gramos
 function dividirPorGramos(items) {
   return {
-    "Presentación de 70gr": items.filter((p) => p.name.includes("70gr")),
-    "Presentación de 35gr": items.filter((p) => p.name.includes("35gr")),
+    "Presentación de 70gr": items.filter((p) => p.presentation === "70gr"),
+    "Presentación de 35gr": items.filter((p) => p.presentation === "35gr"),
   };
 }
 
