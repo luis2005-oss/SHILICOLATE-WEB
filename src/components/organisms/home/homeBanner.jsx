@@ -1,28 +1,33 @@
-import { BannerButtons } from "../../molecules/home/bannerButtons"
+import { BannerButtons } from "../../molecules/home/bannerButtons";
 
-const GOLD          = "#d4af37"
-const GOLD_GRADIENT = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)"
-const GOLD_LINE     = "linear-gradient(to right, #d4af37, #c8895a)"
+const GOLD = "#d4af37";
+const GOLD_GRADIENT =
+  "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
+const GOLD_LINE = "linear-gradient(to right, #d4af37, #c8895a)";
 
 function HomeBanner() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-[#1a0d08]">
-
       {/* Imagen de fondo — ocupa todo */}
       <div
-        className="absolute inset-0 bg-right bg-cover bg-no-repeat transition-all duration-300"
-        style={{ backgroundImage: "url('/REVIEW-4.png')", filter: "sepia(25%) brightness(0.45)" }}
+        className="absolute inset-0 bg-center sm:bg-right bg-cover bg-no-repeat transition-all duration-300"
+        style={{
+          backgroundImage: "url('/REVIEW-4.png')",
+          filter: "sepia(25%) brightness(0.45)",
+        }}
         data-aos="zoom-in"
         data-aos-duration="1500"
       />
 
       {/* Degradado direccional */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(27,15,8,0.98)] via-[rgba(26,13,8,0.5)] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(27,15,8,0.98)] via-[rgba(26,13,8,0.7)] sm:via-[rgba(26,13,8,0.5)] to-transparent" />
 
       {/* Línea vertical dorada */}
       <div
         className="absolute left-6 sm:left-10 top-[30%] bottom-[30%] w-px opacity-25"
-        style={{ background: `linear-gradient(to bottom, transparent, ${GOLD}, transparent)` }}
+        style={{
+          background: `linear-gradient(to bottom, transparent, ${GOLD}, transparent)`,
+        }}
       />
 
       {/* Partículas doradas */}
@@ -37,7 +42,14 @@ function HomeBanner() {
           <span
             key={i}
             className="absolute rounded-full"
-            style={{ top: p.top, left: p.left, width: p.size, height: p.size, background: GOLD, opacity: p.opacity ?? 0.35 }}
+            style={{
+              top: p.top,
+              left: p.left,
+              width: p.size,
+              height: p.size,
+              background: GOLD,
+              opacity: p.opacity ?? 0.35,
+            }}
           />
         ))}
       </div>
@@ -92,9 +104,8 @@ function HomeBanner() {
           <BannerButtons />
         </div>
       </article>
-
     </section>
-  )
+  );
 }
 
-export { HomeBanner }
+export { HomeBanner };

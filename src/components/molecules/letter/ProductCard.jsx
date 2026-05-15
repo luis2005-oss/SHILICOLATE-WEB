@@ -20,7 +20,7 @@ export function ProductCard({ product }) {
 
   return (
     <div
-      style={{ perspective: "1000px", width: "100%", height: "280px" }}
+      style={{ perspective: "1000px", width: "100%", aspectRatio: "4/5" }}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
     >
@@ -49,7 +49,7 @@ export function ProductCard({ product }) {
             alignItems: "center",
             justifyContent: "center",
             gap: "0.75rem",
-            padding: "1.5rem",
+            padding: "1rem",
             overflow: "hidden",
             cursor: "pointer",
           }}
@@ -85,15 +85,21 @@ export function ProductCard({ product }) {
           <img
             src={product.URL}
             alt={product.name}
-            style={{ width: "14rem", height: "14rem", objectFit: "center" }}
+            style={{
+              width: "18rem",
+              height: "auto",
+              objectFit: "contain",
+            }}
           />
-
           <p
             style={{
               fontFamily: TITLE_FONT,
-              fontSize: "0.9rem",
+              fontSize: "clamp(0.85rem, 3vw, 1.3rem)",
               fontWeight: 700,
-              color: "#f5e8d5",
+              background: GOLD_GRAD,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
               textAlign: "center",
               lineHeight: 1.3,
               margin: 0,
@@ -118,8 +124,8 @@ export function ProductCard({ product }) {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            gap: "0.5rem",
-            padding: "1.5rem",
+            gap: "0.4rem",
+            padding: "1rem",
             textAlign: "center",
             overflow: "hidden",
             cursor: "pointer",
@@ -156,7 +162,7 @@ export function ProductCard({ product }) {
           <p
             style={{
               fontFamily: TITLE_FONT,
-              fontSize: "1.3rem",
+              fontSize: "clamp(0.75rem, 2vw, 1rem)",
               fontWeight: 700,
               color: "#1a0d08",
               lineHeight: 1.3,
@@ -178,11 +184,15 @@ export function ProductCard({ product }) {
           <p
             style={{
               fontFamily: BODY_FONT,
-              fontSize: "1rem",
+              fontSize: "clamp(0.65rem, 1.5vw, 0.85rem)",
               fontWeight: 400,
               color: "#7a5c45",
-              lineHeight: 1.6,
+              lineHeight: 1.5,
               margin: 0,
+              overflow: "hidden",
+              display: "-webkit-box",
+              WebkitLineClamp: 4,
+              WebkitBoxOrient: "vertical",
             }}
           >
             {product.desc}
@@ -191,7 +201,7 @@ export function ProductCard({ product }) {
           <p
             style={{
               fontFamily: TITLE_FONT,
-              fontSize: "1.7rem",
+              fontSize: "clamp(1.1rem, 3vw, 1.5rem)",
               fontWeight: 700,
               margin: 0,
               background: GOLD_GRAD,
@@ -211,7 +221,7 @@ export function ProductCard({ product }) {
             style={{
               width: "100%",
               fontFamily: BODY_FONT,
-              fontSize: "0.75rem",
+              fontSize: "clamp(0.6rem, 1.5vw, 0.75rem)",
               fontWeight: 600,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
@@ -219,7 +229,7 @@ export function ProductCard({ product }) {
               background: GOLD_GRAD,
               border: "none",
               borderRadius: "4px",
-              padding: "8px 16px",
+              padding: "7px 12px",
               cursor: "pointer",
               transition: "opacity 0.2s",
             }}

@@ -2,16 +2,15 @@ function HomeMapSection() {
   return (
     <section className="bg-[#fdf6ee] py-20 px-4">
       <div className="max-w-5xl mx-auto">
-
         {/* Cabecera */}
         <div
           className="text-center mb-12"
           data-aos="fade-down"
           data-aos-duration="900"
         >
-
           <h2 className="font-serif font-bold text-[clamp(1.8rem,3.5vw,2.8rem)] text-[#1a0d08] leading-tight m-0">
-            Nuestra <em className="italic font-normal text-[#c8895a]">ubicación</em>
+            Nuestra{" "}
+            <em className="italic font-normal text-[#c8895a]">ubicación</em>
           </h2>
         </div>
 
@@ -68,19 +67,23 @@ function HomeMapSection() {
           </div>
 
           {/* Fila de info debajo del mapa */}
-          <div className="flex border border-[#e8d8c4] rounded-b-[10px] overflow-hidden">
+          <div className="flex flex-col sm:flex-row border border-[#e8d8c4] rounded-b-[10px] overflow-hidden">
             {[
-              { label: "Dirección",  value: "Av. Amazonas 513, Celendín" },
-              { label: "Teléfono",   value: "+51 932 983 227" },
-              { label: "Correo",     value: "shilicolateoficial@gmail.com" },
+              { label: "Dirección", value: "Av. Amazonas 513, Celendín" },
+              { label: "Teléfono", value: "+51 932 983 227" },
+              { label: "Correo", value: "shilicolateoficial@gmail.com" },
             ].map((item, i, arr) => (
               <div
                 key={item.label}
                 className={`
-                  flex-1 bg-[#1a0d08] px-5 py-4
-                  flex flex-col gap-0.5
-                  ${i < arr.length - 1 ? "border-r border-[#c8895a22]" : ""}
-                `}
+        flex-1 bg-[#1a0d08] px-5 py-4
+        flex flex-col gap-0.5
+        ${
+          i < arr.length - 1
+            ? "border-b border-[#c8895a22] sm:border-b-0 sm:border-r border-[#c8895a22]"
+            : ""
+        }
+      `}
               >
                 <span className="font-serif text-[10px] tracking-[0.2em] uppercase text-[#c8895a] opacity-70">
                   {item.label}
@@ -92,10 +95,9 @@ function HomeMapSection() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
-  )
+  );
 }
 
-export { HomeMapSection }
+export { HomeMapSection };
