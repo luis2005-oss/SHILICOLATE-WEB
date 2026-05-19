@@ -184,7 +184,7 @@ export function ProductCard({ product }) {
           <p
             style={{
               fontFamily: BODY_FONT,
-              fontSize: "clamp(0.65rem, 1.5vw, 0.85rem)",
+              fontSize: "clamp(0.80rem, 1.7vw, 1rem)",
               fontWeight: 400,
               color: "#7a5c45",
               lineHeight: 1.5,

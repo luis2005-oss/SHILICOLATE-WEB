@@ -19,7 +19,7 @@ function SpecialMoment({
           <img
             src={image}
             alt={imageAlt}
-            className="w-40 md:w-56 lg:w-80 drop-shadow-[0_8px_20px_rgba(26,13,8,0.18)] hover:scale-105 transition-transform duration-400"
+              className="w-[clamp(15rem,40vw,48rem)] h-auto object-contain drop-shadow-[0_8px_20px_rgba(26,13,8,0.18)] hover:scale-105 transition-all duration-300"
           />
         </div>
 

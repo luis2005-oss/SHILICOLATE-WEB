@@ -21,10 +21,10 @@ export const ComestiblesPage = () => {
           >
             Comestibles
           </h1>
-          <div className="flex items-center gap-3 mt-3" style={{ width: 140 }}>
-            <div className="flex-1 h-px opacity-60" style={{ background: GOLD_LINE }} />
-            <div className="w-1.5 h-1.5 flex-shrink-0" style={{ background: GOLD, transform: "rotate(45deg)", opacity: 0.7 }} />
-            <div className="flex-1 h-px opacity-60" style={{ background: `linear-gradient(to left, ${GOLD}, #c8895a)` }} />
+          <div className="mt-4 flex items-center gap-3 w-40 sm:w-52 lg:w-64">
+            <div className="h-[1px] flex-1 opacity-70" style={{ background: GOLD_LINE }} />
+            <div className="w-2 h-2 rotate-45° opacity-80" style={{ background: GOLD, transform: "rotate(45deg)", opacity: 0.7 }} />
+            <div className="h-[1px] flex-1 opacity-70" style={{ background: `linear-gradient(to left, ${GOLD}, #c8895a)` }} />
           </div>
         </div>
         <div className="max-w-7xl mx-auto">

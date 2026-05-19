@@ -18,6 +18,7 @@ const products = [
     idProduct: 14,
     name: "Shilibombones",
     category: "Shilibombones al 55%",
+    performance: "Avellana, Menta, Fresa, Lucuma, Cafe, Maracuyá",
     price: 8,
     URL: "/SHILIBOMBONES.png",
     desc: "Bombones artesanales con cacao selecto y rellenas de cremas.",
@@ -31,7 +32,7 @@ const products = [
     flavor: "Pecana",
     price: 8,
     URL: "/CHOCOLARE-70gr-PECANA.png",
-    desc: "Chocolate artesanal comestible con trozos de pecana tostada, elaborado con delicados sabores naturales.",
+    desc: "Chocolate artesanal comestible relleno de pecana tostada, elaborado con delicados sabores naturales.",
   },
   {
     idProduct: 16,
@@ -41,7 +42,7 @@ const products = [
     flavor: "Blueberry",
     price: 8,
     URL: "/CHOCOLARE-70gr-BLUEBERRY.png",
-    desc: "Chocolate artesanal comestible con delicado aroma a blueberry, elaborado con sabores naturales.",
+    desc: "Chocolate artesanal comestible con relleno de blueberry, elaborado con sabores naturales.",
   },
   {
     idProduct: 17,
@@ -51,7 +52,7 @@ const products = [
     flavor: "Aguaymanto",
     price: 8,
     URL: "/CHOCOLARE-70gr-AGUAYMANTO.png",
-    desc: "Chocolate artesanal comestible con un toque ácido de aguaymanto, elaborado con sabores naturales.",
+    desc: "Chocolate artesanal comestible con relleno de aguaymanto, elaborado con sabores naturales.",
   },
   {
     idProduct: 18,
@@ -61,7 +62,7 @@ const products = [
     flavor: "Cafe",
     price: 8,
     URL: "/CHOCOLARE-70gr-CAFE.png",
-    desc: "Chocolate artesanal comestible con notas de café tostado, elaborado con delicados sabores naturales.",
+    desc: "Chocolate artesanal comestible con relleno de café tostado, elaborado con delicados sabores naturales.",
   },
   {
     idProduct: 19,
@@ -71,7 +72,7 @@ const products = [
     flavor: "Almendra",
     price: 8,
     URL: "/CHOCOLARE-70gr-ALMENDRA.png",
-    desc: "Chocolate artesanal comestible con almendras crocantes, elaborado con delicados sabores naturales.",
+    desc: "Chocolate artesanal comestible con relleno de almendras, elaborado con delicados sabores naturales.",
   },
 
   {
@@ -82,7 +83,7 @@ const products = [
     flavor: "Pecana",
     price: 4,
     URL: "/CHOCOLARE-35gr-PECANA.png",
-    desc: "Chocolate artesanal comestible con trozos de pecana tostada, elaborado con delicados sabores naturales.",
+    desc: "Chocolate artesanal comestible relleno de pecana tostada, elaborado con delicados sabores naturales.",
   },
   {
     idProduct: 21,
@@ -92,7 +93,7 @@ const products = [
     flavor: "Blueberry",
     price: 4,
     URL: "/CHOCOLARE-35gr-BLUEBERRY.png",
-    desc: "Chocolate artesanal comestible con delicado aroma a blueberry, elaborado con sabores naturales.",
+    desc: "Chocolate artesanal comestible relleno a blueberry, elaborado con sabores naturales.",
   },
   {
     idProduct: 22,
@@ -102,7 +103,7 @@ const products = [
     flavor: "Aguaymanto",
     price: 4,
     URL: "/CHOCOLARE-35gr-AGUAYMANTO.png",
-    desc: "Chocolate artesanal comestible con un toque ácido de aguaymanto, elaborado con sabores naturales.",
+    desc: "Chocolate artesanal comestible relleno de aguaymanto, elaborado con sabores naturales.",
   },
   {
     idProduct: 23,
@@ -112,7 +113,7 @@ const products = [
     flavor: "Cafe",
     price: 4,
     URL: "/CHOCOLARE-35gr-CAFE.png",
-    desc: "Chocolate artesanal comestible con notas de café tostado, elaborado con delicados sabores naturales.",
+    desc: "Chocolate artesanal comestible relleno de café tostado, elaborado con delicados sabores naturales.",
   },
   {
     idProduct: 24,
@@ -122,7 +123,7 @@ const products = [
     flavor: "Almendra",
     price: 4,
     URL: "/CHOCOLARE-35gr-ALMENDRA.png",
-    desc: "Chocolate artesanal comestible con almendras crocantes, elaborado con delicados sabores naturales.",
+    desc: "Chocolate artesanal comestible relleno de almendras , elaborado con delicados sabores naturales.",
   },
 
 
