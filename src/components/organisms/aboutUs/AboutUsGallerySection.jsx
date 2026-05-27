@@ -1,3 +1,5 @@
+import { LazyImage } from "../../common/LazyImage";
+
 function GalleryCard({ src, alt, className = "" }) {
   return (
     <div
@@ -6,9 +8,11 @@ function GalleryCard({ src, alt, className = "" }) {
         bg-[#2a1810] cursor-pointer ${className}
       `}
     >
-      <img
+      <LazyImage
         src={src}
         alt={alt}
+        width={900}
+        height={900}
         className="
           w-full h-full object-cover block
           transition-[transform,filter] duration-500
@@ -53,11 +57,13 @@ function HistoryBlock() {
           octubre del 2006. Es una empresa peruana ubicada en Celendín,
           Cajamarca. Que nació como una idea de negocio que se dedica a la
           elaboración y comercialización de productos derivados del cacao.{" "}
-          <br /><br />
+          <br />
+          <br />
           Tiene como marca registrada "SHILICOLATE – El Verdadero Sabor Del
           Chocolate Shilico", teniendo como dueña la Señora Jesús Haydee Briones
           Sánchez y Representante Legal a su hija Lourdes Jacquelin Alva
-          Briones. <br /><br />
+          Briones. <br />
+          <br />
           Actualmente la empresa, su principal producto es el chocolate al 100%
           y sus derivados: chocolate al 70%, Shilibombones, Chocotejas,
           Shilicoctel. La cual comercializa dentro de la provincia de Celendín,
@@ -112,15 +118,14 @@ function HistoryBlock() {
 
 function AboutUsGallerySection() {
   const images = [
-    { src: "./US-2.jpg", alt: "Interior chocolatería" },
-    { src: "./US-1.jpg", alt: "Detalle café" },
-    { src: "./US-4.jpg", alt: "Ambiente" },
-    { src: "./US-3.jpg", alt: "Grano de café" },
+    { src: "/US-2.webp", alt: "Interior chocolatería" },
+    { src: "/US-1.webp", alt: "Detalle café" },
+    { src: "/US-4.webp", alt: "Ambiente" },
+    { src: "/US-3.webp", alt: "Grano de café" },
   ];
 
   return (
     <section className="bg-[#fdf6ee] py-20 px-4">
-
       {/* Cabecera */}
       <div
         className="text-center mb-12"
@@ -161,10 +166,14 @@ function AboutUsGallerySection() {
         data-aos-duration="900"
         data-aos-delay="200"
       >
-        <GalleryCard src="./US-2.jpg" alt="Interior chocolatería" className="row-span-2" />
-        <GalleryCard src="./US-1.jpg" alt="Detalle café" />
-        <GalleryCard src="./US-4.jpg" alt="Ambiente" className="row-span-2" />
-        <GalleryCard src="./US-3.jpg" alt="Grano de café" />
+        <GalleryCard
+          src="/US-2.webp"
+          alt="Interior chocolatería"
+          className="row-span-2"
+        />
+        <GalleryCard src="/US-1.webp" alt="Detalle café" />
+        <GalleryCard src="/US-4.webp" alt="Ambiente" className="row-span-2" />
+        <GalleryCard src="/US-3.webp" alt="Grano de café" />
       </div>
 
       {/* Bloque historia */}
@@ -176,7 +185,6 @@ function AboutUsGallerySection() {
       >
         <HistoryBlock />
       </div>
-
     </section>
   );
 }

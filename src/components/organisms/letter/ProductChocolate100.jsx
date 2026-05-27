@@ -13,7 +13,7 @@ const products = [
     performance: "Rinde 11 Tazas",
     category: "Chocolate en chapa",
     price: 4,
-    URL: "/CHOCOLATE-CHAPA.png",
+    URL: "/CHOCOLATE-CHAPA.webp",
     desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
   },
   {
@@ -22,7 +22,7 @@ const products = [
     performance: "Rinde 14 Tazas",
     category: "Chocolate en chapa",
     price: 5,
-    URL: "/CHOCOLATE-CHAPA.png",
+    URL: "/CHOCOLATE-CHAPA.webp",
     desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
   },
   {
@@ -31,7 +31,7 @@ const products = [
     performance: "Rinde 20 Tazas",
     category: "Chocolate en chapa",
     price: 7,
-    URL: "/CHOCOLATE-CHAPA.png",
+    URL: "/CHOCOLATE-CHAPA.webp",
     desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
   },
   {
@@ -40,7 +40,7 @@ const products = [
     performance: "Rinde 30 Tazas",
     category: "Chocolate en chapa",
     price: 9,
-    URL: "/CHOCOLATE-CHAPA.png",
+    URL: "/CHOCOLATE-CHAPA.webp",
     desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
   },
   {
@@ -49,7 +49,7 @@ const products = [
     performance: "Rinde 55 Tazas",
     category: "Chocolate en chapa",
     price: 15,
-    URL: "/CHOCOLATE-CHAPA.png",
+    URL: "/CHOCOLATE-CHAPA.webp",
     desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
   },
   {
@@ -58,7 +58,7 @@ const products = [
     performance: "Rinde 70 Tazas",
     category: "Chocolate en chapa",
     price: 18,
-    URL: "/CHOCOLATE-CHAPA.png",
+    URL: "/CHOCOLATE-CHAPA.webp",
     desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
   },
   {
@@ -67,7 +67,7 @@ const products = [
     performance: "Rinde 85 Tazas",
     category: "Chocolate en chapa",
     price: 24,
-    URL: "/CHOCOLATE-CHAPA.png",
+    URL: "/CHOCOLATE-CHAPA.webp",
     desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
   },
   {
@@ -76,7 +76,7 @@ const products = [
     performance: "Rinde 105 Tazas",
     category: "Chocolate en chapa",
     price: 28,
-    URL: "/CHOCOLATE-CHAPA.png",
+    URL: "/CHOCOLATE-CHAPA.webp",
     desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
   },
   {
@@ -85,7 +85,7 @@ const products = [
     performance: "Rinde 112 Tazas",
     category: "Chocolate en chapa",
     price: 30,
-    URL: "/CHOCOLATE-CHAPA.png",
+    URL: "/CHOCOLATE-CHAPA.webp",
     desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
   },
   {
@@ -94,7 +94,7 @@ const products = [
     performance: "Rinde 20 Tazas",
     category: "Chocolate en caja",
     price: 8,
-    URL: "/CAJA-100.png",
+    URL: "/CAJA-100.webp",
     desc: "Cacao intenso, profundo y auténtico para cada momento.",
   },
   {
@@ -103,7 +103,7 @@ const products = [
     performance: "Rinde 40 Tazas",
     category: "Chocolate en caja",
     price: 14,
-    URL: "/CAJA-200.png",
+    URL: "/CAJA-200.webp",
     desc: "Cacao intenso, profundo y auténtico para cada momento.",
   },
   {
@@ -112,7 +112,7 @@ const products = [
     performance: "Rinde 30 Tazas",
     category: "Chocolate en barra",
     price: 9,
-    URL: "/CHOCOLATE-BARRA.png",
+    URL: "/CHOCOLATE-BARRA.webp",
     desc: "Chocolates artesanales en barra, ideales para compartir o regalar.",
   },
   {
@@ -121,7 +121,7 @@ const products = [
     performance: "Rinde 17 Tazas",
     category: "Chocolate dorado",
     price: 6.8,
-    URL: "/CHOCOLATE.png",
+    URL: "/CHOCOLATE.webp",
     desc: "100% cacao artesanal, perfecto para una taza de chocolate caliente.",
   },
 ];

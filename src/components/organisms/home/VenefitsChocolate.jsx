@@ -1,57 +1,60 @@
-import { useState, useRef, useEffect } from 'react'
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { useState, useRef, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { LazyImage } from "../../common/LazyImage";
 
 const benefits = [
   {
     num: "01",
-    image: "/benefit_placer.png",
+    image: "/benefit_placer.webp",
     title: "Más placer",
     text: "Despierta los sentidos y convierte cualquier momento en una experiencia deliciosa.",
   },
   {
     num: "02",
-    image: "/benefit_mood.png",
+    image: "/benefit_mood.webp",
     title: "Mejor estado de ánimo",
     text: "El cacao estimula hormonas que reducen el estrés y aumentan la felicidad.",
   },
   {
     num: "03",
-    image: "/benefit_energy.png",
+    image: "/benefit_energy.webp",
     title: "Energía natural",
     text: "Aporta vitalidad para disfrutar el día con mejor actitud y bienestar.",
   },
   {
     num: "04",
-    image: "/benefit_antioxidants.png",
+    image: "/benefit_antioxidants.webp",
     title: "Antioxidantes naturales",
     text: "El cacao protege las células y contribuye al bienestar integral.",
   },
   {
     num: "05",
-    image: "/benefit_details.png",
+    image: "/benefit_details.webp",
     title: "Detalles que enamoran",
     text: "Shilibonbones, chocotejas y chocolates en caja — cada uno un regalo perfecto.",
   },
   {
     num: "06",
-    image: "/benefit_moments.png",
+    image: "/benefit_moments.webp",
     title: "Momentos únicos",
     text: "El chocolate une personas, acompaña conversaciones y crea recuerdos inolvidables.",
   },
-]
+];
 
 function BenefitCard({ num, image, title, text }) {
   return (
     <div className="flex flex-col h-full bg-[#fdf6ee] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 drop-shadow-md">
       {/* Imagen */}
       <div className="relative w-full h-64 md:h-80 overflow-hidden">
-        <img 
-          src={image} 
+        <LazyImage
+          src={image}
           alt={title}
-          className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+          width={900}
+          height={700}
+          className=" w-full h-full object-cover hover:scale-110 transition-transform duration-500"
         />
         {/* Número decorativo */}
-        <span 
+        <span
           className="absolute top-4 right-4 font-serif italic text-5xl text-[#c8895a] opacity-20 select-none"
           aria-hidden="true"
         >
@@ -69,67 +72,69 @@ function BenefitCard({ num, image, title, text }) {
         </p>
         <div className="flex items-center gap-2 mt-2">
           <div className="h-1 w-8 bg-[#c8895a] rounded-full"></div>
-          <span className="font-serif text-sm text-[#c8895a] font-semibold">{num}</span>
+          <span className="font-serif text-sm text-[#c8895a] font-semibold">
+            {num}
+          </span>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function VenefitsChocolate() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isAutoplay, setIsAutoplay] = useState(true)
-  const autoplayTimerRef = useRef(null)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoplay, setIsAutoplay] = useState(true);
+  const autoplayTimerRef = useRef(null);
 
   // Calcular cuántas tarjetas mostrar según el tamaño de pantalla
-  const [visibleCards, setVisibleCards] = useState(1)
+  const [visibleCards, setVisibleCards] = useState(1);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
-        setVisibleCards(2)
+        setVisibleCards(2);
       } else if (window.innerWidth >= 768) {
-        setVisibleCards(1.5)
+        setVisibleCards(1.5);
       } else {
-        setVisibleCards(1)
+        setVisibleCards(1);
       }
-    }
+    };
 
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Autoplay
   useEffect(() => {
-    if (!isAutoplay) return
+    if (!isAutoplay) return;
 
     autoplayTimerRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % benefits.length)
-    }, 5000)
+      setCurrentIndex((prev) => (prev + 1) % benefits.length);
+    }, 5000);
 
-    return () => clearInterval(autoplayTimerRef.current)
-  }, [isAutoplay])
+    return () => clearInterval(autoplayTimerRef.current);
+  }, [isAutoplay]);
 
   const handlePrev = () => {
-    setIsAutoplay(false)
-    setCurrentIndex((prev) => (prev - 1 + benefits.length) % benefits.length)
-  }
+    setIsAutoplay(false);
+    setCurrentIndex((prev) => (prev - 1 + benefits.length) % benefits.length);
+  };
 
   const handleNext = () => {
-    setIsAutoplay(false)
-    setCurrentIndex((prev) => (prev + 1) % benefits.length)
-  }
+    setIsAutoplay(false);
+    setCurrentIndex((prev) => (prev + 1) % benefits.length);
+  };
 
   const handleDotClick = (index) => {
-    setIsAutoplay(false)
-    setCurrentIndex(index)
-  }
+    setIsAutoplay(false);
+    setCurrentIndex(index);
+  };
 
   // Calcular el índice de inicio para mostrar las tarjetas correctas
-  const visibleIndices = []
+  const visibleIndices = [];
   for (let i = 0; i < Math.ceil(visibleCards); i++) {
-    visibleIndices.push((currentIndex + i) % benefits.length)
+    visibleIndices.push((currentIndex + i) % benefits.length);
   }
 
   return (
@@ -145,14 +150,16 @@ function VenefitsChocolate() {
           >
             <h2 className="font-serif font-bold text-[clamp(2rem,5vw,3.5rem)] text-[#1a0d08] leading-tight m-0">
               El chocolate{" "}
-              <span className="italic font-normal text-[#c8895a]">que transforma</span>
+              <span className="italic font-normal text-[#c8895a]">
+                que transforma
+              </span>
               <br />
               tu día
             </h2>
           </div>
 
           {/* Carrusel */}
-          <div 
+          <div
             className="relative px-2"
             data-aos="fade-up"
             data-aos-duration="900"
@@ -196,8 +203,8 @@ function VenefitsChocolate() {
                   onClick={() => handleDotClick(index)}
                   className={`transition-all duration-300 rounded-full ${
                     index === currentIndex
-                      ? 'bg-[#c8895a] w-8 h-2'
-                      : 'bg-[#c8895a] opacity-40 w-2 h-2 hover:opacity-60'
+                      ? "bg-[#c8895a] w-8 h-2"
+                      : "bg-[#c8895a] opacity-40 w-2 h-2 hover:opacity-60"
                   }`}
                   aria-label={`Ir al beneficio ${index + 1}`}
                 />
@@ -206,10 +213,8 @@ function VenefitsChocolate() {
           </div>
         </div>
       </section>
-
-      
     </>
-  )
+  );
 }
 
-export { VenefitsChocolate }
+export { VenefitsChocolate };

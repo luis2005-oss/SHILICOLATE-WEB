@@ -3,15 +3,13 @@ import { useCart } from "../../../context/CartContext";
 import { formatPrice } from "../../utils/formatPrice";
 
 const GOLD = "#d4af37";
-const GOLD_GRAD =
-  "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
+const GOLD_GRAD = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
 const TITLE_FONT = "'Montserrat', 'Helvetica Neue', Arial, sans-serif";
 const BODY_FONT = "'Inter', 'Segoe UI', Roboto, sans-serif";
 
 export function ProductCard({ product }) {
   const [flipped, setFlipped] = useState(false);
   const { addToCart } = useCart();
-
   const handleFrontClick = () => setFlipped(true);
   const handleBackClick = (e) => {
     e.stopPropagation();
@@ -20,7 +18,11 @@ export function ProductCard({ product }) {
 
   return (
     <div
-      style={{ perspective: "1000px", width: "100%", aspectRatio: "4/5" }}
+      style={{
+        perspective: "1000px",
+        width: "100%",
+        aspectRatio: "4/5",
+      }}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
     >
@@ -31,10 +33,12 @@ export function ProductCard({ product }) {
           height: "100%",
           transformStyle: "preserve-3d",
           transition: "transform 0.55s ease",
-          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          transform: flipped
+            ? "rotateY(180deg)"
+            : "rotateY(0deg)",
         }}
       >
-        {/* ── FRENTE ── */}
+        {/* ───────── FRENTE ───────── */}
         <div
           onClick={handleFrontClick}
           style={{
@@ -42,7 +46,8 @@ export function ProductCard({ product }) {
             position: "absolute",
             inset: 0,
             borderRadius: "1rem",
-            background: "linear-gradient(145deg, #1A0D08 5%, #5E2E11 100%)",
+            background:
+              "linear-gradient(145deg, #1A0D08 5%, #5E2E11 100%)",
             border: `0.5px solid ${GOLD}22`,
             display: "flex",
             flexDirection: "column",
@@ -54,7 +59,7 @@ export function ProductCard({ product }) {
             cursor: "pointer",
           }}
         >
-          {/* Esquina superior izquierda */}
+          {/* esquina superior */}
           <span
             style={{
               position: "absolute",
@@ -68,7 +73,7 @@ export function ProductCard({ product }) {
             }}
           />
 
-          {/* Esquina inferior derecha */}
+          {/* esquina inferior */}
           <span
             style={{
               position: "absolute",
@@ -82,15 +87,24 @@ export function ProductCard({ product }) {
             }}
           />
 
+          {/* IMAGEN OPTIMIZADA */}
           <img
             src={product.URL}
             alt={product.name}
+            loading="lazy"
+            decoding="async"
+            draggable="false"
             style={{
-              width: "18rem",
-              height: "auto",
+              width: "100%",
+              maxWidth: "220px",
+              height: "220px",
               objectFit: "contain",
+              willChange: "transform",
+              userSelect: "none",
             }}
           />
+
+          {/* TITULO */}
           <p
             style={{
               fontFamily: TITLE_FONT,
@@ -109,7 +123,7 @@ export function ProductCard({ product }) {
           </p>
         </div>
 
-        {/* ── REVERSO ── */}
+        {/* ───────── REVERSO ───────── */}
         <div
           onClick={handleBackClick}
           style={{
@@ -131,7 +145,7 @@ export function ProductCard({ product }) {
             cursor: "pointer",
           }}
         >
-          {/* Esquina superior izquierda */}
+          {/* esquina */}
           <span
             style={{
               position: "absolute",
@@ -145,7 +159,6 @@ export function ProductCard({ product }) {
             }}
           />
 
-          {/* Esquina inferior derecha */}
           <span
             style={{
               position: "absolute",
@@ -159,6 +172,7 @@ export function ProductCard({ product }) {
             }}
           />
 
+          {/* PERFORMANCE */}
           <p
             style={{
               fontFamily: TITLE_FONT,
@@ -181,6 +195,7 @@ export function ProductCard({ product }) {
             }}
           />
 
+          {/* DESCRIPCIÓN */}
           <p
             style={{
               fontFamily: BODY_FONT,
@@ -198,6 +213,7 @@ export function ProductCard({ product }) {
             {product.desc}
           </p>
 
+          {/* PRECIO */}
           <p
             style={{
               fontFamily: TITLE_FONT,
@@ -213,6 +229,7 @@ export function ProductCard({ product }) {
             {formatPrice(product.price)}
           </p>
 
+          {/* BOTÓN */}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -233,8 +250,12 @@ export function ProductCard({ product }) {
               cursor: "pointer",
               transition: "opacity 0.2s",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.88")}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.opacity = "0.88")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.opacity = "1")
+            }
           >
             Agregar al carrito
           </button>

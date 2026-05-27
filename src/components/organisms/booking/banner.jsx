@@ -1,6 +1,6 @@
-const GOLD       = "#d4af37"
-const GOLD_LINE  = "linear-gradient(to right, #d4af37, #c8895a)"
-const GOLD_GRAD  = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)"
+const GOLD = "#d4af37";
+const GOLD_LINE = "linear-gradient(to right, #d4af37, #c8895a)";
+const GOLD_GRAD = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
 
 function Article({ ...props }) {
   return (
@@ -22,7 +22,7 @@ function Article({ ...props }) {
         Shilicolate · Distinción
       </span>
 
-      {/* Título con gradiente dorado */}
+      {/* Título */}
       <h1 className="font-serif font-bold leading-tight tracking-tight text-[clamp(2.2rem,4.5vw,3.5rem)] text-[#f5e8d5] m-0">
         Nuestros{" "}
         <em
@@ -38,42 +38,57 @@ function Article({ ...props }) {
         </em>
       </h1>
 
-      {/* Divisor degradado dorado */}
+      {/* Línea */}
       <div
         className="w-12 h-px my-6 opacity-75"
         style={{ background: GOLD_LINE }}
       />
 
-      {/* Descripción */}
+      {/* Texto */}
       <p className="font-serif font-light text-[1rem] text-[#c4a98a] leading-[1.75] max-w-md m-0">
         Reconocimientos que respaldan nuestra calidad, esfuerzo
         y compromiso con cada cliente.
       </p>
     </article>
-  )
+  );
 }
 
 function Banner() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-[#1a0d08]">
 
-      {/* Imagen de fondo */}
-      <div
-        className="absolute inset-0 bg-[url('/IMG-REC.jpg')] bg-right bg-cover bg-no-repeat [filter:sepia(25%)_brightness(0.45)] transition-all duration-300"
-        data-aos="zoom-in"
-        data-aos-duration="1500"
+      {/* Imagen optimizada */}
+      <img
+        src="/IMG-REC.webp"
+        alt="Reconocimientos Shilicolate"
+        width="1920"
+        height="1080"
+        fetchPriority="high"
+        decoding="async"
+        className="
+          absolute inset-0
+          w-full h-full
+          object-cover
+          object-right
+          transition-all duration-300
+        "
+        style={{
+          filter: "sepia(25%) brightness(0.45)",
+        }}
       />
 
-      {/* Degradado direccional */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[rgba(26,13,8,0.95)] via-[rgba(26,13,8,0.4)] to-transparent" />
 
-      {/* Línea vertical dorada */}
+      {/* Línea vertical */}
       <div
         className="absolute left-6 sm:left-10 top-[30%] bottom-[30%] w-px opacity-25"
-        style={{ background: `linear-gradient(to bottom, transparent, ${GOLD}, transparent)` }}
+        style={{
+          background: `linear-gradient(to bottom, transparent, ${GOLD}, transparent)`,
+        }}
       />
 
-      {/* Partículas doradas */}
+      {/* Partículas */}
       <div className="absolute inset-0 pointer-events-none z-10">
         {[
           { top: "20%", left: "55%", size: 3 },
@@ -84,7 +99,14 @@ function Banner() {
           <span
             key={i}
             className="absolute rounded-full"
-            style={{ top: p.top, left: p.left, width: p.size, height: p.size, background: GOLD, opacity: p.opacity ?? 0.3 }}
+            style={{
+              top: p.top,
+              left: p.left,
+              width: p.size,
+              height: p.size,
+              background: GOLD,
+              opacity: p.opacity ?? 0.3,
+            }}
           />
         ))}
       </div>
@@ -95,9 +117,8 @@ function Banner() {
         data-aos-duration="1000"
         data-aos-delay="300"
       />
-
     </section>
-  )
+  );
 }
 
-export { Banner }
+export { Banner };

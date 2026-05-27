@@ -21,7 +21,7 @@ export const ComestiblesPage = () => {
           >
             Comestibles
           </h1>
-          <div className="mt-4 flex items-center gap-3 w-40 sm:w-52 lg:w-64">
+          <div className="mt-4 flex items-center gap-3 w-50 sm:w-55 lg:w-74">
             <div className="h-[1px] flex-1 opacity-70" style={{ background: GOLD_LINE }} />
             <div className="w-2 h-2 rotate-45° opacity-80" style={{ background: GOLD, transform: "rotate(45deg)", opacity: 0.7 }} />
             <div className="h-[1px] flex-1 opacity-70" style={{ background: `linear-gradient(to left, ${GOLD}, #c8895a)` }} />

@@ -100,9 +100,11 @@ function Footer() {
           <div className="flex flex-col gap-5">
             <Link to="/" className="flex items-center gap-2.5 no-underline w-fit">
               <img
-                src="/LOGO.png"
+                src="/LOGO.webp"
                 alt="Shilicolate"
-                className="w-9 h-9 object-contain"
+                className="w-25 h-auto object-contain"
+                loading="lazy"
+                decoding="async"
               />
 
               <span

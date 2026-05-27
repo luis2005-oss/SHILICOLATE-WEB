@@ -34,9 +34,9 @@ export const Chocolate100Page = () => {
             Chocolates al 100%
           </h1>
           <div className="flex items-center gap-4 mt-3 w-[81%] sm:w-[43%] md:w-full max-w-[29rem] px-2 sm:px-0">
-            <div className="flex-1 h-px opacity-60" style={{ background: GOLD_LINE }} />
-            <div className="w-1.5 h-1.5 flex-shrink-0" style={{ background: GOLD, transform: "rotate(45deg)", opacity: 0.7,}} />
-            <div className="flex-1 h-px opacity-60" style={{ background: `linear-gradient(to left, ${GOLD}, #c8895a)`, }} /> </div>
+            <div className="flex-1 h-[1px] opacity-60" style={{ background: GOLD_LINE }} />
+            <div className="w-2 h-2 flex-shrink-0" style={{ background: GOLD, transform: "rotate(45deg)", opacity: 0.7,}} />
+            <div className="flex-1 h-[1px] opacity-60" style={{ background: `linear-gradient(to left, ${GOLD}, #c8895a)`, }} /> </div>
         </div>
 
         <div className="max-w-7xl mx-auto">

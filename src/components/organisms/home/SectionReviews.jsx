@@ -1,14 +1,20 @@
+import { LazyImage } from "../../common/LazyImage";
+
 function ReviewCard({ title, img, className = "" }) {
   return (
     <div
       className={`
-        group relative overflow-hidden rounded-[6px] cursor-pointer
-        bg-[#2a1810] ${className}
+        group relative overflow-hidden rounded-[6px]
+        cursor-pointer bg-[#2a1810]
+        ${className}
       `}
     >
-      <img
+      <LazyImage
         src={img}
         alt={title}
+        width={800}
+        height={800}
+        sizes="(max-width: 768px) 50vw, 33vw"
         className="
           w-full h-full object-cover block
           transition-[transform,filter] duration-500
@@ -21,18 +27,25 @@ function ReviewCard({ title, img, className = "" }) {
       <div
         className="
           absolute inset-0
-          bg-gradient-to-t from-[rgba(26,13,8,0.88)] via-transparent to-transparent
+          bg-gradient-to-t
+          from-[rgba(26,13,8,0.88)]
+          via-transparent
+          to-transparent
           flex items-end
           p-4 sm:p-5
         "
       >
         <p
           className="
-            font-serif font-light text-[0.9rem] text-[#f5e8d5]
+            font-serif font-light text-[0.9rem]
+            text-[#f5e8d5]
             opacity-0 translate-y-1.5
-            transition-[opacity,transform] duration-300
-            group-hover:opacity-100 group-hover:translate-y-0
-            group-active:opacity-100 group-active:translate-y-0
+            transition-[opacity,transform]
+            duration-300
+            group-hover:opacity-100
+            group-hover:translate-y-0
+            group-active:opacity-100
+            group-active:translate-y-0
           "
         >
           {title}
@@ -54,12 +67,12 @@ function ReviewCard({ title, img, className = "" }) {
 
 function Reviews() {
   const listReviews = [
-    { id: 1, title: "Tradición Shilicolate", img: "/REVIEW-4.png"  },
-    { id: 2, title: "Ambiente cálido", img: "REVIEW-3.jpg" },
-    { id: 3, title: "Chocolates en chapa", img: "REVIEW-2.png"  },
-    { id: 4, title: "Cacao seleccionado", img: "REVIEW-1.png"  },
-    { id: 5, title: "Chocolates hechos para disfrutar", img: "REVIEW-5.png"  },
-    { id: 6, title: "Momentos especiales", img: "REVIEW-6.jpg"  },
+    { id: 1, title: "Tradición Shilicolate", img: "/REVIEW-4.webp" },
+    { id: 2, title: "Ambiente cálido", img: "/REVIEW-3.webp" },
+    { id: 3, title: "Chocolates en chapa", img: "/REVIEW-2.webp" },
+    { id: 4, title: "Cacao seleccionado", img: "/REVIEW-1.webp" },
+    { id: 5, title: "Chocolates hechos para disfrutar", img: "/REVIEW-5.webp" },
+    { id: 6, title: "Momentos especiales", img: "/REVIEW-6.webp" },
   ];
 
   return (
@@ -72,9 +85,9 @@ function Reviews() {
         </h2>
       </div>
 
-      {/* MÓVIL: 2 columnas simples */}
+      {/* MÓVIL */}
       <div className="grid grid-cols-2 gap-3 max-w-5xl mx-auto md:hidden">
-        {listReviews.map(review => (
+        {listReviews.map((review) => (
           <ReviewCard
             key={review.id}
             title={review.title}
@@ -84,7 +97,7 @@ function Reviews() {
         ))}
       </div>
 
-      {/* DESKTOP: grid original */}
+      {/* DESKTOP */}
       <div
         className="
           hidden md:grid max-w-5xl mx-auto gap-3
@@ -92,42 +105,42 @@ function Reviews() {
           grid-rows-[220px_220px_220px]
         "
       >
-        {/* 1 - izquierda grande */}
+        {/* 1 */}
         <ReviewCard
           title={listReviews[0].title}
           img={listReviews[0].img}
           className="row-span-2 col-start-1 row-start-1"
         />
 
-        {/* 2 - arriba centro */}
+        {/* 2 */}
         <ReviewCard
           title={listReviews[1].title}
           img={listReviews[1].img}
           className="col-start-2 row-start-1"
         />
 
-        {/* 3 - derecha grande */}
+        {/* 3 */}
         <ReviewCard
           title={listReviews[2].title}
           img={listReviews[2].img}
           className="row-span-2 col-start-3 row-start-1"
         />
 
-        {/* 5 - centro grande */}
+        {/* 5 */}
         <ReviewCard
           title={listReviews[4].title}
           img={listReviews[4].img}
           className="row-span-2 col-start-2 row-start-2"
         />
 
-        {/* 4 - abajo izquierda */}
+        {/* 4 */}
         <ReviewCard
           title={listReviews[3].title}
           img={listReviews[3].img}
           className="col-start-1 row-start-3"
         />
 
-        {/* 6 - abajo derecha */}
+        {/* 6 */}
         <ReviewCard
           title={listReviews[5].title}
           img={listReviews[5].img}

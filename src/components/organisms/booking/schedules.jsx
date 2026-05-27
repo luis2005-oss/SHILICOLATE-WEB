@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { MdClose } from "react-icons/md";
 import { createPortal } from "react-dom";
+import { LazyImage } from "../../common/LazyImage";
 
 const GOLD = "#d4af37";
 
@@ -55,9 +56,11 @@ function RecognitionModal({ image, title, isOpen, setIsOpen }) {
           <MdClose className="w-5 h-5" />
         </button>
 
-        <img
+        <LazyImage
           src={image}
           alt={title}
+          width={1600}
+          height={2000}
           className="max-w-full max-h-[90vh] object-contain rounded-lg"
         />
       </div>
@@ -91,11 +94,20 @@ function RecognitionRow({
           onClick={onImageClick}
         >
           <div className="absolute -inset-1 bg-gradient-to-r from-[#d4af37] to-[#c8895a] opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300 blur-lg"></div>
-          <img
+          <LazyImage
             src={image}
             alt={title}
-            className="relative w-full h-auto object-contain rounded-xl shadow-2xl transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-[1deg] group-hover:brightness-75 group-hover:shadow-[0_25px_60px_rgba(212,175,55,0.25)] [filter:sepia(15%)_brightness(0.7)]"
-            loading="lazy"
+            width={900}
+            height={1200}
+            className="
+              relative w-full h-auto object-contain rounded-xl shadow-2xl
+              transition-all duration-700 ease-out
+              group-hover:scale-110
+              group-hover:rotate-[1deg]
+              group-hover:brightness-75
+              group-hover:shadow-[0_25px_60px_rgba(212,175,55,0.25)]
+              [filter:sepia(15%)_brightness(0.7)]
+            "
           />
 
           {/* Hint hover */}
@@ -161,25 +173,25 @@ function Schedules() {
 
   const recognitions = [
     {
-      image: "/RECOGNITION-1.jpg",
+      image: "/RECOGNITION-1.webp",
       title: "Premio Chocoandino (Colombia)",
       description:
         "Distinción otorgada por el mejor licor de cacao otorgado por IILA y FEDECACAO. Un logro que refleja nuestro compromiso con la excelencia y la calidad en cada paso del proceso de producción.",
     },
     {
-      image: "/RECOGNITION-2.png",
+      image: "/RECOGNITION-2.webp",
       title: "Industrias manufactureras",
       description:
         "Premio a la calidad y sabor artesanal en eventos regionales. Reconocimiento que valida nuestras técnicas tradicionales y la dedicación de nuestro equipo en crear chocolates únicos.",
     },
     {
-      image: "/RECOGNITION-3.png",
+      image: "/RECOGNITION-3.webp",
       title: "Buenas prácticas empresariales",
       description:
         "Reconocido otorgado por las buenas prácticas empresariales. Un testimonio de nuestro compromiso con la sostenibilidad, la ética y la responsabilidad social en toda nuestra operación.",
     },
     {
-      image: "/RECOGNITION-4.jpg",
+      image: "/RECOGNITION-4.webp",
       title: "Reconocimiento 4",
       description:
         "Reconocidos por categoría industrial manufactureras referente en chocolate shilico. Posicionándonos como líderes innovadores en la industria chocolatera regional.",

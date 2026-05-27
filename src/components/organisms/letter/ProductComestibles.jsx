@@ -3,8 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { ProductCard } from "../../molecules/letter/ProductCard";
 
 const GOLD = "#d4af37";
-const GOLD_GRAD =
-  "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
+const GOLD_GRAD = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
 const GOLD_LINE = "linear-gradient(to right, #d4af37, #c8895a)";
 
 const filterMap = {
@@ -20,7 +19,7 @@ const products = [
     category: "Shilibombones al 55%",
     performance: "Avellana, Menta, Fresa, Lucuma, Cafe, Maracuyá",
     price: 8,
-    URL: "/SHILIBOMBONES.png",
+    URL: "/SHILIBOMBONES.webp",
     desc: "Bombones artesanales con cacao selecto y rellenas de cremas.",
   },
 
@@ -31,7 +30,7 @@ const products = [
     category: "Chocolate al 70%",
     flavor: "Pecana",
     price: 8,
-    URL: "/CHOCOLARE-70gr-PECANA.png",
+    URL: "/CHOCOLARE-70gr-PECANA.webp",
     desc: "Chocolate artesanal comestible relleno de pecana tostada, elaborado con delicados sabores naturales.",
   },
   {
@@ -41,7 +40,7 @@ const products = [
     category: "Chocolate al 70%",
     flavor: "Blueberry",
     price: 8,
-    URL: "/CHOCOLARE-70gr-BLUEBERRY.png",
+    URL: "/CHOCOLARE-70gr-BLUEBERRY.webp",
     desc: "Chocolate artesanal comestible con relleno de blueberry, elaborado con sabores naturales.",
   },
   {
@@ -51,7 +50,7 @@ const products = [
     category: "Chocolate al 70%",
     flavor: "Aguaymanto",
     price: 8,
-    URL: "/CHOCOLARE-70gr-AGUAYMANTO.png",
+    URL: "/CHOCOLARE-70gr-AGUAYMANTO.webp",
     desc: "Chocolate artesanal comestible con relleno de aguaymanto, elaborado con sabores naturales.",
   },
   {
@@ -61,7 +60,7 @@ const products = [
     category: "Chocolate al 70%",
     flavor: "Cafe",
     price: 8,
-    URL: "/CHOCOLARE-70gr-CAFE.png",
+    URL: "/CHOCOLARE-70gr-CAFE.webp",
     desc: "Chocolate artesanal comestible con relleno de café tostado, elaborado con delicados sabores naturales.",
   },
   {
@@ -71,7 +70,7 @@ const products = [
     category: "Chocolate al 70%",
     flavor: "Almendra",
     price: 8,
-    URL: "/CHOCOLARE-70gr-ALMENDRA.png",
+    URL: "/CHOCOLARE-70gr-ALMENDRA.webp",
     desc: "Chocolate artesanal comestible con relleno de almendras, elaborado con delicados sabores naturales.",
   },
 
@@ -82,7 +81,7 @@ const products = [
     category: "Chocolate al 70%",
     flavor: "Pecana",
     price: 4,
-    URL: "/CHOCOLARE-35gr-PECANA.png",
+    URL: "/CHOCOLARE-35gr-PECANA.webp",
     desc: "Chocolate artesanal comestible relleno de pecana tostada, elaborado con delicados sabores naturales.",
   },
   {
@@ -92,7 +91,7 @@ const products = [
     category: "Chocolate al 70%",
     flavor: "Blueberry",
     price: 4,
-    URL: "/CHOCOLARE-35gr-BLUEBERRY.png",
+    URL: "/CHOCOLARE-35gr-BLUEBERRY.webp",
     desc: "Chocolate artesanal comestible relleno a blueberry, elaborado con sabores naturales.",
   },
   {
@@ -102,7 +101,7 @@ const products = [
     category: "Chocolate al 70%",
     flavor: "Aguaymanto",
     price: 4,
-    URL: "/CHOCOLARE-35gr-AGUAYMANTO.png",
+    URL: "/CHOCOLARE-35gr-AGUAYMANTO.webp",
     desc: "Chocolate artesanal comestible relleno de aguaymanto, elaborado con sabores naturales.",
   },
   {
@@ -112,7 +111,7 @@ const products = [
     category: "Chocolate al 70%",
     flavor: "Cafe",
     price: 4,
-    URL: "/CHOCOLARE-35gr-CAFE.png",
+    URL: "/CHOCOLARE-35gr-CAFE.webp",
     desc: "Chocolate artesanal comestible relleno de café tostado, elaborado con delicados sabores naturales.",
   },
   {
@@ -122,7 +121,7 @@ const products = [
     category: "Chocolate al 70%",
     flavor: "Almendra",
     price: 4,
-    URL: "/CHOCOLARE-35gr-ALMENDRA.png",
+    URL: "/CHOCOLARE-35gr-ALMENDRA.webp",
     desc: "Chocolate artesanal comestible relleno de almendras , elaborado con delicados sabores naturales.",
   },
 
@@ -133,7 +132,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Maracuyá",
     price: 1,
-    URL: "/SHILICOTEJA-MARACUYA.png",
+    URL: "/SHILICOTEJA-MARACUYA.webp",
     desc: "Rellena con mermelada de maracuyá, equilibrio perfecto entre dulzura y acidez.",
   },
   {
@@ -142,7 +141,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Maracumango",
     price: 1,
-    URL: "/SHILICOTEJA-MARACUMAGO.png",
+    URL: "/SHILICOTEJA-MARACUMAGO.webp",
     desc: "Con mermelada de maracuyá y mango, una mezcla tropical de dulzura y frescura.",
   },
   {
@@ -151,7 +150,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Naranja",
     price: 1,
-    URL: "/SHILICOTEJA-NARANJA.png",
+    URL: "/SHILICOTEJA-NARANJA.webp",
     desc: "Con mermelada de naranja, una combinación cítrica de dulzura y acidez.",
   },
   {
@@ -160,7 +159,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Mandarina",
     price: 1,
-    URL: "/SHILICOTEJA-MANDARINA.png",
+    URL: "/SHILICOTEJA-MANDARINA.webp",
     desc: "Rellena con mermelada de mandarina, con un toque cítrico en cada bocado.",
   },
   {
@@ -169,7 +168,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Aguaymanto",
     price: 1,
-    URL: "/SHILICOTEJA-AGUAYMANTO.png",
+    URL: "/SHILICOTEJA-AGUAYMANTO.webp",
     desc: "Rellena con mermelada de aguaymanto, con un ligero toque agridulce.",
   },
   {
@@ -178,7 +177,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Piña",
     price: 1,
-    URL: "/SHILICOTEJA-PINA.png",
+    URL: "/SHILICOTEJA-PINA.webp",
     desc: "Rellena con mermelada de piña, con un sabor tropical y refrescante.",
   },
   {
@@ -187,7 +186,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Limón",
     price: 1,
-    URL: "/SHILICOTEJA-LIMON.png",
+    URL: "/SHILICOTEJA-LIMON.webp",
     desc: "Rellena con mermelada de limón, con un toque cítrico y refrescante.",
   },
   {
@@ -196,7 +195,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Tamarindo",
     price: 1,
-    URL: "/SHILICOTEJA-TAMARINDO.png",
+    URL: "/SHILICOTEJA-TAMARINDO.webp",
     desc: "Rellena con mermelada de tamarindo, con un sabor único y refrescante.",
   },
   {
@@ -205,7 +204,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Pisco",
     price: 1,
-    URL: "/SHILICOTEJA-PISCO.png",
+    URL: "/SHILICOTEJA-PISCO.webp",
     desc: "Rellena con crema de pisco, un delicado toque de licor que resalta el cacao.",
   },
   {
@@ -214,7 +213,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Vino",
     price: 1,
-    URL: "/SHILICOTEJA-VINO.png",
+    URL: "/SHILICOTEJA-VINO.webp",
     desc: "Rellena con vino, un toque de licor que resalta el sabor del chocolate.",
   },
   {
@@ -223,7 +222,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Fresa",
     price: 1,
-    URL: "/SHILICOTEJA-FRESA.png",
+    URL: "/SHILICOTEJA-FRESA.webp",
     desc: "Rellena con mermelada de fresa, con un sabor dulce y refrescante.",
   },
   {
@@ -232,7 +231,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Mora",
     price: 1,
-    URL: "/SHILICOTEJA-MORA.png",
+    URL: "/SHILICOTEJA-MORA.webp",
     desc: "Rellena con mermelada de mora, con un sabor intenso y refrescante.",
   },
   {
@@ -241,7 +240,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Arándano",
     price: 1,
-    URL: "/SHILICOTEJA-ARANDANO.png",
+    URL: "/SHILICOTEJA-ARANDANO.webp",
     desc: "Rellena con mermelada de arándano, con un sabor dulce y refrescante.",
   },
   {
@@ -250,7 +249,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Sauco",
     price: 1,
-    URL: "/SHILICOTEJA-SAUCO.png",
+    URL: "/SHILICOTEJA-SAUCO.webp",
     desc: "Rellena con mermelada de sauco, con un sabor único y refrescante.",
   },
   {
@@ -259,7 +258,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Lúcuma",
     price: 1,
-    URL: "/SHILICOTEJA-LUCUMA.png",
+    URL: "/SHILICOTEJA-LUCUMA.webp",
     desc: "Rellena con crema de lúcuma, un sabor suave que endulza cada bocado.",
   },
   {
@@ -268,7 +267,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Pasas",
     price: 1,
-    URL: "/SHILICOTEJA-PASAS.png",
+    URL: "/SHILICOTEJA-PASAS.webp",
     desc: "Rellena con pasas deshidratadas, un sabor dulce que endulza cada bocado.",
   },
   {
@@ -277,7 +276,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Guindón",
     price: 1,
-    URL: "/SHILICOTEJA-GUINDON.png",
+    URL: "/SHILICOTEJA-GUINDON.webp",
     desc: "Rellena con mermelada de durazno, con un sabor dulce y refrescante.",
   },
   {
@@ -286,7 +285,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Café",
     price: 1,
-    URL: "/SHILICOTEJA-CAFE.png",
+    URL: "/SHILICOTEJA-CAFE.webp",
     desc: "Rellena con mermelada de café, con un sabor tropical y refrescante.",
   },
   {
@@ -295,7 +294,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Pitahaya",
     price: 1,
-    URL: "/SHILICOTEJA-PITAHAYA.png",
+    URL: "/SHILICOTEJA-PITAHAYA.webp",
     desc: "Rellena con mermelada de pitahaya, con un sabor único y refrescante.",
   },
   {
@@ -304,7 +303,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Pecana",
     price: 1,
-    URL: "/SHILICOTEJA-PECANA.png",
+    URL: "/SHILICOTEJA-PECANA.webp",
     desc: "Rellena con mermelada de pecana, con un sabor intenso y refrescante.",
   },
   {
@@ -313,7 +312,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Coco",
     price: 1,
-    URL: "/SHILICOTEJA-COCO.png",
+    URL: "/SHILICOTEJA-COCO.webp",
     desc: "Rellena con mermelada de coco, con un sabor tropical y refrescante.",
   },
   {
@@ -322,7 +321,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Maní",
     price: 1,
-    URL: "/SHILICOTEJA-MANI.png",
+    URL: "/SHILICOTEJA-MANI.webp",
     desc: "Rellena con mermelada de maní, con un sabor intenso y refrescante.",
   },
   {
@@ -331,7 +330,7 @@ const products = [
     category: "Shilicotejas",
     flavor: "Almendra",
     price: 1,
-    URL: "/SHILICOTEJA-ALMENDRA.png",
+    URL: "/SHILICOTEJA-ALMENDRA.webp",
     desc: "Rellena con mermelada de almendra, con un sabor intenso y refrescante.",
   },
 ];

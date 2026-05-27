@@ -16,9 +16,11 @@ function Navbar({ setModalIsOpen, setCartShopOpen, setRegisterIsOpen }) {
         {/* MÓVIL: logo izquierda */}
         <a href="/" className="lg:hidden flex items-center gap-2">
           <img
-            src="/LOGO.png"
+            src="/LOGO.webp"
             alt="Shilicolate"
             className="w-15 h-15 object-contain"
+            loading="eager"
+            decoding="async"
           />
           <span className="font-serif italic text-[0.75rem] tracking-[0.18em] text-[#c8895a]">
             Shilicolate
