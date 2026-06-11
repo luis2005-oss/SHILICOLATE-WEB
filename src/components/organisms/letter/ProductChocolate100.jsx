@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ProductCard } from "../../molecules/letter/ProductCard";
 
 const GOLD = "#d4af37";
@@ -14,7 +14,7 @@ const products = [
     category: "Chocolate en chapa",
     price: 4,
     URL: "/CHOCOLATE-CHAPA.webp",
-    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
+    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural",
   },
   {
     idProduct: 2,
@@ -23,7 +23,7 @@ const products = [
     category: "Chocolate en chapa",
     price: 5,
     URL: "/CHOCOLATE-CHAPA.webp",
-    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
+    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural",
   },
   {
     idProduct: 3,
@@ -32,7 +32,7 @@ const products = [
     category: "Chocolate en chapa",
     price: 7,
     URL: "/CHOCOLATE-CHAPA.webp",
-    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
+    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural",
   },
   {
     idProduct: 4,
@@ -41,7 +41,7 @@ const products = [
     category: "Chocolate en chapa",
     price: 9,
     URL: "/CHOCOLATE-CHAPA.webp",
-    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
+    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural",
   },
   {
     idProduct: 5,
@@ -50,7 +50,7 @@ const products = [
     category: "Chocolate en chapa",
     price: 15,
     URL: "/CHOCOLATE-CHAPA.webp",
-    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
+    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural",
   },
   {
     idProduct: 6,
@@ -59,7 +59,7 @@ const products = [
     category: "Chocolate en chapa",
     price: 18,
     URL: "/CHOCOLATE-CHAPA.webp",
-    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
+    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural",
   },
   {
     idProduct: 7,
@@ -68,7 +68,7 @@ const products = [
     category: "Chocolate en chapa",
     price: 24,
     URL: "/CHOCOLATE-CHAPA.webp",
-    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
+    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural",
   },
   {
     idProduct: 8,
@@ -77,7 +77,7 @@ const products = [
     category: "Chocolate en chapa",
     price: 28,
     URL: "/CHOCOLATE-CHAPA.webp",
-    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
+    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural",
   },
   {
     idProduct: 9,
@@ -86,7 +86,7 @@ const products = [
     category: "Chocolate en chapa",
     price: 30,
     URL: "/CHOCOLATE-CHAPA.webp",
-    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural.",
+    desc: "Elaborado con 100% cacao puro, de sabor intenso y natural",
   },
   {
     idProduct: 10,
@@ -95,7 +95,7 @@ const products = [
     category: "Chocolate en caja",
     price: 8,
     URL: "/CAJA-100.webp",
-    desc: "Cacao intenso, profundo y auténtico para cada momento.",
+    desc: "Cacao intenso, profundo y auténtico para cada momento",
   },
   {
     idProduct: 11,
@@ -104,7 +104,7 @@ const products = [
     category: "Chocolate en caja",
     price: 14,
     URL: "/CAJA-200.webp",
-    desc: "Cacao intenso, profundo y auténtico para cada momento.",
+    desc: "Cacao intenso, profundo y auténtico para cada momento",
   },
   {
     idProduct: 12,
@@ -113,7 +113,8 @@ const products = [
     category: "Chocolate en barra",
     price: 9,
     URL: "/CHOCOLATE-BARRA.webp",
-    desc: "Chocolates artesanales en barra, ideales para compartir o regalar.",
+    desc: "Chocolates artesanales en barra",
+    titleSize: "clamp(1.2rem, 4vw, 2rem)",
   },
   {
     idProduct: 13,
@@ -122,7 +123,12 @@ const products = [
     category: "Chocolate dorado",
     price: 6.8,
     URL: "/CHOCOLATE.webp",
-    desc: "100% cacao artesanal, perfecto para una taza de chocolate caliente.",
+    desc: "100% cacao artesanal",
+
+    titleSize: "clamp(1.1rem, 4vw, 1.5rem)",
+
+    // solo responsive
+    titleMoveYMobile: "-20px",
   },
 ];
 
@@ -134,23 +140,30 @@ const categories = [
   "Chocolate dorado",
 ];
 
-export function ProductChocolate100({ initialCategory = "Todos" }) {
-  const [activeCategory, setActiveCategory] = useState(initialCategory);
-
-  useEffect(() => {
-    setActiveCategory(initialCategory);
-  }, [initialCategory]);
+export function ProductChocolate100({
+  initialCategory = "Todos",
+}) {
+  const [activeCategory, setActiveCategory] =
+    useState(() => initialCategory);
 
   const filteredProducts =
     activeCategory === "Todos"
       ? products
-      : products.filter((p) => p.category === activeCategory);
+      : products.filter(
+          (p) => p.category === activeCategory
+        );
 
-  const groupedProducts = filteredProducts.reduce((acc, product) => {
-    if (!acc[product.category]) acc[product.category] = [];
-    acc[product.category].push(product);
-    return acc;
-  }, {});
+  const groupedProducts = filteredProducts.reduce(
+    (acc, product) => {
+      if (!acc[product.category])
+        acc[product.category] = [];
+
+      acc[product.category].push(product);
+
+      return acc;
+    },
+    {}
+  );
 
   return (
     <>
@@ -162,21 +175,17 @@ export function ProductChocolate100({ initialCategory = "Todos" }) {
             className="font-bold text-[0.74rem] tracking-[0.1em] uppercase px-4 py-1 rounded-[4px] cursor-pointer transition-all duration-200"
             style={
               activeCategory === cat
-                ? { background: GOLD_GRAD, color: "#1a0d08", border: "none" }
+                ? {
+                    background: GOLD_GRAD,
+                    color: "#1a0d08",
+                    border: "none",
+                  }
                 : {
                     background: "transparent",
                     color: "#7a5c45",
                     border: `0.145rem solid ${GOLD}44`,
                   }
             }
-            onMouseEnter={(e) => {
-              if (activeCategory !== cat)
-                e.currentTarget.style.borderColor = GOLD;
-            }}
-            onMouseLeave={(e) => {
-              if (activeCategory !== cat)
-                e.currentTarget.style.borderColor = `${GOLD}44`;
-            }}
           >
             {cat}
           </button>
@@ -184,30 +193,41 @@ export function ProductChocolate100({ initialCategory = "Todos" }) {
       </div>
 
       <div className="space-y-14">
-        {Object.entries(groupedProducts).map(([category, items]) => (
-          <div key={category}>
-            {activeCategory === "Todos" && (
-              <>
-                <h2
-                  className="font-serif font-bold text-[1.65rem] m-0 mb-1"
-                  style={{ color: "#5E2E11" }}
-                >
-                  {category}
-                </h2>
-                <div
-                  className="h-px mb-6"
-                  style={{ background: GOLD_LINE, opacity: 0.4 }}
-                />
-              </>
-            )}
+        {Object.entries(groupedProducts).map(
+          ([category, items]) => (
+            <div key={category}>
+              {activeCategory === "Todos" && (
+                <>
+                  <h2
+                    className="font-serif font-bold text-[1.65rem] m-0 mb-1"
+                    style={{
+                      color: "#5E2E11",
+                    }}
+                  >
+                    {category}
+                  </h2>
 
-            <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-              {items.map((product) => (
-                <ProductCard key={product.idProduct} product={product} />
-              ))}
+                  <div
+                    className="h-px mb-6"
+                    style={{
+                      background: GOLD_LINE,
+                      opacity: 0.4,
+                    }}
+                  />
+                </>
+              )}
+
+              <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                {items.map((product) => (
+                  <ProductCard
+                    key={product.idProduct}
+                    product={product}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     </>
   );

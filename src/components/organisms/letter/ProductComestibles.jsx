@@ -21,6 +21,7 @@ const products = [
     price: 8,
     URL: "/SHILIBOMBONES.webp",
     desc: "Bombones artesanales con cacao selecto y rellenas de cremas.",
+    titleSize: "clamp(1.5rem, 4vw, 2rem)",
   },
 
   {
@@ -52,6 +53,7 @@ const products = [
     price: 8,
     URL: "/CHOCOLARE-70gr-AGUAYMANTO.webp",
     desc: "Chocolate artesanal comestible con relleno de aguaymanto, elaborado con sabores naturales.",
+    titleSize: "clamp(1.5rem, 4vw, 2.4rem)",
   },
   {
     idProduct: 18,
@@ -103,6 +105,7 @@ const products = [
     price: 4,
     URL: "/CHOCOLARE-35gr-AGUAYMANTO.webp",
     desc: "Chocolate artesanal comestible relleno de aguaymanto, elaborado con sabores naturales.",
+    titleSize: "clamp(1.5rem, 4vw, 2.4rem)",
   },
   {
     idProduct: 23,
@@ -143,6 +146,7 @@ const products = [
     price: 1,
     URL: "/SHILICOTEJA-MARACUMAGO.webp",
     desc: "Con mermelada de maracuyá y mango, una mezcla tropical de dulzura y frescura.",
+    titleSize: "clamp(1.5rem, 4vw, 2.1rem)",
   },
   {
     idProduct: 27,
@@ -170,6 +174,7 @@ const products = [
     price: 1,
     URL: "/SHILICOTEJA-AGUAYMANTO.webp",
     desc: "Rellena con mermelada de aguaymanto, con un ligero toque agridulce.",
+    titleSize: "clamp(1.5rem, 4vw, 2.4rem)",
   },
   {
     idProduct: 30,

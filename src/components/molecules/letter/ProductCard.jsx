@@ -3,14 +3,19 @@ import { useCart } from "../../../context/CartContext";
 import { formatPrice } from "../../utils/formatPrice";
 
 const GOLD = "#d4af37";
-const GOLD_GRAD = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
+const GOLD_GRAD =
+  "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
+
 const TITLE_FONT = "'Montserrat', 'Helvetica Neue', Arial, sans-serif";
+
 const BODY_FONT = "'Inter', 'Segoe UI', Roboto, sans-serif";
 
 export function ProductCard({ product }) {
   const [flipped, setFlipped] = useState(false);
   const { addToCart } = useCart();
+
   const handleFrontClick = () => setFlipped(true);
+
   const handleBackClick = (e) => {
     e.stopPropagation();
     setFlipped(false);
@@ -33,9 +38,7 @@ export function ProductCard({ product }) {
           height: "100%",
           transformStyle: "preserve-3d",
           transition: "transform 0.55s ease",
-          transform: flipped
-            ? "rotateY(180deg)"
-            : "rotateY(0deg)",
+          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
         {/* ───────── FRENTE ───────── */}
@@ -46,15 +49,14 @@ export function ProductCard({ product }) {
             position: "absolute",
             inset: 0,
             borderRadius: "1rem",
-            background:
-              "linear-gradient(145deg, #1A0D08 5%, #5E2E11 100%)",
+            background: "linear-gradient(145deg, #1A0D08 5%, #5E2E11 100%)",
             border: `0.5px solid ${GOLD}22`,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            gap: "0.75rem",
-            padding: "1rem",
+            gap: "0.1rem",
+            padding: "0.4rem",
             overflow: "hidden",
             cursor: "pointer",
           }}
@@ -87,7 +89,7 @@ export function ProductCard({ product }) {
             }}
           />
 
-          {/* IMAGEN OPTIMIZADA */}
+          {/* IMAGEN */}
           <img
             src={product.URL}
             alt={product.name}
@@ -96,27 +98,38 @@ export function ProductCard({ product }) {
             draggable="false"
             style={{
               width: "100%",
-              maxWidth: "220px",
-              height: "220px",
+              maxWidth: "clamp(140px, 50vw, 220px)",
+              height: "clamp(140px, 50vw, 220px)",
               objectFit: "contain",
-              willChange: "transform",
+              transform: "translateY(-8px)",
+              marginBottom: "-18px",
+              flexShrink: 0,
               userSelect: "none",
+              willChange: "transform",
             }}
           />
 
           {/* TITULO */}
           <p
             style={{
-              fontFamily: TITLE_FONT,
-              fontSize: "clamp(0.85rem, 3vw, 1.3rem)",
+              fontFamily: "fangsong",
+              fontSize: product.titleSize || "clamp(1.7rem, 4vw, 2.5rem)",
               fontWeight: 700,
               background: GOLD_GRAD,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
               textAlign: "center",
-              lineHeight: 1.3,
-              margin: 0,
+              lineHeight: 1.2,
+              width: "92%",
+              overflow: "hidden",
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              margin:
+                window.innerWidth <= 768
+                  ? `${product.titleMoveYMobile || "-2px"} 0 0`
+                  : "-2px 0 0",
             }}
           >
             {product.name}
@@ -145,7 +158,6 @@ export function ProductCard({ product }) {
             cursor: "pointer",
           }}
         >
-          {/* esquina */}
           <span
             style={{
               position: "absolute",
@@ -172,7 +184,6 @@ export function ProductCard({ product }) {
             }}
           />
 
-          {/* PERFORMANCE */}
           <p
             style={{
               fontFamily: TITLE_FONT,
@@ -195,7 +206,6 @@ export function ProductCard({ product }) {
             }}
           />
 
-          {/* DESCRIPCIÓN */}
           <p
             style={{
               fontFamily: BODY_FONT,
@@ -213,7 +223,6 @@ export function ProductCard({ product }) {
             {product.desc}
           </p>
 
-          {/* PRECIO */}
           <p
             style={{
               fontFamily: TITLE_FONT,
@@ -229,7 +238,6 @@ export function ProductCard({ product }) {
             {formatPrice(product.price)}
           </p>
 
-          {/* BOTÓN */}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -248,14 +256,14 @@ export function ProductCard({ product }) {
               borderRadius: "4px",
               padding: "7px 12px",
               cursor: "pointer",
-              transition: "opacity 0.2s",
+              transition: "opacity .2s",
             }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.opacity = "0.88")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.opacity = "1")
-            }
+            onMouseEnter={(e) => {
+              e.currentTarget.style.opacity = "0.88";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.opacity = "1";
+            }}
           >
             Agregar al carrito
           </button>
