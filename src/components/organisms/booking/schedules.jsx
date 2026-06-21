@@ -77,7 +77,6 @@ function RecognitionRow({
   num,
   isReversed,
   onImageClick,
-  label = "RECONOCIMIENTO",
 }) {
   return (
     <div
@@ -137,15 +136,24 @@ function RecognitionRow({
       <div className="w-full md:w-1/2 flex flex-col gap-6">
         <div>
           <span
-            className="inline-block font-serif italic text-[0.7rem] tracking-[0.15em] mb-3 opacity-85"
+            className="inline-block font-serif italic text-[2.5rem] tracking-[0.15em] mb-3 opacity-85"
             style={{ color: GOLD }}
           >
             — {num}
           </span>
           <h3 className="font-serif font-bold text-[clamp(1.5rem,3vw,2.2rem)] text-[#f5e8d5] leading-tight mb-4">
-            {title}
+            {title.includes(" - ") ? (
+              <>
+                {title.split(" - ")[0]} —{" "}
+                <span style={{ color: GOLD }} className="italic font-normal">
+                  {title.split(" - ")[1]}
+                </span>
+              </>
+            ) : (
+              title
+            )}
           </h3>
-          <p className="font-serif font-light text-[1rem] text-[#c4a98a] leading-relaxed">
+          <p className="font-serif font-light text-[1.4rem] text-[#c4a98a] leading-relaxed">
             {description}
           </p>
         </div>
@@ -153,14 +161,11 @@ function RecognitionRow({
         {/* Línea decorativa */}
         <div className="flex items-center gap-3 pt-4">
           <div
-            className="h-[2px] w-12 rounded-full"
+            className="h-[2px] w-110 rounded-full"
             style={{
               background: "linear-gradient(to right, #d4af37, #c8895a)",
             }}
           />
-          <span className="font-serif text-[0.8rem] text-[#c8895a] tracking-[0.1em]">
-            {label}
-          </span>
         </div>
       </div>
     </div>
@@ -174,25 +179,25 @@ function Schedules() {
   const recognitions = [
     {
       image: "/RECOGNITION-1.webp",
-      title: "Premio Chocoandino (Colombia)",
+      title: "Premio Chocoandino (Colombia) - 2010",
       description:
         "Distinción otorgada por el mejor licor de cacao otorgado por IILA y FEDECACAO. Un logro que refleja nuestro compromiso con la excelencia y la calidad en cada paso del proceso de producción.",
     },
     {
       image: "/RECOGNITION-2.webp",
-      title: "Industrias manufactureras",
+      title: `Industrias Manufactureras - "Gobierno Regional de Cajamarca"`,
       description:
-        "Premio a la calidad y sabor artesanal en eventos regionales. Reconocimiento que valida nuestras técnicas tradicionales y la dedicación de nuestro equipo en crear chocolates únicos.",
+        "Reconocimiento que valida nuestras técnicas tradicionales y la dedicación de nuestro equipo en crear chocolates únicos.",
     },
     {
       image: "/RECOGNITION-3.webp",
-      title: "Buenas prácticas empresariales",
+      title: "Buenas Prácticas Empresariales - 2010",
       description:
         "Reconocido otorgado por las buenas prácticas empresariales. Un testimonio de nuestro compromiso con la sostenibilidad, la ética y la responsabilidad social en toda nuestra operación.",
     },
     {
       image: "/RECOGNITION-4.webp",
-      title: "Reconocimiento 4",
+      title: "Reconocimiento ",
       description:
         "Reconocidos por categoría industrial manufactureras referente en chocolate shilico. Posicionándonos como líderes innovadores en la industria chocolatera regional.",
     },
@@ -215,14 +220,8 @@ function Schedules() {
           data-aos="fade-down"
           data-aos-duration="900"
         >
-          <span
-            className="inline-block mb-4 font-serif text-[11px] tracking-[0.25em] uppercase pb-1"
-            style={{ color: GOLD, borderBottom: `0.5px solid ${GOLD}55` }}
-          >
-            Logros que nos enorgullecen
-          </span>
           <h2 className="font-serif font-bold text-[clamp(2rem,5vw,3.5rem)] text-[#f5e8d5] leading-tight m-0">
-            Nuestros{" "}
+            Logros que nos{" "}
             <em
               className="italic font-normal"
               style={{
@@ -232,10 +231,10 @@ function Schedules() {
                 backgroundClip: "text",
               }}
             >
-              reconocimientos
+              enorgullecen
             </em>
           </h2>
-          <p className="font-serif font-light text-[1rem] text-[#c4a98a] max-w-md mx-auto mt-4 leading-[1.7]">
+          <p className="font-serif font-light text-[1.5rem] text-[#c4a98a] max-w-2xl mx-auto mt-4 leading-[1.7]">
             Distinciones que reflejan nuestra pasión, dedicación y amor por el
             chocolate.
           </p>
@@ -250,7 +249,6 @@ function Schedules() {
               num={String(index + 1).padStart(2, "0")}
               isReversed={index % 2 !== 0}
               onImageClick={() => handleImageClick(index)}
-              label={index === 3 ? "PREMIO" : "RECONOCIMIENTO"}
             />
           ))}
         </div>

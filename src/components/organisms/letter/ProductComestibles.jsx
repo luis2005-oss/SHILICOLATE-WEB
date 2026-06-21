@@ -3,7 +3,8 @@ import { useSearchParams } from "react-router-dom";
 import { ProductCard } from "../../molecules/letter/ProductCard";
 
 const GOLD = "#d4af37";
-const GOLD_GRAD = "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
+const GOLD_GRAD =
+  "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
 const GOLD_LINE = "linear-gradient(to right, #d4af37, #c8895a)";
 
 const filterMap = {
@@ -127,7 +128,6 @@ const products = [
     URL: "/CHOCOLARE-35gr-ALMENDRA.webp",
     desc: "Chocolate artesanal comestible relleno de almendras , elaborado con delicados sabores naturales.",
   },
-
 
   {
     idProduct: 25,
@@ -343,7 +343,10 @@ const products = [
 const categories = [
   { label: "Todos", value: "Todos" },
   { label: "Shilibombones al 55%", value: "Shilibombones al 55%" },
-  { label: "Chocolate al 70%", value: "Chocolate al 70%" },
+  {
+    label: "Chocolate al 70%",
+    value: "Chocolate al 70%",
+  },
   { label: "Shilicotejas", value: "Shilicotejas" },
 ];
 
@@ -435,10 +438,13 @@ export function ProductComestibles() {
             {effectiveCategory === "Todos" && (
               <>
                 <h2
-                  className="font-sans font-bold text-[1.65rem] m-0 mb-1 tracking-tight"
+                  className="font-sans font-bold text-[2.2rem] m-0 mb-1 tracking-tight"
                   style={{ color: "#5E2E11" }}
                 >
-                  {category}
+                  {/* Si la categoría es el chocolate, pintamos el texto largo; si no, el original */}
+                  {category === "Chocolate al 70%"
+                    ? "Chocolate al 70% (Frutas Deshidratadas)"
+                    : category}
                 </h2>
                 <div
                   className="h-px mb-6"

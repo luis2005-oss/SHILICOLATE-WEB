@@ -43,13 +43,11 @@ function HistoryBlock() {
     >
       {/* Izquierda — oscura */}
       <div className="bg-[#1a0d08] p-10 flex flex-col gap-4">
-        <span className="font-serif text-[11px] tracking-[0.22em] uppercase text-[#c8895a]">
+        <span className="font-serif text-[25px] tracking-[0.22em] uppercase text-[#c8895a] font-bold">
           Nuestra historia
         </span>
         <h3 className="font-serif font-bold text-[1.5rem] text-[#f5e8d5] leading-snug">
-          Shilicolate,
-          <br />
-          el sabor de una tradición
+          "Orgullo y Tradición de mi Tierra Celendín.""
         </h3>
         <div className="w-8 h-px bg-[#c8895a] opacity-50" />
         <p className="font-serif font-light text-[0.9rem] text-[#c4a98a] leading-[1.8]">
@@ -59,31 +57,38 @@ function HistoryBlock() {
           elaboración y comercialización de productos derivados del cacao.{" "}
           <br />
           <br />
-          Tiene como marca registrada "SHILICOLATE – El Verdadero Sabor Del
-          Chocolate Shilico", teniendo como dueña la Señora Jesús Haydee Briones
-          Sánchez y Representante Legal a su hija Lourdes Jacquelin Alva
-          Briones. <br />
+          Tiene como marca registrada SHILICOLATE – "El Verdadero Sabor Del
+          Chocolate Shilico”, teniendo como dueña la Señora Jesús H. Briones
+          S.
           <br />
-          Actualmente la empresa, su principal producto es el chocolate al 100%
-          y sus derivados: chocolate al 70%, Shilibombones, Chocotejas,
-          Shilicoctel. La cual comercializa dentro de la provincia de Celendín,
+          <br />
+          El nombre de SHILICOLATE, nace con ayuda de HAMILTON un joven del
+          estado de Texas (Estados Unidos), en ese tiempo llego como voluntario
+          del programa de Cuerpo De Paz; ayudando así en el nombre, proponiendo
+          de cómo les dicen a los celendinos (SHILICOS), y fusionado con la
+          palabra CHOCOLATE saldría el nombre de “SHILICOLATE”.
+          <br />
+          <br />
+          Actualmente la empresa, su principal producto es el Chocolate al 100%
+          y sus derivados: Chocolate al 70%, Shilibombones, Shilicotejas. 
+          La cual comercializa dentro de la provincia de Celendín,
           Región Cajamarca, y Costa Central.
+          <br />
         </p>
       </div>
 
       {/* Derecha — clara */}
       <div className="bg-[#fdf6ee] p-10 flex flex-col gap-4 border-t md:border-t-0 md:border-l border-[#e8d8c4]">
-        <span className="font-serif text-[11px] tracking-[0.22em] uppercase text-[#c8895a]">
+        <span className="font-serif text-[25px] tracking-[0.22em] uppercase text-[#c8895a] font-bold">
           Nuestros valores
         </span>
         <h3 className="font-serif font-bold text-[1.5rem] text-[#1a0d08] leading-snug">
-          Calidad que respeta la naturaleza
-          <br />y nuestra identidad.
+          "Tradición, pureza y respeto en cada detalle."
         </h3>
-        <div className="w-8 h-px bg-[#c8895a] opacity-50" />
-        <div className="flex flex-col gap-5 font-serif text-[0.9rem] text-[#7a5c45] leading-[1.8]">
+        <div className="w-8 h-px bg-[#1a0d08] opacity-50" />
+        <div className="flex flex-col gap-5 font-serif text-[0.9rem] text-[#372619] leading-[1.8]">
           <p>
-            <strong>Calidad</strong>
+            <strong className="text-[1.4rem] text-[#c8895a] font-light">Calidad</strong>
             <br />
             En Shilicolate, la calidad no es solo un estándar, es una promesa.
             Seleccionamos cuidadosamente el mejor cacao de la región y
@@ -91,21 +96,21 @@ function HistoryBlock() {
             textura y frescura.
           </p>
           <p>
-            <strong>Innovación</strong>
+            <strong className="text-[1.4rem] text-[#c8895a] font-light">Innovación</strong>
             <br />
-            Creamos productos únicos como Shilibombones y chocolates al 70% y
-            50%. Experimentamos constantemente con nuevas combinaciones,
+            Creamos productos únicos como Shilibombones, Shilicotejas y Chocolates al 70%. 
+            Experimentamos constantemente con nuevas combinaciones,
             texturas y formatos que sorprenden.
           </p>
           <p>
-            <strong>Compromiso con la comunidad</strong>
+            <strong className="text-[1.4rem] text-[#c8895a] font-light">Compromiso con la comunidad</strong>
             <br />
             Trabajamos directamente con agricultores locales, promoviendo
             prácticas sostenibles y generando oportunidades para jóvenes y
             mujeres de la zona.
           </p>
           <p>
-            <strong>Pasión por el chocolate</strong>
+            <strong className="text-[1.4rem] text-[#c8895a] font-light">Pasión por el chocolate</strong>
             <br />
             El chocolate es nuestro arte e inspiración. Cada creación nace del
             amor por el cacao y el deseo de compartirlo con el mundo.
@@ -133,8 +138,10 @@ function AboutUsGallerySection() {
         data-aos-duration="900"
       >
         <h2 className="font-serif font-bold text-[clamp(1.8rem,3.5vw,2.8rem)] text-[#1a0d08] leading-tight">
-          Un espacio{" "}
-          <em className="italic font-normal text-[#c8895a]">hecho para ti</em>
+          Un espacio del{" "}
+          <em className="italic font-normal text-[#c8895a]">
+            Verdadero Chocolate Shilico
+          </em>
         </h2>
       </div>
 

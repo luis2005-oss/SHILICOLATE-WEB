@@ -5,7 +5,7 @@ const GOLD_GRADIENT =
   "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
 const GOLD_LINE = "linear-gradient(to right, #d4af37, #c8895a)";
 
-function InfoCard({ title, text, tags }) {
+function InfoCard({ title, text}) {
   return (
     <div
       className="bg-[rgba(26,13,8,0.6)] rounded-lg p-8 flex flex-col gap-4 relative overflow-hidden"
@@ -28,7 +28,7 @@ function InfoCard({ title, text, tags }) {
       />
 
       <span
-        className="font-serif text-[11px] tracking-[0.22em] uppercase"
+        className="font-serif text-[30px] tracking-[0.22em] uppercase"
         style={{ color: GOLD }}
       >
         {title}
@@ -39,19 +39,9 @@ function InfoCard({ title, text, tags }) {
           background: `linear-gradient(to right, ${GOLD}, transparent)`,
         }}
       />
-      <p className="font-serif font-light text-[0.92rem] text-[#c4a98a] leading-[1.75] m-0">
+      <p className="font-serif font-light text-[1.1rem] text-[#c4a98a] leading-[1.75] m-0">
         {text}
       </p>
-      <span
-        className="inline-block w-fit font-serif text-[0.75rem] tracking-wide px-3 py-1 rounded-[1px]"
-        style={{
-          background: `linear-gradient(135deg,${GOLD}22,#c8895a22)`,
-          color: GOLD,
-          border: `0.5px solid ${GOLD}44`,
-        }}
-      >
-        {tags}
-      </span>
     </div>
   );
 }

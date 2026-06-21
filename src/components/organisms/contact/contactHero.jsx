@@ -180,8 +180,8 @@ function ContactHero() {
         <p
           className="
             font-serif font-light
-            text-[1.05rem]
-            text-[#c4a98a]
+            text-[2rem]
+            text-[#c6baad]
             leading-[1.8]
             max-w-lg
             m-0

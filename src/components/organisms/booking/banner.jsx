@@ -11,19 +11,14 @@ function Article({ ...props }) {
         px-8 sm:px-12 lg:px-20
         max-w-2xl
         pt-24 md:pt-0
+        ml-15
       "
       {...props}
     >
       {/* Eyebrow dorado */}
-      <span
-        className="inline-block mb-6 w-fit font-serif text-[11px] tracking-[0.25em] uppercase pb-1"
-        style={{ color: GOLD, borderBottom: `0.5px solid ${GOLD}55` }}
-      >
-        Shilicolate · Distinción
-      </span>
 
       {/* Título */}
-      <h1 className="font-serif font-bold leading-tight tracking-tight text-[clamp(2.2rem,4.5vw,3.5rem)] text-[#f5e8d5] m-0">
+      <h1 className="font-serif font-bold leading-tight tracking-tight text-[clamp(2.2rem,4.5vw,4rem)] text-[#f5e8d5] m-0">
         Nuestros{" "}
         <em
           className="italic font-normal"
@@ -34,7 +29,7 @@ function Article({ ...props }) {
             backgroundClip: "text",
           }}
         >
-          reconocimientos
+          Reconocimientos
         </em>
       </h1>
 
@@ -45,9 +40,9 @@ function Article({ ...props }) {
       />
 
       {/* Texto */}
-      <p className="font-serif font-light text-[1rem] text-[#c4a98a] leading-[1.75] max-w-md m-0">
-        Reconocimientos que respaldan nuestra calidad, esfuerzo
-        y compromiso con cada cliente.
+      <p className="font-serif font-light text-[1.3rem] text-[#c4a98a] leading-[1.75] max-w-md m-0 ml-2.5">
+        Que respaldan nuestra calidad, esfuerzo
+        y compromiso con cada uno de Nuestros Clientes.
       </p>
     </article>
   );

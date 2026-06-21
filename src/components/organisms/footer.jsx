@@ -41,17 +41,15 @@ const navLinks = [
 ];
 
 const chocolate100 = [
-  { text: "Todos", href: "/chocolate100" },
   { text: "Chocolate en chapa", href: "/chocolate100?filter=chapa" },
   { text: "Chocolate en caja", href: "/chocolate100?filter=caja" },
   { text: "Chocolate en barra", href: "/chocolate100?filter=barra" },
-  { text: "Chocolate", href: "/chocolate100?filter=chocolate" },
+  { text: "Chocolate dorado", href: "/chocolate100?filter=dorado" },
 ];
 
 const comestibles = [
-  { text: "Todos", href: "/comestibles" },
   { text: "Shilibombones", href: "/comestibles?filter=shilibombones" },
-  { text: "Chocolate comestible", href: "/comestibles?filter=comestible" },
+  { text: "Chocolate al 70%", href: "/comestibles?filter=comestible" },
   { text: "Shilicotejas", href: "/comestibles?filter=shilicotejas" },
 ];
 
@@ -66,7 +64,7 @@ function FooterCol({ title, children }) {
   return (
     <div className="flex flex-col">
       <p
-        className="text-[10px] tracking-[0.22em] uppercase text-[#c8895a] opacity-80 mb-5"
+        className="text-[18px] text-bold tracking-[0.22em] uppercase text-[#d89f73] opacity-80 mb-5"
         style={{ fontFamily: "'Montserrat', sans-serif" }}
       >
         {title}
@@ -79,7 +77,7 @@ function FooterCol({ title, children }) {
 function FooterSubTitle({ children }) {
   return (
     <p
-      className="text-[11px] mt-2 mb-2 text-[#f5e8d5] font-semibold"
+      className="text-[18px] mt-2 mb-2 text-[#f5e8d5] font-semibold"
       style={{ fontFamily: "'Montserrat', sans-serif" }}
     >
       {children}
@@ -102,20 +100,11 @@ function Footer() {
               <img
                 src="/LOGO.webp"
                 alt="Shilicolate"
-                className="w-25 h-auto object-contain"
+                className="w-45 h-auto object-contain"
                 loading="lazy"
                 decoding="async"
               />
 
-              <span
-                className="font-bold text-[1.3rem] text-[#f5e8d5]"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
-              >
-                Shili
-                <em className="font-normal text-[#c8895a] not-italic">
-                  colate
-                </em>
-              </span>
             </Link>
 
             <p className="font-light text-[0.88rem] text-[#7a5c45] leading-[1.7] max-w-[240px]">
@@ -130,9 +119,9 @@ function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-[34px] h-[34px] border border-[#c8895a33] flex items-center justify-center text-[#c4a98a] hover:bg-[#c8895a] hover:text-[#1a0d08] transition"
+                  className="w-[48px] h-[48px] border border-[#c8895a33] flex items-center justify-center text-[#c4a98a] hover:bg-[#c8895a] hover:text-[#1a0d08] transition"
                 >
-                  <Icon size={14} />
+                  <Icon size={22} />
                 </a>
               ))}
             </div>
@@ -144,7 +133,7 @@ function Footer() {
               <Link
                 key={href}
                 to={href}
-                className="text-[#c4a98a] py-1.5 block hover:text-[#f5e8d5]"
+                className="text-[#c4a98a] py-1.5 block hover:text-[#f5e8d5] "
               >
                 {text}
               </Link>

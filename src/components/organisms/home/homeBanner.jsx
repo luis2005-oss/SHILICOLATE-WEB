@@ -5,8 +5,7 @@ const GOLD = "#d4af37";
 const GOLD_GRADIENT =
   "linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #c8895a 100%)";
 
-const GOLD_LINE =
-  "linear-gradient(to right, #d4af37, #c8895a)";
+const GOLD_LINE = "linear-gradient(to right, #d4af37, #c8895a)";
 
 function HomeBanner() {
   return (
@@ -109,24 +108,24 @@ function HomeBanner() {
         </h1>
 
         <div
-          className="w-14 h-px my-6 opacity-80"
+          className="w-40 sm:w-56 md:w-72 lg:w-103 h-px my-6 opacity-80"
           style={{ background: GOLD_LINE }}
         />
 
         <p
           className="
             font-serif font-light
-            text-[1.05rem]
+            text-[1.08rem]
             leading-[1.75]
             text-[#c4a98a]
             max-w-md mb-10
           "
         >
-          Una experiencia llena de sabor y calidez.
-          Shilibonbones, chocotejas,
-          chocolate en chapa y chocolates en caja —
-          elaborados para despertar tus sentidos
-          y regalarte un momento especial.
+          Celendín, tierra reconocida internacionalmente por el Sombrero de Paja
+          Toquilla y por su Chocolate. En ese escenario nace Shilicolate, una
+          marca que rescata la Calidad del Chocolate de nuestra Zona, transformado
+          artesanalmente para ofrecer El verdadero Sabor del Chocolate shilico.
+          Contamos con una variedad de productos por descubrir ✦✦✦
         </p>
 
         <BannerButtons />

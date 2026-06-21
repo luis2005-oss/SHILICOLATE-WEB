@@ -11,7 +11,7 @@ const filterMap = {
   chapa: "Chocolate en chapa",
   caja: "Chocolate en caja",
   barra: "Chocolate en barra",
-  chocolate: "Chocolate",
+  dorado: "Chocolate dorado",
 };
 
 export const Chocolate100Page = () => {
@@ -23,7 +23,7 @@ export const Chocolate100Page = () => {
       <div className="min-h-screen bg-[#fdf6ee] px-4 pt-32 pb-16 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto mb-10">
           <h1
-            className="font-serif font-bold text-[clamp(2rem,4vw,3rem)] m-0 mb-2 leading-tight"
+            className="font-serif font-bold text-[clamp(3rem,4.5vw,4rem)] m-0 mb-2 leading-tight"
             style={{
               background: GOLD_GRAD,
               WebkitBackgroundClip: "text",
@@ -31,9 +31,9 @@ export const Chocolate100Page = () => {
               backgroundClip: "text",
             }}
           >
-            Chocolates al 100%
+            Chocolates al 100% Cacao
           </h1>
-          <div className="flex items-center gap-4 mt-3 w-[81%] sm:w-[43%] md:w-full max-w-[29rem] px-2 sm:px-0">
+          <div className="flex items-center gap-4 mt-3 w-[81%] sm:w-[43%] md:w-full max-w-[52rem] px-2 sm:px-0">
             <div className="flex-1 h-[1px] opacity-60" style={{ background: GOLD_LINE }} />
             <div className="w-2 h-2 flex-shrink-0" style={{ background: GOLD, transform: "rotate(45deg)", opacity: 0.7,}} />
             <div className="flex-1 h-[1px] opacity-60" style={{ background: `linear-gradient(to left, ${GOLD}, #c8895a)`, }} /> </div>

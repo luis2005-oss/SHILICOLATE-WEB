@@ -187,9 +187,9 @@ export function ProductCard({ product }) {
           <p
             style={{
               fontFamily: TITLE_FONT,
-              fontSize: "clamp(0.75rem, 2vw, 1rem)",
+              fontSize: "clamp(0.65rem, 1.6vw, 1.5rem)",
               fontWeight: 700,
-              color: "#1a0d08",
+              color: "#3A1A0C",
               lineHeight: 1.3,
               margin: 0,
             }}
@@ -208,31 +208,15 @@ export function ProductCard({ product }) {
 
           <p
             style={{
-              fontFamily: BODY_FONT,
-              fontSize: "clamp(0.80rem, 1.7vw, 1rem)",
-              fontWeight: 400,
-              color: "#7a5c45",
-              lineHeight: 1.5,
-              margin: 0,
-              overflow: "hidden",
-              display: "-webkit-box",
-              WebkitLineClamp: 4,
-              WebkitBoxOrient: "vertical",
-            }}
-          >
-            {product.desc}
-          </p>
-
-          <p
-            style={{
               fontFamily: TITLE_FONT,
-              fontSize: "clamp(1.1rem, 3vw, 1.5rem)",
+              fontSize: "clamp(1.1rem, 3vw, 2.5rem)",
               fontWeight: 700,
               margin: 0,
               background: GOLD_GRAD,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
+              marginBottom: "1.5rem",
             }}
           >
             {formatPrice(product.price)}

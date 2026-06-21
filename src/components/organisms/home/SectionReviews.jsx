@@ -67,21 +67,21 @@ function ReviewCard({ title, img, className = "" }) {
 
 function Reviews() {
   const listReviews = [
-    { id: 1, title: "Tradición Shilicolate", img: "/REVIEW-3.webp" },
-    { id: 2, title: "Ambiente cálido", img: "/REVIEW-4.webp" },
-    { id: 3, title: "Chocolates en chapa", img: "/REVIEW-2.webp" },
-    { id: 4, title: "Cacao seleccionado", img: "/REVIEW-1.webp" },
-    { id: 5, title: "Chocolates hechos para disfrutar", img: "/REVIEW-5.webp" },
-    { id: 6, title: "Momentos especiales", img: "/REVIEW-6.webp" },
+    { id: 1, img: "/REVIEW-3.webp" },
+    { id: 2, img: "/REVIEW-4.webp" },
+    { id: 3, img: "/REVIEW-2.webp" },
+    { id: 4, img: "/REVIEW-1.webp" },
+    { id: 5, img: "/REVIEW-5.webp" },
+    { id: 6, img: "/REVIEW-6.webp" },
   ];
 
   return (
     <section className="bg-[#1a0d08] w-full py-20 px-4">
       <div className="text-center mb-14">
         <h2 className="font-serif text-4xl text-[#f5e8d5]">
-          Cada foto, <em className="text-[#c8895a]">un sabor</em>
+            Cada detalle, <em className="text-[#c8895a]">una experiencia</em>
           <br />
-          que recordar
+            para recordar
         </h2>
       </div>
 
@@ -90,7 +90,6 @@ function Reviews() {
         {listReviews.map((review) => (
           <ReviewCard
             key={review.id}
-            title={review.title}
             img={review.img}
             className="h-[180px]"
           />
@@ -107,42 +106,36 @@ function Reviews() {
       >
         {/* 1 */}
         <ReviewCard
-          title={listReviews[0].title}
           img={listReviews[0].img}
           className="row-span-2 col-start-1 row-start-1"
         />
 
         {/* 2 */}
         <ReviewCard
-          title={listReviews[1].title}
           img={listReviews[1].img}
           className="col-start-2 row-start-1"
         />
 
         {/* 3 */}
         <ReviewCard
-          title={listReviews[2].title}
           img={listReviews[2].img}
           className="row-span-2 col-start-3 row-start-1"
         />
 
         {/* 5 */}
         <ReviewCard
-          title={listReviews[4].title}
           img={listReviews[4].img}
           className="row-span-2 col-start-2 row-start-2"
         />
 
         {/* 4 */}
         <ReviewCard
-          title={listReviews[3].title}
           img={listReviews[3].img}
           className="col-start-1 row-start-3"
         />
 
         {/* 6 */}
         <ReviewCard
-          title={listReviews[5].title}
           img={listReviews[5].img}
           className="col-start-3 row-start-3"
         />
