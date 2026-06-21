@@ -197,7 +197,7 @@ function Schedules() {
     },
     {
       image: "/RECOGNITION-4.webp",
-      title: "Presente",
+      title: "Presente - 2010",
       description:
         "Presente de CARE PERU por un trabajo conjunto, desde los PROVEEDORES hasta la elaboracion del CHOCOLATE.",
     },
