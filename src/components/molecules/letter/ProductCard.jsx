@@ -187,7 +187,7 @@ export function ProductCard({ product }) {
           <p
             style={{
               fontFamily: TITLE_FONT,
-              fontSize: "clamp(1.3rem, 1.6vw, 1.5rem)",
+              fontSize: "clamp(1.5rem, 1.6vw, 1.5rem)",
               fontWeight: 700,
               color: "#3A1A0C",
               lineHeight: 1.3,
@@ -209,7 +209,7 @@ export function ProductCard({ product }) {
           <p
             style={{
               fontFamily: TITLE_FONT,
-              fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
+              fontSize: "clamp(2.1rem, 3vw, 2.5rem)",
               fontWeight: 700,
               margin: 0,
               background: GOLD_GRAD,
