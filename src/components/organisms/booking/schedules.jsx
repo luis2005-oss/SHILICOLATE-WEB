@@ -197,9 +197,9 @@ function Schedules() {
     },
     {
       image: "/RECOGNITION-4.webp",
-      title: "Reconocimiento ",
+      title: "Presente",
       description:
-        "Reconocidos por categoría industrial manufactureras referente en chocolate shilico. Posicionándonos como líderes innovadores en la industria chocolatera regional.",
+        "Presente de CARE PERU por un trabajo conjunto, desde los PROVEEDORES hasta la elaboracion del CHOCOLATE.",
     },
   ];
 
