@@ -193,7 +193,7 @@ function Schedules() {
       image: "/RECOGNITION-3.webp",
       title: "Buenas Prácticas Empresariales - 2010",
       description:
-        "Reconocido otorgado por las buenas prácticas empresariales. Un testimonio de nuestro compromiso con la sostenibilidad, la ética y la responsabilidad social en toda nuestra operación.",
+        "Reconocimiento otorgado por las buenas prácticas empresariales. Un testimonio de nuestro compromiso con la sostenibilidad, la ética y la responsabilidad social en toda nuestra operación.",
     },
     {
       image: "/RECOGNITION-4.webp",

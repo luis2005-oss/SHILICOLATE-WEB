@@ -14,7 +14,8 @@ function SpecialMoment({
       {/* Contenedor interno con max-width */}
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-0">
         {/* Imagen - 50% */}
-        <div className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-8"
+        <div
+          className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-8"
           data-aos="fade-up"
           data-aos-duration="800"
           data-aos-delay="400"
@@ -24,12 +25,13 @@ function SpecialMoment({
             alt={imageAlt}
             width={1000}
             height={1000}
-            className=" w-[clamp(15rem,40vw,48rem)] h-auto object-contain drop-shadow-[0_8px_20px_rgba(26,13,8,0.18)] hover:scale-105 transition-all duration-300"
+            className=" w-[clamp(25rem,45vw,58rem)] h-auto object-contain drop-shadow-[0_8px_20px_rgba(26,13,8,0.18)] hover:scale-105 transition-all duration-300"
           />
         </div>
 
         {/* Frase - 50% */}
-        <div className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-8"
+        <div
+          className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-8"
           data-aos="fade-up"
           data-aos-duration="800"
           data-aos-delay="400"
